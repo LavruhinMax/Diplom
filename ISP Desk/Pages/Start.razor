@@ -1,0 +1,26 @@
+﻿@page "/"
+@inject Start_ViewModel ViewModel
+
+<link href="css/start.css" rel="stylesheet" />
+<PageTitle>Вход</PageTitle>
+
+<Header />
+<div class="main">
+    <div class="auto-cnt">
+        <p class="title">Авторизация</p>
+        <input placeholder="Электронная почта или номер телефона" />
+        <input placeholder="Пароль" type="password" />
+        <a>Забыли пароль?</a>
+        <button>Войти</button>
+    </div>
+</div>
+<Footer />
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        ViewModel.InitializeAsync();
+    }
+
+}

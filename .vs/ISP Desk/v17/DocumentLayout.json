@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Diplom\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\pages\\start.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\pages\\start.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\viewmodel\\start_viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\viewmodel\\start_viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Start_ViewModel.cs",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\ViewModel\\Start_ViewModel.cs",
+              "RelativeDocumentMoniker": "ISP Desk\\ViewModel\\Start_ViewModel.cs",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\ViewModel\\Start_ViewModel.cs",
+              "RelativeToolTip": "ISP Desk\\ViewModel\\Start_ViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T17:46:17.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Start.razor",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Pages\\Start.razor",
+              "RelativeDocumentMoniker": "ISP Desk\\Pages\\Start.razor",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\Pages\\Start.razor",
+              "RelativeToolTip": "ISP Desk\\Pages\\Start.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T15:29:08.735Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

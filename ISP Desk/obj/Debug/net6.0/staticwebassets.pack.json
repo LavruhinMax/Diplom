@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ISP Desk.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ISP Desk.rku0qs3xxh.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\disp.css",
+      "PackagePath": "staticwebassets\\css\\disp.css"
+    },
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\emp.css",
+      "PackagePath": "staticwebassets\\css\\emp.css"
+    },
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\inst.css",
+      "PackagePath": "staticwebassets\\css\\inst.css"
+    },
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\lead.css",
+      "PackagePath": "staticwebassets\\css\\lead.css"
+    },
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\req.css",
+      "PackagePath": "staticwebassets\\css\\req.css"
+    },
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\start.css",
+      "PackagePath": "staticwebassets\\css\\start.css"
+    },
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\stats.css",
+      "PackagePath": "staticwebassets\\css\\stats.css"
+    },
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\images\\bird.png",
+      "PackagePath": "staticwebassets\\images\\bird.png"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ISP Desk.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ISP Desk.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ISP Desk.props",
+      "PackagePath": "build\\ISP Desk.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ISP Desk.props",
+      "PackagePath": "buildMultiTargeting\\ISP Desk.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ISP Desk.props",
+      "PackagePath": "buildTransitive\\ISP Desk.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
