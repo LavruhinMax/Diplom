@@ -1,5 +1,5 @@
 ﻿@page "/"
-@inject Start_ViewModel ViewModel
+@inject Start_VM ViewModel
 
 <link href="css/start.css" rel="stylesheet" />
 <PageTitle>Вход</PageTitle>
@@ -8,19 +8,77 @@
 <div class="main">
     <div class="auto-cnt">
         <p class="title">Авторизация</p>
-        <input placeholder="Электронная почта или номер телефона" />
-        <input placeholder="Пароль" type="password" />
-        <a>Забыли пароль?</a>
-        <button>Войти</button>
+        <div class="input-container">
+            <input style="@((!isFormatCorrect) ? "border: 1px solid red" : "")" placeholder="Электронная почта" @bind="mail" @oninput="MailChanged" />
+        </div>
+        <div class="input-container">
+            <input placeholder="Пароль" type="@((showPass) ? "text" : "password")" @bind ="pass" @oninput="PassChanged" />
+            <img class="eye" src="@((showPass) ? "images/opened-eye.png" : "images/closed-eye.png")"  @onclick="PassVisibility" />
+        </div>
+        <div class="forgot-password">
+            <a>Забыли пароль?</a>
+        </div>
+        <button @onclick="Enter">Войти</button>
+        @if (!string.IsNullOrEmpty(error))
+        {
+            <p class="error">@error</p>
+        }
     </div>
 </div>
 <Footer />
 
 @code {
+    public string mail = string.Empty, pass = string.Empty;
+
+    public string error = string.Empty;
+    public bool showPass = false;
+    public bool isFormatCorrect = true;
 
     protected override async Task OnInitializedAsync()
     {
-        ViewModel.InitializeAsync();
+        await ViewModel.InitializeAsync();
     }
 
+    public void Enter()
+    {
+        if (string.IsNullOrWhiteSpace(mail) || string.IsNullOrWhiteSpace(pass))
+        {
+            error = "Заполните все поля!";
+            return;
+        }
+        if (!FormatChecker.validateMail(mail))
+        {
+            error = "Неправильный формат электронной почты!";
+            return;
+        }
+        if (ViewModel.CheckPassword(pass))
+        {
+            switch (UserContext.status)
+            {
+                case "Руководитель":
+                    NavManager.NavigateTo("lead");
+                    break;
+                case "Инсталлятор":
+                    NavManager.NavigateTo("inst");
+                    break;
+                case "Диспетчер":
+                    NavManager.NavigateTo("disp");
+                    break;
+                default: break;
+            }
+        }
+        else
+        {
+            error = "Неверная электронная почта или пароль!";
+        }
+    }
+
+    private void MailChanged(ChangeEventArgs e)
+    {
+        mail = e.Value?.ToString();
+        isFormatCorrect = FormatChecker.validateMail(mail);
+    }
+
+    private void PassChanged(ChangeEventArgs e) => error = string.Empty;
+    public void PassVisibility() => showPass = !showPass;
 }

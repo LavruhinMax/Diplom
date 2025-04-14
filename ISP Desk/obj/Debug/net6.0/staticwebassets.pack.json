@@ -1,44 +1,88 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ISP Desk.bundle.scp.css",
-      "PackagePath": "staticwebassets\\ISP Desk.rku0qs3xxh.bundle.scp.css"
-    },
-    {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\disp.css",
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\disp.css",
       "PackagePath": "staticwebassets\\css\\disp.css"
     },
     {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\emp.css",
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\emp.css",
       "PackagePath": "staticwebassets\\css\\emp.css"
     },
     {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\inst.css",
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\global.css",
+      "PackagePath": "staticwebassets\\css\\global.css"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
       "PackagePath": "staticwebassets\\css\\inst.css"
     },
     {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\lead.css",
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\lead.css",
       "PackagePath": "staticwebassets\\css\\lead.css"
     },
     {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\req.css",
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\req.css",
       "PackagePath": "staticwebassets\\css\\req.css"
     },
     {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\start.css",
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\start.css",
       "PackagePath": "staticwebassets\\css\\start.css"
     },
     {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\stats.css",
-      "PackagePath": "staticwebassets\\css\\stats.css"
-    },
-    {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\favicon.ico",
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\images\\bird.png",
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\arrow-left.png",
+      "PackagePath": "staticwebassets\\images\\arrow-left.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\arrow-right.png",
+      "PackagePath": "staticwebassets\\images\\arrow-right.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\bird.png",
       "PackagePath": "staticwebassets\\images\\bird.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\closed-eye.png",
+      "PackagePath": "staticwebassets\\images\\closed-eye.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\empty.png",
+      "PackagePath": "staticwebassets\\images\\empty.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\income.png",
+      "PackagePath": "staticwebassets\\images\\income.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\location.png",
+      "PackagePath": "staticwebassets\\images\\location.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\opened-eye.png",
+      "PackagePath": "staticwebassets\\images\\opened-eye.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\problem.webp",
+      "PackagePath": "staticwebassets\\images\\problem.webp"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\red-arrow-left.png",
+      "PackagePath": "staticwebassets\\images\\red-arrow-left.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\red-arrow-right.png",
+      "PackagePath": "staticwebassets\\images\\red-arrow-right.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.webp",
+      "PackagePath": "staticwebassets\\images\\schedule.webp"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\time.webp",
+      "PackagePath": "staticwebassets\\images\\time.webp"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ISP Desk.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

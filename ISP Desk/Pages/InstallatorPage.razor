@@ -1,13 +1,58 @@
-﻿@page "/installator"
+﻿@page "/inst"
+@inject Installator_VM ViewModel
 
 <link href="css/inst.css" rel="stylesheet" />
 <PageTitle>Расписание</PageTitle>
 
 <Header />
-    
+<div class="main">
+    <div class="schedule">
+        <div class="schedule-time">
+            <p>Расписание на @ViewModel.selectedDate.ToString("d MMMM", ViewModel.culture)</p>
+            <div class="time-cnt">
+                <img src="images/time.webp" />
+                <p>@DateTime.Now.ToString("ddd, d MMM", ViewModel.culture) | @DateTime.Now.ToString("HH:mm", ViewModel.culture)</p>
+            </div>
+        </div>
+        <div class="schedule-row">
+            <img class="icon" src="@(ViewModel.futureWeek ? "images/red-arrow-left.png" : "images/arrow-left.png")" @onclick="ViewModel.SelectPreviousWeek" />
+            @for (int i = 0; i < 7; i++)
+            {
+                var dayDate = ViewModel.currentWeekStart.AddDays(i);
+                <div class="column-day" @onclick="() => ViewModel.SelectDate(dayDate)">
+                    <p>@ViewModel.weekDays[i]</p>
+                    <p class="@(dayDate == ViewModel.selectedDate ? "selected-day" : "day")">@ViewModel.days[i]</p>
+                </div>
+            }
+            <img src="@(ViewModel.pastWeek ? "images/red-arrow-right.png" : "images/arrow-right.png")" @onclick="ViewModel.SelectNextWeek" />
+        </div>
+    </div>
+    <div class="req-list">
+        @if (!ViewModel.filteredRequests.Any())
+        {
+            <img src="images/empty.png"/>
+            <p>Выездов не запланировано</p>
+        }
+        else {
+            foreach (var r in ViewModel.filteredRequests)
+            {
+                @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a) && r.InstallatorID == UserContext.ID)
+                {
+                    <RequestCard ab="a" req="r" />
+                }
+            }
+        }
+        
+        
+    </div>
+</div>
 <Footer />
 
 @code {
-    
-    
+
+    protected override async Task OnInitializedAsync()
+    {
+        ViewModel.InitializeAsync();
+    }
+
 }

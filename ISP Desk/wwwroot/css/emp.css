@@ -1,16 +1,395 @@
-﻿body, html {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0
-}
-
+﻿
 .main {
     width: 100%;
+    background-color: whitesmoke;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex: 1;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 30px 0 0 0;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 30px;
+}
+
+.head {
+    position: relative;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    column-gap: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 30px 50px;
+}
+
+.left-cnt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 30px
+}
+
+    .left-cnt p {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0
+    }
+
+.middle-cnt {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px
+}
+
+    .middle-cnt .edit, .middle-cnt .delete {
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        transition: 0.2s;
+        border-radius: 10px;
+        cursor: pointer
+    }
+
+    .middle-cnt .edit {
+        background-color: darkgreen;
+        border: 1px solid darkgreen;
+    }
+
+        .middle-cnt .edit:hover {
+            background-color: darkolivegreen;
+            border: 1px solid darkolivegreen
+        }
+
+    .middle-cnt .delete {
+        background-color: red;
+        border: 1px solid red
+    }
+
+        .middle-cnt .delete:hover {
+            background-color: firebrick;
+            border: 1px solid firebrick
+        }
+
+.right-cnt {
+    position: absolute;
+    height: calc(100% - 60px);
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+    .right-cnt img {
+        height: 50px;
+        width: 75px;
+        cursor: pointer;
+    }
+
+.day {
+    display: flex;
+    width: 175px;
+    height: max-content;
+    padding: 10px 20px;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
+}
+
+    .day img {
+        height: 35px;
+        width: 35px;
+        cursor: pointer
+    }
+
+.today {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+}
+
+    .today .num, .today .month {
+        margin: 0;
+        font-weight: 600
+    }
+
+    .today .num {
+        font-size: 40px
+    }
+
+    .today .month {
+        font-size: 18px
+    }
+
+.list {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    column-gap: 50px;
+    padding: 30px 50px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+    .list .title {
+        width: 100%;
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0
+    }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    width: calc((100% - 150px)/2);
+    row-gap: 30px;
+    height: max-content;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer
+}
+
+    .card:hover {
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    }
+
+.card-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 30px
+}
+
+    .card-row img {
+        height: 35px;
+        width: 35px
+    }
+
+    .card-row p {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600
+    }
+
+
+@media (max-width: 1920px) {
+    .grid {
+        width: 90%;
+        column-gap: 15px
+    }
+
+    .head {
+        padding: 25px
+    }
+
+    .left-cnt p {
+        font-size: 22px
+    }
+
+    .right-cnt img {
+        width: 60px;
+        height: 40px
+    }
+
+    .day {
+        width: 10%
+    }
+
+        .day img {
+            height: 20px;
+            width: 20px
+        }
+
+    .today {
+        row-gap: 10px
+    }
+
+        .today .num {
+            font-size: 28px
+        }
+
+        .today .month {
+            font-size: 16px
+        }
+
+    .list {
+        padding: 30px 40px;
+        row-gap: 30px
+    }
+
+        .list .title {
+            font-size: 20px
+        }
+
+    .card {
+        width: calc((100% - 115px)/2);
+        padding: 15px;
+        row-gap: 20px
+    }
+
+    .card-row {
+        column-gap: 15px
+    }
+
+        .card-row p {
+            font-size: 18px
+        }
+
+        .card-row img {
+            height: 30px;
+            width: 30px
+        }
+}
+
+@media (max-width: 1280px) {
+    .grid {
+        width: 90%
+    }
+
+    .head {
+        flex-direction: column;
+        row-gap: 30px;
+        padding: 20px;
+    }
+
+    .left-cnt {
+        flex-direction: row;
+        column-gap: 30px;
+        align-items: center
+    }
+
+        .left-cnt p {
+            font-size: 18px
+        }
+
+    .middle-cnt {
+        flex-direction: row;
+        column-gap: 50px;
+    }
+
+    .right-cnt {
+        position: relative;
+        flex-direction: row;
+        right: 0px;
+        column-gap: 100px;
+    }
+
+    .day {
+        width: 100%
+    }
+
+    .list {
+        padding: 30px;
+        row-gap: 30px
+    }
+
+        .list .title {
+            font-size: 20px
+        }
+
+    .card {
+        width: 100%;
+        padding: 15px;
+        row-gap: 15px
+    }
+
+    .card-row {
+        column-gap: 20px
+    }
+
+        .card-row p {
+            font-size: 20px
+        }
+
+        .card-row img {
+            height: 30px;
+            width: 30px
+        }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        width: 95%
+    }
+
+    .head {
+        flex-direction: column;
+        row-gap: 30px;
+        padding: 20px;
+    }
+
+    .left-cnt {
+        flex-direction: column;
+        height: max-content;
+        align-items: center
+    }
+
+        .left-cnt p {
+            font-size: 16px
+        }
+
+    .middle-cnt {
+        flex-direction: column;
+        width: auto
+    }
+
+    .right-cnt {
+        position: relative;
+        flex-direction: row;
+        right: 0px;
+        column-gap: 30px
+    }
+
+    .day {
+        width: 100%
+    }
+
+    .list {
+        padding: 20px;
+        row-gap: 30px
+    }
+
+        .list .title {
+            font-size: 18px
+        }
+
+    .card {
+        width: 100%;
+        padding: 10px;
+        row-gap: 10px
+    }
+
+    .card-row {
+        column-gap: 15px
+    }
+
+        .card-row p {
+            font-size: 16px
+        }
+
+        .card-row img {
+            height: 25px;
+            width: 25px
+        }
 }

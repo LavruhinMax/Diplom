@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\\u0414\u0438\u043F\u043B\u043E\u043C\\",
+  "WorkspaceRootPath": "C:\\Diplom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\\u0434\u0438\u043F\u043B\u043E\u043C\\isp desk\\pages\\start.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\pages\\start.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\\u0434\u0438\u043F\u043B\u043E\u043C\\isp desk\\viewmodel\\start_viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\viewmodel\\start_viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\shared\\mailbox.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\shared\\mailbox.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,28 +34,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Start_ViewModel.cs",
-              "DocumentMoniker": "C:\\\u0414\u0438\u043F\u043B\u043E\u043C\\ISP Desk\\ViewModel\\Start_ViewModel.cs",
-              "RelativeDocumentMoniker": "ISP Desk\\ViewModel\\Start_ViewModel.cs",
-              "ToolTip": "C:\\\u0414\u0438\u043F\u043B\u043E\u043C\\ISP Desk\\ViewModel\\Start_ViewModel.cs",
-              "RelativeToolTip": "ISP Desk\\ViewModel\\Start_ViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T17:46:17.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Start.razor",
-              "DocumentMoniker": "C:\\\u0414\u0438\u043F\u043B\u043E\u043C\\ISP Desk\\Pages\\Start.razor",
-              "RelativeDocumentMoniker": "ISP Desk\\Pages\\Start.razor",
-              "ToolTip": "C:\\\u0414\u0438\u043F\u043B\u043E\u043C\\ISP Desk\\Pages\\Start.razor",
-              "RelativeToolTip": "ISP Desk\\Pages\\Start.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Title": "Mailbox.razor",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Shared\\Mailbox.razor",
+              "RelativeDocumentMoniker": "ISP Desk\\Shared\\Mailbox.razor",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\Shared\\Mailbox.razor",
+              "RelativeToolTip": "ISP Desk\\Shared\\Mailbox.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-09T15:29:08.735Z",
+              "WhenOpened": "2025-04-14T00:07:40.958Z",
               "EditorCaption": ""
             }
           ]

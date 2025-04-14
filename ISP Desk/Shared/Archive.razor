@@ -1,0 +1,220 @@
+﻿<style>
+    .archive-popup {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        top: 25%;
+        bottom: 25%;
+        left: 15%;
+        right: 15%;
+        background-color: white;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        overflow-y: auto;
+        z-index: 100
+    }
+
+    .archive-title {
+        font-size: 32px;
+        font-weight: 600;
+        margin: 40px 0
+    }
+
+    .archive-row p, .head-row p {
+        width: 22.5%;
+        padding: 20px 0 20px 15px;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .head-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 85%;
+        min-height: 50px;
+        background-color: dimgray
+    }
+
+        .head-row p {
+            font-size: 16px;
+            color: white
+        }
+
+    .archive-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 85%;
+        min-height: max-content;
+        border: 1px solid lightgray
+    }
+
+        .archive-row p {
+            padding: 25px 0 25px 15px
+        }
+
+        .archive-row div {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            column-gap: 30px
+        }
+
+        .archive-row img {
+            height: 30px;
+            width: 30px;
+            cursor: pointer
+        }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 32px;
+        width: 32px;
+        cursor: pointer
+    }
+
+    @@media (max-width: 1920px) {
+        .archive-title {
+            font-size: 28px;
+            margin: 25px 0
+        }
+
+        .archive-popup {
+            top: 25%;
+            bottom: 25%;
+            left: 10%;
+            right: 10%;
+        }
+
+        .archive-row p {
+            font-size: 14px
+        }
+    }
+
+    @@media (max-width: 1280px) {
+        .archive-title {
+            font-size: 28px;
+            margin: 25px 0
+        }
+
+        .archive-popup {
+            top: 25%;
+            bottom: 25%;
+            left: 10%;
+            right: 10%;
+        }
+
+        .head-row {
+            display: none;
+        }
+
+        .archive-row {
+            min-height: max-content;
+            padding: 10px 0;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 20px;
+            margin: 0 0 20px 0
+        }
+
+            .archive-row p {
+                padding: 0 0 0 15px;
+                width: 100%;
+                font-size: 18px
+            }
+
+            .archive-row div {
+                padding: 0 0 0 15px
+            }
+    }
+
+    @@media (max-width: 768px) {
+        .archive-title {
+            font-size: 24px;
+            margin: 25px 0
+        }
+
+        .archive-popup {
+            top: 25%;
+            bottom: 25%;
+            left: 5%;
+            right: 5%
+        }
+
+        .head-row {
+            display: none;
+        }
+
+        .archive-row {
+            min-height: max-content;
+            padding: 10px 0;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 20px;
+            margin: 0 0 20px 0
+        }
+
+            .archive-row p {
+                padding: 0 0 0 15px;
+                width: 100%;
+                font-size: 14px
+            }
+
+            .archive-row div {
+                padding: 0 0 0 15px
+            }
+    }
+</style>
+
+<div class="archive-popup">
+    <p class="archive-title">Архив</p>
+    <div class="head-row">
+        <p>ФИО</p>
+        <p>Email</p>
+        <p>Контактный телефон</p>
+        <p>Дата удаления</p>
+        <p style="width: 10%; flex: none"></p>
+    </div>
+    <div class="archive-row">
+        <p>Бардин Арсений Игоревич</p>
+        <p>bardin@yandex.ru</p>
+        <p>+79005671122</p>
+        <p>10.05.25 10:30</p>
+        <div>
+            <img src="images/recover.png" />
+            <img src="images/delete.webp" />
+        </div>
+    </div>
+    <div class="archive-row">
+        <p>Бардин Арсений Игоревич</p>
+        <p>bardin@yandex.ru</p>
+        <p>+79005671122</p>
+        <p>10.05.25 10:30</p>
+        <div>
+            <img src="images/recover.png" />
+            <img src="images/delete.webp" />
+        </div>
+    </div>
+    <div class="archive-row">
+        <p>Бардин Арсений Игоревич</p>
+        <p>bardin@yandex.ru</p>
+        <p>+79005671122</p>
+        <p>10.05.25 10:30</p>
+        <div>
+            <img src="images/recover.png" />
+            <img src="images/delete.webp" />
+        </div>
+    </div>
+    <img class="close" src="images/close.png" />
+</div>
+
+@code {
+
+}

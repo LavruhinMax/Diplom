@@ -1,77 +1,205 @@
-﻿body, html {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0
-}
-
-.main {
+﻿.main {
+    overflow-y: auto;
     width: 100%;
     display: flex;
+    background-color: whitesmoke;
     flex-direction: column;
     justify-content: flex-start;
-    row-gap: 30px;
     align-items: center;
+    row-gap: 30px;
     flex: 1
 }
 
-.head {
+.schedule {
+    background-color: white;
     width: 70%;
-    display: flex;
-    justify-content: space-between
+    padding: 40px;
+    margin: 30px 0 0 0;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box
 }
 
-.calendar-row {
+.schedule-time {
+    width: 100%;
     display: flex;
-    width: 70%;
-    align-items: center;
     justify-content: space-between;
-    margin: 1rem 0;
-    padding: 0.5rem;
-    background: #f5f5f5;
-    border-radius: 8px;
+    align-items: center;
+    box-sizing: border-box
 }
 
-    .calendar-row img {
-        cursor: pointer;
-        width: 24px;
-        height: 24px;
+    .schedule-time p {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 20px 0 40px 0;
+        white-space: nowrap
     }
 
-.day {
+.time-cnt {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 20px;
+    margin: 20px 0 40px 0
+}
+
+    .time-cnt p {
+        margin: 0
+    }
+
+.schedule-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 20px;
+    box-sizing: border-box
+}
+
+    .schedule-row img, .schedule-time img {
+        width: 35px;
+        height: 35px;
+        cursor: pointer
+    }
+
+.column-day {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem;
-    width: 40px;
-    cursor: pointer
+    cursor: pointer;
 }
 
-.current-day {
-    background: #1976d2;
-    color: white;
-    border-radius: 50%;
-    padding: 0.5rem;
-    cursor: pointer
+    .column-day p {
+        font-size: 22px;
+        font-weight: 500;
+        margin: 10px 0
+    }
+
+.column-day .day, .column-day .selected-day {
+    padding: 15px;
 }
 
-.selected-day {
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    font-weight: bold;
+    .column-day .day:hover {
+        background-color: gainsboro;
+        border-radius: 200px
+    }
+
+.column-day .selected-day {
+    background-color: darkslateblue;
+    border-radius: 200px;
+    color: white
 }
 
-.current-day.selected-day {
-    background-color: #1565c0;
+.req-list {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    row-gap: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box
 }
 
-.day-name {
-    font-size: 0.8rem;
-    text-transform: capitalize;
+    .req-list img {
+        width: 300px;
+        height: 135px
+    }
+
+    .req-list p {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 600
+    }
+
+@media (max-width: 1920px) {
+    .schedule, .req-list {
+        width: 80%;
+    }
+
+    .schedule-time p {
+        font-size: 24px;
+    }
+
+    .column-day p {
+        font-size: 20px
+    }
+
+    .schedule-row img, .schedule-time img {
+        width: 25px;
+        height: 25px
+    }
 }
 
-.day-number {
-    font-size: 1.2rem;
-    font-weight: bold;
+@media (max-width: 1280px) {
+    .schedule, .req-list {
+        width: 90%;
+        padding: 30px
+    }
+
+    .schedule-time p {
+        font-size: 20px;
+    }
+
+    .column-day p {
+        font-size: 18px
+    }
+
+    .schedule-row img, .schedule-time img {
+        width: 20px;
+        height: 20px
+    }
+
+    .req-list p {
+        font-size: 22px
+    }
+
+    .req-list img {
+        width: 200px;
+        height: 90px
+    }
+}
+
+@media (max-width: 768px) {
+    .schedule, .req-list {
+        width: 95%;
+        padding: 20px
+    }
+
+    .schedule-time p {
+        font-size: 15px;
+    }
+
+    .time-cnt {
+        column-gap: 10px
+    }
+
+    .schedule-row {
+        padding: 0
+    }
+
+    .column-day p {
+        font-size: 14px
+    }
+
+    .day, .selected-day {
+        padding: 10px
+    }
+
+    .schedule-row img, .schedule-time img {
+        width: 20px;
+        height: 20px
+    }
+
+    .req-list p {
+        font-size: 16px
+    }
+
+    .req-list img {
+        width: 150px;
+        height: 67.5px
+    }
 }

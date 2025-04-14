@@ -1,0 +1,123 @@
+﻿<style>
+.message-popup {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: max-content;
+    width: 600px;
+    background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    z-index: 100
+}
+
+.message-head-row {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    background-color: lightgray;
+    justify-content: center;
+    box-sizing: border-box;
+    column-gap: 20px
+}
+
+    .message-head-row img {
+        width: 40px;
+        height: 30px
+    }
+
+    .message-head-row p {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600
+    }
+
+.message-popup input {
+    margin: 20px 0;
+    width: 90%;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px 5px 80px 5px;
+    border: 1px solid black
+}
+
+    .message-popup input:focus {
+        border-color: blue;
+        outline: none
+    }
+
+.message-cnt {
+    display: flex;
+    width: 100%;
+    background-color: lightgray;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+    .message-cnt .button-left, .message-cnt .button-right {
+        margin: 0 20px 0 0;
+        padding: 10px;
+        font-weight: 600;
+        color: white;
+        transition: 0.2s;
+        cursor: pointer
+    }
+
+    .message-cnt .button-left {
+        background-color: red;
+        border: 1px solid red;
+    }
+
+    .message-cnt .button-left:hover {
+        background-color: firebrick;
+        border: 1px solid firebrick
+    }
+
+    .message-cnt .button-right {
+        background-color: slategray;
+        border: 1px solid slategray
+    }
+
+    .message-cnt .button-right:hover {
+        background-color: dimgray;
+        border: 1px solid dimgray
+    }
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer
+}
+
+@@media (max-width: 768px) {
+    .message-popup {
+        width: 90%
+    }
+}
+</style>
+
+<div class="message-popup">
+    <div class="message-head-row">
+        <img src="images/income.png" />
+        <p>-></p>
+        <p>Бардин А.И.</p>
+    </div>
+    <input placeholder="Текст сообщения" />
+    <div class="message-cnt">
+        <button class="button-left">Отправить</button>
+        <button class="button-right">Отмена</button>
+    </div>
+    <img class="close" src="images/close.png" />
+</div>
+
+@code {
+
+}

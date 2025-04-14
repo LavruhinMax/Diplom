@@ -1,5 +1,6 @@
 using ISP_Desk.Data;
 using ISP_Desk.ViewModel;
+using ISP_Desk.Service;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
@@ -9,7 +10,15 @@ using System;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ConnectionString");
 builder.Services.AddDbContext<AppDbContext>(c => c.UseSqlite(connectionString));
-builder.Services.AddScoped<Start_ViewModel>();
+
+builder.Services.AddScoped<Start_VM>();
+builder.Services.AddScoped<Stats_VM>();
+builder.Services.AddScoped<Dispatcher_VM>();
+builder.Services.AddScoped<Installator_VM>();
+builder.Services.AddScoped<LeadPage_VM>();
+builder.Services.AddScoped<Unit_VM>();
+builder.Services.AddScoped<CryptoService>();
+
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 

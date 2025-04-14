@@ -1,0 +1,143 @@
+﻿<style>
+.add-popup {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: max-content;
+    width: 650px;
+    background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    z-index: 100
+}
+
+.add-head-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    column-gap: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px
+}
+
+.add-head-row img {
+    width: 32px;
+    height: 32px
+}
+
+.add-head-row p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600
+}
+
+.add-field {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 30px;
+    box-sizing: border-box;
+    column-gap: 30px
+}
+
+    .add-field input {
+        font-size: 20px;
+        font-weight: 600;
+        padding: 5px
+    }
+
+    .add-field input:focus {
+        border-color: blue;
+        outline: none;
+    }
+
+.add-cnt {
+    display: flex;
+    width: 100%;
+    background-color: lightgray;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+    .add-cnt .button-left, .add-cnt .button-right {
+        margin: 0 20px 0 0;
+        padding: 10px;
+        font-weight: 600;
+        color: white;
+        transition: 0.2s;
+        cursor: pointer
+    }
+
+    .add-cnt .button-left {
+        background-color: red;
+        border: 1px solid red;
+    }
+
+    .add-cnt .button-left:hover {
+        background-color: firebrick;
+        border: 1px solid firebrick
+    }
+
+    .add-cnt .button-right {
+        background-color: slategray;
+        border: 1px solid slategray
+    }
+
+    .add-cnt .button-right:hover {
+        background-color: dimgray;
+        border: 1px solid dimgray
+    }
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer
+}
+
+@@media (max-width: 768px) {
+    .add-popup {
+        width: 80%
+    }
+    .add-field {
+        flex-direction: column;
+    }
+}
+</style>
+
+<div class="add-popup">
+    <div class="add-head-row">
+        <img src="images/add.png" />
+        <p>Новый сотрудник</p>
+    </div>
+    <div class="add-field">
+        <input placeholder="Фамилия" />
+        <input placeholder="Имя" />
+        <input placeholder="Отчество" />
+        <input placeholder="Номер телефона" />
+        <input placeholder="Электронная почта" />
+    </div>
+    <div class="add-cnt">
+        <button class="button-left">Добавить</button>
+        <button class="button-right">Отмена</button>
+    </div>
+    <img class="close" src="images/close.png" />
+</div>
+
+@code {
+    
+}

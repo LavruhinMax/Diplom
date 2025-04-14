@@ -1,16 +1,372 @@
-﻿body, html {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0
-}
-
+﻿
 .main {
     width: 100%;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex: 1;
+}
+
+.main {
+    width: 100%;
+    background-color: whitesmoke;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 30px 0 0 0;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.head {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 30px 50px;
+}
+
+.left-cnt {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px
+}
+
+    .left-cnt p {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 600
+    }
+
+.button-cnt {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 50px
+}
+
+    .button-cnt .button-left, .button-cnt .button-right {
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 15px 50px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        transition: 0.2s;
+        cursor: pointer
+    }
+
+    .button-cnt .button-left {
+        background-color: dimgray;
+        border: 1px solid dimgray
+    }
+
+    .button-cnt .button-right {
+        background-color: darkgreen;
+        border: 1px solid darkgreen
+    }
+
+.right-cnt {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 100%;
+    overflow: hidden
+}
+
+    .right-cnt .month {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: firebrick;
+        padding: 0 30px;
+        flex: 1;
+        margin: 0;
+        color: white;
+        font-size: 30px;
+        font-weight: 600
+    }
+
+    .right-cnt .day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        flex: 1;
+        margin: 0;
+        font-weight: 800
+    }
+
+.list {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    border-radius: 10px;
+    padding: 40px;
+    row-gap: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
+}
+
+    .list input {
+        width: 100%;
+        padding: 15px;
+        font-size: 22px;
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 0 0 10px 0;
+        transition: 0.3s
+    }
+
+        .list input:focus {
+            border-color: blue;
+            outline: none
+        }
+
+.list-row {
+    display: flex;
+    min-height: max-content;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+    .list-row:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+.last {
+    flex: 1;
+    display: flex;
+    align-items: center
+}
+
+    .last div {
+        height: 20px;
+        width: 20px;
+        background-color: green;
+        border-radius: 50%
+    }
+
+    .list-row p, .last p {
+        font-size: 18px;
+        font-weight: 600;
+        padding: 30px;
+        margin: 0
+    }
+
+.list-row p {
+    flex: 1
+}
+
+.window {
+    flex: 1;
+    height: max-content;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
+}
+
+    .window p {
+        font-size: 20px;
+        font-weight: 600
+    }
+
+.window-row {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 20px
+}
+
+    .window-row img {
+        height: 30px;
+        width: 30px
+    }
+
+@media (max-width: 1920px) {
+    .grid {
+        width: 85%
+    }
+
+    .left-cnt p {
+        font-size: 25px
+    }
+
+    .button-cnt .button-left, .button-cnt .button-right {
+        font-size: 16px;
+        padding: 10px 40px
+    }
+
+    .right-cnt .month {
+        padding: 0 25px;
+        font-size: 20px;
+    }
+
+    .right-cnt .day {
+        font-size: 30px;
+    }
+
+    .list {
+        padding: 30px
+    }
+
+        .list input {
+            padding: 10px;
+            font-size: 20px
+        }
+
+    .list-row p, .last p {
+        padding: 25px
+    }
+
+    .window {
+        margin: 0 0 30px 0
+    }
+
+        .window p {
+            font-size: 16px
+        }
+
+    .window-row {
+        column-gap: 10px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .grid {
+        width: 90%
+    }
+
+    .left-cnt p {
+        font-size: 20px
+    }
+
+    .button-cnt .button-left, .button-cnt .button-right {
+        font-size: 14px;
+        padding: 10px 30px
+    }
+
+    .right-cnt .month {
+        padding: 0 25px;
+        font-size: 16px;
+    }
+
+    .right-cnt .day {
+        font-size: 24px;
+    }
+
+    .list {
+        width: 100%
+    }
+
+    .list-row p, .last p {
+        padding: 20px;
+        font-size: 16px
+    }
+
+    .window {
+        flex-direction: row;
+        margin: 0 0 30px 0
+    }
+
+    .window-row {
+        justify-content: center;
+        column-gap: 10px;
+    }
+
+        .window-row p {
+            font-size: 14px
+        }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        width: 95%
+    }
+
+    .left-cnt p {
+        font-size: 20px
+    }
+
+    .button-cnt {
+        flex-wrap: wrap;
+        row-gap: 30px
+    }
+
+        .button-cnt .button-left, .button-cnt .button-right {
+            width: 80%;
+            font-size: 12px;
+            padding: 10px 0
+        }
+
+    .right-cnt {
+        height: 50%
+    }
+
+        .right-cnt .month {
+            padding: 0 20px;
+            font-size: 12px;
+        }
+
+        .right-cnt .day {
+            font-size: 16px;
+        }
+
+    .list {
+        width: 100%
+    }
+
+        .list input {
+            padding: 10px;
+            font-size: 15px
+        }
+
+    .list-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .list-row p, .last p {
+            flex: none;
+            padding: 15px;
+            font-size: 14px
+        }
+
+    .last {
+        padding: 0 15px
+    }
+
+    .window {
+        flex-direction: column;
+        margin: 0 0 30px 0
+    }
+
+    .window-row {
+        justify-content: center;
+        column-gap: 30px;
+        font-size: 20px
+    }
 }

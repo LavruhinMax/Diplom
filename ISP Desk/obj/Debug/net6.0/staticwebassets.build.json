@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h1Wil0bZIfjjTefOZpfqr1284UMuvcDPzbvqKTobiSU=",
+  "Hash": "3odH3Zm5PD5UCAexHBSF/DujgDwD7wv9KHxXFLoFFNI=",
   "Source": "ISP Desk",
   "BasePath": "_content/ISP Desk",
   "Mode": "Default",
@@ -10,59 +10,17 @@
     {
       "Name": "ISP Desk\\wwwroot",
       "Source": "ISP Desk",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ISP Desk.styles.css",
-      "SourceId": "ISP Desk",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/ISP Desk",
-      "RelativePath": "ISP Desk#[.{fingerprint}]?.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "rku0qs3xxh",
-      "Integrity": "NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ISP Desk.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ISP Desk.bundle.scp.css",
-      "SourceId": "ISP Desk",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/ISP Desk",
-      "RelativePath": "ISP Desk#[.{fingerprint}]!.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "rku0qs3xxh",
-      "Integrity": "NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ISP Desk.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\disp.css",
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\disp.css",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
       "RelativePath": "css/disp#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -73,17 +31,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gk54q1a7bj",
-      "Integrity": "MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=",
+      "Fingerprint": "9us173ivwf",
+      "Integrity": "v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\disp.css"
     },
     {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\emp.css",
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\emp.css",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
       "RelativePath": "css/emp#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -94,17 +52,38 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gk54q1a7bj",
-      "Integrity": "MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=",
+      "Fingerprint": "9us173ivwf",
+      "Integrity": "v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\emp.css"
     },
     {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\inst.css",
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\global.css",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "css/global#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wjrshz117x",
+      "Integrity": "hBib+h4LUrmEaC9hXRSnzrzUQ+aOBCEJsgC7INXmz/U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\global.css"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
       "RelativePath": "css/inst#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -115,17 +94,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cjy60rayvv",
-      "Integrity": "qJ9VatwIP2rxguzIb6qAH2LdosroQvBHWS7bfzDNWf4=",
+      "Fingerprint": "2g9aoj5x5g",
+      "Integrity": "rt0ggM70car0weSqOZ640W7C1ziOfTwg1bKQgkzZKBk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\inst.css"
     },
     {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\lead.css",
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\lead.css",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
       "RelativePath": "css/lead#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -136,17 +115,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gk54q1a7bj",
-      "Integrity": "MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=",
+      "Fingerprint": "ohlq1t6r9b",
+      "Integrity": "TESBTHtn0WkUNpJ7Bp2KaqQmHvW5FvpdeyXqCnzeiO0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\lead.css"
     },
     {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\req.css",
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\req.css",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
       "RelativePath": "css/req#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -157,17 +136,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gk54q1a7bj",
-      "Integrity": "MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=",
+      "Fingerprint": "uoj8yt0i4d",
+      "Integrity": "rovKJc3yZ6YZ+4UPUVsTFxClv7tri1sY/bAjabard64=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\req.css"
     },
     {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\start.css",
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\start.css",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
       "RelativePath": "css/start#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -178,38 +157,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "eitvklon8x",
-      "Integrity": "Ju8DcDu0edBQu2YW58JDOzTzlUqVTTeYHAn9iBMj5+0=",
+      "Fingerprint": "ectcoop59x",
+      "Integrity": "jmcsTDaCtQkW1DcCcIIgHrvy8DqSNnRrIylCGoX7C6w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\start.css"
     },
     {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\stats.css",
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\favicon.ico",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
-      "BasePath": "_content/ISP Desk",
-      "RelativePath": "css/stats#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "3jwkutrfvx",
-      "Integrity": "r8OjHo7raAV8vWHJ71ZWTLcxXnGzGUkGtrn89H0p3j4=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\stats.css"
-    },
-    {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\favicon.ico",
-      "SourceId": "ISP Desk",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
       "RelativePath": "favicon#[.{fingerprint}]?.ico",
       "AssetKind": "All",
@@ -227,10 +185,52 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\images\\bird.png",
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\arrow-left.png",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/arrow-left#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "j6uz0s83tq",
+      "Integrity": "dUykbyGtpKOXQy7YqIC6o34NrToeHEAkrSIBg7T+T/g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\arrow-left.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\arrow-right.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/arrow-right#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oh2u1sj5qe",
+      "Integrity": "5JbvDbLKiDSxmZL7xnvJIZb97VCD9HJOC8Iedya+CWA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\arrow-right.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\bird.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
       "RelativePath": "images/bird#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -246,12 +246,222 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\bird.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\closed-eye.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/closed-eye#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8k9hqgh6vx",
+      "Integrity": "WItGC45XpZTTF7ZqTe1/K09/d5276efMXno/CXRhBY4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\closed-eye.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\empty.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/empty#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8jmlj2lslw",
+      "Integrity": "VPBLh9gvsf5YXlVDCTOtUyTRobAhdfkZ+i/zx9iTkyc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\empty.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\income.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/income#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3y4bfn3dnt",
+      "Integrity": "y4gOnsQcxmsrGoKWaUMDNyxzpywBDOIFNoJMe0Ef/mQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\income.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\location.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/location#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "olo0hdnalv",
+      "Integrity": "jHFoL2AIC/U3zVJcnqKzBcQc+oSjE0yL1/dnvlahXaU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\location.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\opened-eye.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/opened-eye#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b4tk9psowf",
+      "Integrity": "az1HpnqcChkcBfpPUrEf/TICs70l6qUIHsc2kmoKJxA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\opened-eye.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\problem.webp",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/problem#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "auxp2e6hlv",
+      "Integrity": "klFIPbG8yi4M1296erCkOnf5wlE/fWhzQK8OXmjnRhs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\problem.webp"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\red-arrow-left.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/red-arrow-left#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3706ij7ki8",
+      "Integrity": "gcs7yk+btnu3MjqB7F8Ss2TVBbw6B4blktkAnQXKeqo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\red-arrow-left.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\red-arrow-right.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/red-arrow-right#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "huem1bcqjx",
+      "Integrity": "Vx6jzWllt3H4wpEug5vnsBOGb6/jtLVYi6p3t4ujTr0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\red-arrow-right.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.webp",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/schedule#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pd3qzd2kdy",
+      "Integrity": "Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\schedule.webp"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\time.webp",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/time#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a07oe9zkog",
+      "Integrity": "evvbUv+O1S1n0ADGs4zF/LyDs+HwNhR02vR3IW1kYE0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\time.webp"
     }
   ],
   "Endpoints": [
     {
-      "Route": "css/disp.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\disp.css",
+      "Route": "css/disp.9us173ivwf.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\disp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -260,7 +470,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "272"
+          "Value": "152"
         },
         {
           "Name": "Content-Type",
@@ -268,48 +478,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=\""
+          "Value": "\"v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:16:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI="
-        }
-      ]
-    },
-    {
-      "Route": "css/disp.gk54q1a7bj.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\disp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "272"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:16:28 GMT"
+          "Value": "Sat, 12 Apr 2025 15:40:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -319,7 +492,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gk54q1a7bj"
+          "Value": "9us173ivwf"
         },
         {
           "Name": "label",
@@ -327,13 +500,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI="
+          "Value": "sha256-v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8="
         }
       ]
     },
     {
-      "Route": "css/emp.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\emp.css",
+      "Route": "css/disp.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\disp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -342,7 +515,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "272"
+          "Value": "152"
         },
         {
           "Name": "Content-Type",
@@ -350,11 +523,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=\""
+          "Value": "\"v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:16:33 GMT"
+          "Value": "Sat, 12 Apr 2025 15:40:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -364,13 +537,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI="
+          "Value": "sha256-v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8="
         }
       ]
     },
     {
-      "Route": "css/emp.gk54q1a7bj.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\emp.css",
+      "Route": "css/emp.9us173ivwf.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\emp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -379,7 +552,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "272"
+          "Value": "152"
         },
         {
           "Name": "Content-Type",
@@ -387,11 +560,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=\""
+          "Value": "\"v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:16:33 GMT"
+          "Value": "Sat, 12 Apr 2025 15:40:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -401,7 +574,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gk54q1a7bj"
+          "Value": "9us173ivwf"
         },
         {
           "Name": "label",
@@ -409,13 +582,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI="
+          "Value": "sha256-v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8="
         }
       ]
     },
     {
-      "Route": "css/inst.cjy60rayvv.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\inst.css",
+      "Route": "css/emp.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\emp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -424,7 +597,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1296"
+          "Value": "152"
         },
         {
           "Name": "Content-Type",
@@ -432,11 +605,85 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qJ9VatwIP2rxguzIb6qAH2LdosroQvBHWS7bfzDNWf4=\""
+          "Value": "\"v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 04:31:52 GMT"
+          "Value": "Sat, 12 Apr 2025 15:40:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v4S2a1Y7lGKoESegX5g8zOgK+h+KWHfiavoesv+7Bk8="
+        }
+      ]
+    },
+    {
+      "Route": "css/global.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\global.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "147"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hBib+h4LUrmEaC9hXRSnzrzUQ+aOBCEJsgC7INXmz/U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 15:39:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hBib+h4LUrmEaC9hXRSnzrzUQ+aOBCEJsgC7INXmz/U="
+        }
+      ]
+    },
+    {
+      "Route": "css/global.wjrshz117x.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\global.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "147"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hBib+h4LUrmEaC9hXRSnzrzUQ+aOBCEJsgC7INXmz/U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 15:39:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -446,7 +693,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "cjy60rayvv"
+          "Value": "wjrshz117x"
+        },
+        {
+          "Name": "label",
+          "Value": "css/global.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hBib+h4LUrmEaC9hXRSnzrzUQ+aOBCEJsgC7INXmz/U="
+        }
+      ]
+    },
+    {
+      "Route": "css/inst.2g9aoj5x5g.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rt0ggM70car0weSqOZ640W7C1ziOfTwg1bKQgkzZKBk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 18:39:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2g9aoj5x5g"
         },
         {
           "Name": "label",
@@ -454,13 +746,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qJ9VatwIP2rxguzIb6qAH2LdosroQvBHWS7bfzDNWf4="
+          "Value": "sha256-rt0ggM70car0weSqOZ640W7C1ziOfTwg1bKQgkzZKBk="
         }
       ]
     },
     {
       "Route": "css/inst.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\inst.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -469,7 +761,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1296"
+          "Value": "3605"
         },
         {
           "Name": "Content-Type",
@@ -477,11 +769,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qJ9VatwIP2rxguzIb6qAH2LdosroQvBHWS7bfzDNWf4=\""
+          "Value": "\"rt0ggM70car0weSqOZ640W7C1ziOfTwg1bKQgkzZKBk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 04:31:52 GMT"
+          "Value": "Sun, 13 Apr 2025 18:39:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -491,13 +783,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qJ9VatwIP2rxguzIb6qAH2LdosroQvBHWS7bfzDNWf4="
+          "Value": "sha256-rt0ggM70car0weSqOZ640W7C1ziOfTwg1bKQgkzZKBk="
         }
       ]
     },
     {
       "Route": "css/lead.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\lead.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\lead.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -506,7 +798,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "272"
+          "Value": "6717"
         },
         {
           "Name": "Content-Type",
@@ -514,11 +806,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=\""
+          "Value": "\"TESBTHtn0WkUNpJ7Bp2KaqQmHvW5FvpdeyXqCnzeiO0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:16:21 GMT"
+          "Value": "Sun, 13 Apr 2025 23:46:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -528,13 +820,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI="
+          "Value": "sha256-TESBTHtn0WkUNpJ7Bp2KaqQmHvW5FvpdeyXqCnzeiO0="
         }
       ]
     },
     {
-      "Route": "css/lead.gk54q1a7bj.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\lead.css",
+      "Route": "css/lead.ohlq1t6r9b.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\lead.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -543,7 +835,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "272"
+          "Value": "6717"
         },
         {
           "Name": "Content-Type",
@@ -551,11 +843,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=\""
+          "Value": "\"TESBTHtn0WkUNpJ7Bp2KaqQmHvW5FvpdeyXqCnzeiO0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:16:21 GMT"
+          "Value": "Sun, 13 Apr 2025 23:46:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -565,7 +857,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gk54q1a7bj"
+          "Value": "ohlq1t6r9b"
         },
         {
           "Name": "label",
@@ -573,13 +865,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI="
+          "Value": "sha256-TESBTHtn0WkUNpJ7Bp2KaqQmHvW5FvpdeyXqCnzeiO0="
         }
       ]
     },
     {
       "Route": "css/req.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\req.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\req.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -588,7 +880,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "272"
+          "Value": "154"
         },
         {
           "Name": "Content-Type",
@@ -596,11 +888,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=\""
+          "Value": "\"rovKJc3yZ6YZ+4UPUVsTFxClv7tri1sY/bAjabard64=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:16:16 GMT"
+          "Value": "Sat, 12 Apr 2025 15:40:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -610,13 +902,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI="
+          "Value": "sha256-rovKJc3yZ6YZ+4UPUVsTFxClv7tri1sY/bAjabard64="
         }
       ]
     },
     {
-      "Route": "css/req.gk54q1a7bj.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\req.css",
+      "Route": "css/req.uoj8yt0i4d.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\req.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -625,7 +917,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "272"
+          "Value": "154"
         },
         {
           "Name": "Content-Type",
@@ -633,11 +925,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI=\""
+          "Value": "\"rovKJc3yZ6YZ+4UPUVsTFxClv7tri1sY/bAjabard64=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:16:16 GMT"
+          "Value": "Sat, 12 Apr 2025 15:40:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -647,7 +939,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gk54q1a7bj"
+          "Value": "uoj8yt0i4d"
         },
         {
           "Name": "label",
@@ -655,13 +947,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MFP5quLtxENXvKVKiBEusVFIJIG9XpVqPey5pjXcpXI="
+          "Value": "sha256-rovKJc3yZ6YZ+4UPUVsTFxClv7tri1sY/bAjabard64="
         }
       ]
     },
     {
       "Route": "css/start.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\start.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\start.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -670,7 +962,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1348"
+          "Value": "2466"
         },
         {
           "Name": "Content-Type",
@@ -678,11 +970,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Ju8DcDu0edBQu2YW58JDOzTzlUqVTTeYHAn9iBMj5+0=\""
+          "Value": "\"jmcsTDaCtQkW1DcCcIIgHrvy8DqSNnRrIylCGoX7C6w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 02:36:28 GMT"
+          "Value": "Sun, 13 Apr 2025 09:37:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -692,13 +984,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Ju8DcDu0edBQu2YW58JDOzTzlUqVTTeYHAn9iBMj5+0="
+          "Value": "sha256-jmcsTDaCtQkW1DcCcIIgHrvy8DqSNnRrIylCGoX7C6w="
         }
       ]
     },
     {
-      "Route": "css/start.eitvklon8x.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\start.css",
+      "Route": "css/start.ectcoop59x.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\start.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -707,7 +999,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1348"
+          "Value": "2466"
         },
         {
           "Name": "Content-Type",
@@ -715,11 +1007,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Ju8DcDu0edBQu2YW58JDOzTzlUqVTTeYHAn9iBMj5+0=\""
+          "Value": "\"jmcsTDaCtQkW1DcCcIIgHrvy8DqSNnRrIylCGoX7C6w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 02:36:28 GMT"
+          "Value": "Sun, 13 Apr 2025 09:37:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -729,7 +1021,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "eitvklon8x"
+          "Value": "ectcoop59x"
         },
         {
           "Name": "label",
@@ -737,95 +1029,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Ju8DcDu0edBQu2YW58JDOzTzlUqVTTeYHAn9iBMj5+0="
-        }
-      ]
-    },
-    {
-      "Route": "css/stats.3jwkutrfvx.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\stats.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "270"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"r8OjHo7raAV8vWHJ71ZWTLcxXnGzGUkGtrn89H0p3j4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:36:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "3jwkutrfvx"
-        },
-        {
-          "Name": "label",
-          "Value": "css/stats.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-r8OjHo7raAV8vWHJ71ZWTLcxXnGzGUkGtrn89H0p3j4="
-        }
-      ]
-    },
-    {
-      "Route": "css/stats.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\css\\stats.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "270"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"r8OjHo7raAV8vWHJ71ZWTLcxXnGzGUkGtrn89H0p3j4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 00:36:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-r8OjHo7raAV8vWHJ71ZWTLcxXnGzGUkGtrn89H0p3j4="
+          "Value": "sha256-jmcsTDaCtQkW1DcCcIIgHrvy8DqSNnRrIylCGoX7C6w="
         }
       ]
     },
     {
       "Route": "favicon.61n19gt1b8.ico",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -870,7 +1080,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -906,8 +1116,172 @@
       ]
     },
     {
+      "Route": "images/arrow-left.j6uz0s83tq.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\arrow-left.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95624"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dUykbyGtpKOXQy7YqIC6o34NrToeHEAkrSIBg7T+T/g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 19:54:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "j6uz0s83tq"
+        },
+        {
+          "Name": "label",
+          "Value": "images/arrow-left.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dUykbyGtpKOXQy7YqIC6o34NrToeHEAkrSIBg7T+T/g="
+        }
+      ]
+    },
+    {
+      "Route": "images/arrow-left.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\arrow-left.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95624"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dUykbyGtpKOXQy7YqIC6o34NrToeHEAkrSIBg7T+T/g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 19:54:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dUykbyGtpKOXQy7YqIC6o34NrToeHEAkrSIBg7T+T/g="
+        }
+      ]
+    },
+    {
+      "Route": "images/arrow-right.oh2u1sj5qe.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\arrow-right.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30961"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5JbvDbLKiDSxmZL7xnvJIZb97VCD9HJOC8Iedya+CWA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 19:49:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oh2u1sj5qe"
+        },
+        {
+          "Name": "label",
+          "Value": "images/arrow-right.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5JbvDbLKiDSxmZL7xnvJIZb97VCD9HJOC8Iedya+CWA="
+        }
+      ]
+    },
+    {
+      "Route": "images/arrow-right.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\arrow-right.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30961"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5JbvDbLKiDSxmZL7xnvJIZb97VCD9HJOC8Iedya+CWA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 19:49:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5JbvDbLKiDSxmZL7xnvJIZb97VCD9HJOC8Iedya+CWA="
+        }
+      ]
+    },
+    {
       "Route": "images/bird.b6yicf7c5z.png",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\images\\bird.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\bird.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -952,7 +1326,7 @@
     },
     {
       "Route": "images/bird.png",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\wwwroot\\images\\bird.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\bird.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -988,8 +1362,8 @@
       ]
     },
     {
-      "Route": "ISP Desk.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ISP Desk.bundle.scp.css",
+      "Route": "images/closed-eye.8k9hqgh6vx.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\closed-eye.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -998,56 +1372,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1535"
+          "Value": "50707"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/css"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to=\""
+          "Value": "\"WItGC45XpZTTF7ZqTe1/K09/d5276efMXno/CXRhBY4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 15:43:03 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to="
-        }
-      ]
-    },
-    {
-      "Route": "ISP Desk.rku0qs3xxh.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ISP Desk.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1535"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 15:43:03 GMT"
+          "Value": "Fri, 11 Apr 2025 17:17:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1057,21 +1394,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rku0qs3xxh"
+          "Value": "8k9hqgh6vx"
         },
         {
           "Name": "label",
-          "Value": "ISP Desk.bundle.scp.css"
+          "Value": "images/closed-eye.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to="
+          "Value": "sha256-WItGC45XpZTTF7ZqTe1/K09/d5276efMXno/CXRhBY4="
         }
       ]
     },
     {
-      "Route": "ISP Desk.rku0qs3xxh.styles.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ISP Desk.styles.css",
+      "Route": "images/closed-eye.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\closed-eye.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1080,19 +1417,56 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1535"
+          "Value": "50707"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/css"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to=\""
+          "Value": "\"WItGC45XpZTTF7ZqTe1/K09/d5276efMXno/CXRhBY4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 15:43:03 GMT"
+          "Value": "Fri, 11 Apr 2025 17:17:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WItGC45XpZTTF7ZqTe1/K09/d5276efMXno/CXRhBY4="
+        }
+      ]
+    },
+    {
+      "Route": "images/empty.8jmlj2lslw.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\empty.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "97837"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VPBLh9gvsf5YXlVDCTOtUyTRobAhdfkZ+i/zx9iTkyc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 11:58:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1102,21 +1476,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rku0qs3xxh"
+          "Value": "8jmlj2lslw"
         },
         {
           "Name": "label",
-          "Value": "ISP Desk.styles.css"
+          "Value": "images/empty.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to="
+          "Value": "sha256-VPBLh9gvsf5YXlVDCTOtUyTRobAhdfkZ+i/zx9iTkyc="
         }
       ]
     },
     {
-      "Route": "ISP Desk.styles.css",
-      "AssetFile": "C:\\Users\\Максим\\Documents\\Projects\\ISP Desk\\ISP Desk\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ISP Desk.styles.css",
+      "Route": "images/empty.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\empty.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1125,29 +1499,685 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1535"
+          "Value": "97837"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/css"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to=\""
+          "Value": "\"VPBLh9gvsf5YXlVDCTOtUyTRobAhdfkZ+i/zx9iTkyc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 15:43:03 GMT"
+          "Value": "Sat, 12 Apr 2025 11:58:07 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NatiL3qZliLr1X7l9UgfbFD57nGxSMXaOr+n3Ezx0to="
+          "Value": "sha256-VPBLh9gvsf5YXlVDCTOtUyTRobAhdfkZ+i/zx9iTkyc="
+        }
+      ]
+    },
+    {
+      "Route": "images/income.3y4bfn3dnt.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\income.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37104"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y4gOnsQcxmsrGoKWaUMDNyxzpywBDOIFNoJMe0Ef/mQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 11:07:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3y4bfn3dnt"
+        },
+        {
+          "Name": "label",
+          "Value": "images/income.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-y4gOnsQcxmsrGoKWaUMDNyxzpywBDOIFNoJMe0Ef/mQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/income.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\income.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37104"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y4gOnsQcxmsrGoKWaUMDNyxzpywBDOIFNoJMe0Ef/mQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 11:07:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-y4gOnsQcxmsrGoKWaUMDNyxzpywBDOIFNoJMe0Ef/mQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/location.olo0hdnalv.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\location.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46578"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jHFoL2AIC/U3zVJcnqKzBcQc+oSjE0yL1/dnvlahXaU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "olo0hdnalv"
+        },
+        {
+          "Name": "label",
+          "Value": "images/location.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jHFoL2AIC/U3zVJcnqKzBcQc+oSjE0yL1/dnvlahXaU="
+        }
+      ]
+    },
+    {
+      "Route": "images/location.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\location.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46578"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jHFoL2AIC/U3zVJcnqKzBcQc+oSjE0yL1/dnvlahXaU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jHFoL2AIC/U3zVJcnqKzBcQc+oSjE0yL1/dnvlahXaU="
+        }
+      ]
+    },
+    {
+      "Route": "images/opened-eye.b4tk9psowf.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\opened-eye.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57159"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"az1HpnqcChkcBfpPUrEf/TICs70l6qUIHsc2kmoKJxA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 16:42:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b4tk9psowf"
+        },
+        {
+          "Name": "label",
+          "Value": "images/opened-eye.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-az1HpnqcChkcBfpPUrEf/TICs70l6qUIHsc2kmoKJxA="
+        }
+      ]
+    },
+    {
+      "Route": "images/opened-eye.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\opened-eye.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57159"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"az1HpnqcChkcBfpPUrEf/TICs70l6qUIHsc2kmoKJxA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 16:42:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-az1HpnqcChkcBfpPUrEf/TICs70l6qUIHsc2kmoKJxA="
+        }
+      ]
+    },
+    {
+      "Route": "images/problem.auxp2e6hlv.webp",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\problem.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9150"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"klFIPbG8yi4M1296erCkOnf5wlE/fWhzQK8OXmjnRhs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 09:32:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "auxp2e6hlv"
+        },
+        {
+          "Name": "label",
+          "Value": "images/problem.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-klFIPbG8yi4M1296erCkOnf5wlE/fWhzQK8OXmjnRhs="
+        }
+      ]
+    },
+    {
+      "Route": "images/problem.webp",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\problem.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9150"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"klFIPbG8yi4M1296erCkOnf5wlE/fWhzQK8OXmjnRhs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 09:32:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-klFIPbG8yi4M1296erCkOnf5wlE/fWhzQK8OXmjnRhs="
+        }
+      ]
+    },
+    {
+      "Route": "images/red-arrow-left.3706ij7ki8.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\red-arrow-left.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "455269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gcs7yk+btnu3MjqB7F8Ss2TVBbw6B4blktkAnQXKeqo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 20:00:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3706ij7ki8"
+        },
+        {
+          "Name": "label",
+          "Value": "images/red-arrow-left.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gcs7yk+btnu3MjqB7F8Ss2TVBbw6B4blktkAnQXKeqo="
+        }
+      ]
+    },
+    {
+      "Route": "images/red-arrow-left.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\red-arrow-left.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "455269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gcs7yk+btnu3MjqB7F8Ss2TVBbw6B4blktkAnQXKeqo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 20:00:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gcs7yk+btnu3MjqB7F8Ss2TVBbw6B4blktkAnQXKeqo="
+        }
+      ]
+    },
+    {
+      "Route": "images/red-arrow-right.huem1bcqjx.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\red-arrow-right.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "455227"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vx6jzWllt3H4wpEug5vnsBOGb6/jtLVYi6p3t4ujTr0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 20:00:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "huem1bcqjx"
+        },
+        {
+          "Name": "label",
+          "Value": "images/red-arrow-right.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vx6jzWllt3H4wpEug5vnsBOGb6/jtLVYi6p3t4ujTr0="
+        }
+      ]
+    },
+    {
+      "Route": "images/red-arrow-right.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\red-arrow-right.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "455227"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vx6jzWllt3H4wpEug5vnsBOGb6/jtLVYi6p3t4ujTr0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 20:00:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vx6jzWllt3H4wpEug5vnsBOGb6/jtLVYi6p3t4ujTr0="
+        }
+      ]
+    },
+    {
+      "Route": "images/schedule.pd3qzd2kdy.webp",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19094"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 08:44:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pd3qzd2kdy"
+        },
+        {
+          "Name": "label",
+          "Value": "images/schedule.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM="
+        }
+      ]
+    },
+    {
+      "Route": "images/schedule.webp",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19094"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 08:44:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM="
+        }
+      ]
+    },
+    {
+      "Route": "images/time.a07oe9zkog.webp",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\time.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11276"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"evvbUv+O1S1n0ADGs4zF/LyDs+HwNhR02vR3IW1kYE0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 09:14:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a07oe9zkog"
+        },
+        {
+          "Name": "label",
+          "Value": "images/time.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-evvbUv+O1S1n0ADGs4zF/LyDs+HwNhR02vR3IW1kYE0="
+        }
+      ]
+    },
+    {
+      "Route": "images/time.webp",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\time.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11276"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"evvbUv+O1S1n0ADGs4zF/LyDs+HwNhR02vR3IW1kYE0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 09:14:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-evvbUv+O1S1n0ADGs4zF/LyDs+HwNhR02vR3IW1kYE0="
         }
       ]
     }

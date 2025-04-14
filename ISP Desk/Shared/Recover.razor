@@ -1,0 +1,92 @@
+﻿<style>
+    .recover-popup {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: max-content;
+        background-color: whitesmoke;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 200
+    }
+
+        .recover-popup p {
+            margin: 20px;
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: 600
+        }
+
+    .recover-cnt {
+        display: flex;
+        width: 100%;
+        background-color: lightgray;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+        .recover-cnt .button-left, .recover-cnt .button-right {
+            margin: 0 20px 0 0;
+            padding: 10px;
+            font-weight: 600;
+            color: white;
+            transition: 0.2s;
+            cursor: pointer
+        }
+
+        .recover-cnt .button-left {
+            background-color: red;
+            border: 1px solid red;
+        }
+
+            .recover-cnt .button-left:hover {
+                background-color: firebrick;
+                border: 1px solid firebrick
+            }
+
+        .recover-cnt .button-right {
+            background-color: slategray;
+            border: 1px solid slategray
+        }
+
+            .recover-cnt .button-right:hover {
+                background-color: dimgray;
+                border: 1px solid dimgray
+            }
+
+    .recover-popup img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 32px;
+        width: 32px;
+        cursor: pointer
+    }
+
+    @@media (max-width: 768px) {
+        .recover-popup {
+            width: 80%
+        }
+    }
+</style>
+
+<div class="recover-popup">
+    <p>Бардин А.И. будет восстановлен. Продолжить?</p>
+    <div class="recover-cnt">
+        <button class="button-left">Подтвердить</button>
+        <button class="button-right">Отмена</button>
+    </div>
+    <img src="images/close.png" />
+</div>
+
+@code {
+
+}
