@@ -32,33 +32,34 @@ namespace ISP_Desk.ViewModel
             dispatchers = await _context.Dispatcher.ToListAsync();
         }
 
-        public bool CheckPassword(string pass)
+        public bool CheckPassword(string mail, string pass)
         {
-            var installatorsDict = installators.ToDictionary(x => x.InstallatorID);
-            var leadsDict = leads.ToDictionary(x => x.LeadID);
-            var dispatchersDict = dispatchers.ToDictionary(x => x.DispatcherID);
 
             foreach (var account in accounts)
             {
-                if (CryptoService.Decrypt(account.Password) != pass)
-                    continue;
-
-                if (account.InstallatorID.HasValue && installatorsDict.TryGetValue(account.InstallatorID.Value, out var installator))
+                foreach(var i in installators)
                 {
-                    ContextSetter(installator.InstallatorID, "Инсталлятор", installator.FirstName, installator.PhoneNumber, installator.Email);
-                    return true;
+                    if (mail == i.Email && CryptoService.Decrypt(account.Password) == pass)
+                    {
+                        ContextSetter(i.InstallatorID, "Инсталлятор", i.FirstName, i.PhoneNumber, i.Email);
+                        return true;
+                    }
                 }
-
-                if (account.LeadID.HasValue && leadsDict.TryGetValue(account.LeadID.Value, out var lead))
+                foreach(var l in leads)
                 {
-                    ContextSetter(lead.LeadID, "Руководитель", lead.FirstName, lead.PhoneNumber, lead.Email); 
-                    return true;
+                    if(mail == l.Email && CryptoService.Decrypt(account.Password) == pass)
+                    {
+                        ContextSetter(l.LeadID, "Руководитель", l.FirstName, l.PhoneNumber, l.Email);
+                        return true;
+                    }
                 }
-
-                if (account.DispatcherID.HasValue && dispatchersDict.TryGetValue(account.DispatcherID.Value, out var dispatcher))
+                foreach(var d in dispatchers)
                 {
-                    ContextSetter(dispatcher.DispatcherID, "Диспетчер", dispatcher.FirstName, dispatcher.PhoneNumber, dispatcher.Email);
-                    return true;
+                    if (mail == d.Email && CryptoService.Decrypt(account.Password) == pass)
+                    {
+                        ContextSetter(d.DispatcherID, "Диспетчер", d.FirstName, d.PhoneNumber, d.Email);
+                        return true;
+                    }
                 }
             }
             return false;

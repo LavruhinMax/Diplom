@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Diplom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\shared\\mailbox.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\shared\\mailbox.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\pages\\unit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\pages\\unit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\shared\\add.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\shared\\add.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\viewmodel\\unit_vm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\viewmodel\\unit_vm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\pages\\leadpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\pages\\leadpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\viewmodel\\leadpage_vm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\viewmodel\\leadpage_vm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,14 +51,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Mailbox.razor",
-              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Shared\\Mailbox.razor",
-              "RelativeDocumentMoniker": "ISP Desk\\Shared\\Mailbox.razor",
-              "ToolTip": "C:\\Diplom\\ISP Desk\\Shared\\Mailbox.razor",
-              "RelativeToolTip": "ISP Desk\\Shared\\Mailbox.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Unit.razor",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Pages\\Unit.razor",
+              "RelativeDocumentMoniker": "ISP Desk\\Pages\\Unit.razor",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\Pages\\Unit.razor*",
+              "RelativeToolTip": "ISP Desk\\Pages\\Unit.razor*",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAD8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T00:07:40.958Z",
+              "WhenOpened": "2025-04-16T08:17:40.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Unit_VM.cs",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\ViewModel\\Unit_VM.cs",
+              "RelativeDocumentMoniker": "ISP Desk\\ViewModel\\Unit_VM.cs",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\ViewModel\\Unit_VM.cs*",
+              "RelativeToolTip": "ISP Desk\\ViewModel\\Unit_VM.cs*",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwDYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T08:15:39.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Add.razor",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Shared\\Add.razor",
+              "RelativeDocumentMoniker": "ISP Desk\\Shared\\Add.razor",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\Shared\\Add.razor*",
+              "RelativeToolTip": "ISP Desk\\Shared\\Add.razor*",
+              "ViewState": "AgIAALEAAAAAAAAAAAAAAIwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-16T07:30:01.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LeadPage.razor",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Pages\\LeadPage.razor",
+              "RelativeDocumentMoniker": "ISP Desk\\Pages\\LeadPage.razor",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\Pages\\LeadPage.razor",
+              "RelativeToolTip": "ISP Desk\\Pages\\LeadPage.razor",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAEAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-16T07:17:44.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LeadPage_VM.cs",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\ViewModel\\LeadPage_VM.cs",
+              "RelativeDocumentMoniker": "ISP Desk\\ViewModel\\LeadPage_VM.cs",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\ViewModel\\LeadPage_VM.cs",
+              "RelativeToolTip": "ISP Desk\\ViewModel\\LeadPage_VM.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T07:18:48.084Z",
               "EditorCaption": ""
             }
           ]

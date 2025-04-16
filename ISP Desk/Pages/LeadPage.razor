@@ -1,4 +1,5 @@
 ﻿@page "/lead"
+@inject LeadPage_VM ViewModel
 
 <link href="css/lead.css" rel="stylesheet" />
 <PageTitle>Главная</PageTitle>
@@ -8,74 +9,66 @@
     <div class="grid">
         <div class="head">
             <div class="left-cnt">
-                <p>Добрый вечер, Елена</p>
+                <p>Добрый день, @UserContext.name</p>
                 <div class="button-cnt">
                     <button class="button-left">Добавить нового сотрудника</button>
                     <button class="button-right">Архив</button>
                 </div>
             </div>
             <div class="right-cnt">
-                <p class="month">Август</p>
-                <p class="day">8</p>
+                <p class="month">@ViewModel.date.ToString("MMMM", Culture.culture)</p>
+                <p class="day">@ViewModel.date.Day</p>
             </div>
         </div>
         <div class="list">
             <input placeholder="Поиск" />
-            <div class="list-row">
-                <p>Бардин Арсений Игоревич</p>
-                <div class="last">
-                    <div></div>
-                    <p>Последний завершённый выезд: сегодня в 13:54</p>
+            @foreach (var i in ViewModel.installators)
+            {
+                <div class="list-row" @onclick="() => Select(i.InstallatorID)">
+                    <p>@i.LastName @i.FirstName @i.MiddleName</p>
+                    <div class="last">
+                        <div></div>
+                    </div>
                 </div>
-            </div>
-            <div class="list-row">
-                <p>Бирюков Алексей Вадимович</p>
-                <div class="last">
-                    <div></div>
-                    <p>Последний завершённый выезд: вчера в 18:40</p>
-                </div>
-            </div>
-            <div class="list-row">
-                <p>Доронин Иван Романович</p>
-                <div class="last">
-                    <div></div>
-                    <p>Последний завершённый выезд: 6 июля в 22:07</p>
-                </div>
-            </div>
-            <div class="list-row">
-                <p>Зиновьев Руслан Николаевич</p>
-                <div class="last">
-                    <div></div>
-                    <p>На выезде</p>
-                </div>
-            </div>
-            <div class="list-row">
-                <p>Ивлев Михаил Анатольевич</p>
-                <div class="last">
-                    <div></div>
-                    <p>Последний завершённый выезд: сегодня в 11:26</p>
-                </div>
-            </div>
+            }
         </div>
         <div class="window">
             <p style="color: dimgray">Сегодня:</p>
             <div class="window-row">
                 <img src="images/done.png" />
-                <p>Завершено: 5/26</p>
+                <p>Завершено: 2/26</p>
             </div>
             <div class="window-row">
                 <img src="images/time.webp" />
-                <p>Ожидают: 13/26</p>
+                <p>Ожидают: 11/13</p>
             </div>
             <div class="window-row">
                 <img src="images/trouble.webp" />
-                <p>Отложено: 8/26</p>
+                <p>Отложено: 0/26</p>
             </div>
         </div>
     </div>
 </div>
 <Footer />
 
+<Add isVisible="isAddingVisible" isVisibleChanged="AddVisibility" isAddingOrEditing="true" AddInst="AddInst"/>
 @code {
+    private bool isAddingVisible = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ViewModel.InitializeAsync();
+    }
+
+    private void Select(int id)
+    {
+        NavManager.NavigateTo($"Unit/{id}");
+    }
+
+    private void Add() => isAddingVisible = true;
+
+    private async Task AddInst(Installator inst) => await ViewModel.AddInst(inst);
+
+    private void AddVisibility() => isAddingVisible = false;
 
 }

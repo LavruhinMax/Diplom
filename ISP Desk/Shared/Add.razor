@@ -1,5 +1,5 @@
 ﻿<style>
-.add-popup {
+    .add-popup {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -14,9 +14,9 @@
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     z-index: 100
-}
+    }
 
-.add-head-row {
+    .add-head-row {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -25,20 +25,20 @@
     align-items: center;
     box-sizing: border-box;
     padding: 20px
-}
+    }
 
-.add-head-row img {
+    .add-head-row img {
     width: 32px;
     height: 32px
-}
+    }
 
-.add-head-row p {
+    .add-head-row p {
     margin: 0;
     font-size: 20px;
     font-weight: 600
-}
+    }
 
-.add-field {
+    .add-field {
     padding: 15px;
     width: 100%;
     display: flex;
@@ -49,95 +49,167 @@
     row-gap: 30px;
     box-sizing: border-box;
     column-gap: 30px
-}
+    }
 
     .add-field input {
-        font-size: 20px;
-        font-weight: 600;
-        padding: 5px
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px
     }
 
     .add-field input:focus {
-        border-color: blue;
-        outline: none;
+    border-color: blue;
+    outline: none;
     }
 
-.add-cnt {
+    .add-cnt {
     display: flex;
     width: 100%;
     background-color: lightgray;
     padding: 10px 0;
     align-items: center;
     justify-content: flex-end;
-}
+    }
 
     .add-cnt .button-left, .add-cnt .button-right {
-        margin: 0 20px 0 0;
-        padding: 10px;
-        font-weight: 600;
-        color: white;
-        transition: 0.2s;
-        cursor: pointer
+    margin: 0 20px 0 0;
+    padding: 10px;
+    font-weight: 600;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer
     }
 
     .add-cnt .button-left {
-        background-color: red;
-        border: 1px solid red;
+    background-color: red;
+    border: 1px solid red;
     }
 
     .add-cnt .button-left:hover {
-        background-color: firebrick;
-        border: 1px solid firebrick
+    background-color: firebrick;
+    border: 1px solid firebrick
     }
 
     .add-cnt .button-right {
-        background-color: slategray;
-        border: 1px solid slategray
+    background-color: slategray;
+    border: 1px solid slategray
     }
 
     .add-cnt .button-right:hover {
-        background-color: dimgray;
-        border: 1px solid dimgray
+    background-color: dimgray;
+    border: 1px solid dimgray
     }
 
-.close {
+    .close {
     position: absolute;
     top: 10px;
     right: 10px;
     height: 32px;
     width: 32px;
     cursor: pointer
-}
+    }
 
-@@media (max-width: 768px) {
+    @@media (max-width: 768px) {
     .add-popup {
-        width: 80%
+    width: 80%
     }
+
     .add-field {
-        flex-direction: column;
+    flex-direction: column;
     }
-}
+    }
 </style>
 
-<div class="add-popup">
+<div class="add-popup" style="display:@(isVisible ? "flex": "none")">
     <div class="add-head-row">
-        <img src="images/add.png" />
+        <img src=@(isAddingOrEditing ? "images/add.png" : "images/edit.webp") />
         <p>Новый сотрудник</p>
     </div>
     <div class="add-field">
-        <input placeholder="Фамилия" />
-        <input placeholder="Имя" />
-        <input placeholder="Отчество" />
-        <input placeholder="Номер телефона" />
-        <input placeholder="Электронная почта" />
+        <input placeholder="Фамилия" @bind="lName" />
+        <input placeholder="Имя" @bind="fName" />
+        <input placeholder="Отчество" @bind="mName" />
+        <input placeholder="Номер телефона" @bind="phone" />
+        <input placeholder="Электронная почта" @bind="email" />
     </div>
     <div class="add-cnt">
-        <button class="button-left">Добавить</button>
-        <button class="button-right">Отмена</button>
+        <button class="button-left" @onclick="CheckAndConfirm">@(isAddingOrEditing ? "Добавить" : "Изменить")</button>
+        <button class="button-right" @onclick="Close">Отмена</button>
     </div>
-    <img class="close" src="images/close.png" />
+    <img class="close" src="images/close.png" @onclick="Close" />
 </div>
 
 @code {
-    
+    [Parameter] public bool isVisible { get; set; }
+    [Parameter] public EventCallback isVisibleChanged { get; set; }
+    [Parameter] public EventCallback<Installator> AddInst { get; set; }
+    [Parameter] public EventCallback<Installator> EditInst { get; set; }
+    [Parameter] public Installator i { get; set; }
+    [Parameter] public bool isAddingOrEditing { get; set; }
+
+
+    private string lName = string.Empty, mName = string.Empty, fName = string.Empty,
+        phone = string.Empty, email = string.Empty;
+
+    protected override void OnParametersSet()
+    {
+        if(isAddingOrEditing)
+        {
+            lName = string.Empty;
+            mName = string.Empty;
+            fName = string.Empty;
+            phone = string.Empty;
+            email = string.Empty;
+        }
+        else
+        {
+            lName = i.LastName;
+            mName = i.MiddleName;
+            fName = i.FirstName;
+            phone = i.PhoneNumber;
+            email = i.Email;
+        }
+    }
+
+    private async Task CheckAndConfirm()
+    {
+        if (string.IsNullOrEmpty(fName) || string.IsNullOrEmpty(mName) || string.IsNullOrEmpty(lName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(phone))
+        {
+            return;
+        }
+        else if (!FormatChecker.validateMail(email))
+        {
+            return;
+        }
+        else if (!FormatChecker.validatePhone(phone))
+        {
+            return;
+        }
+        await Confirm();
+    }
+
+    private async Task Confirm()
+    {
+        Installator inst = new Installator()
+            {
+                LeadID = UserContext.ID.Value,
+                FirstName = fName,
+                MiddleName = mName,
+                LastName = lName,
+                PhoneNumber = phone,
+                Email = email
+            };
+        if (isAddingOrEditing)
+        {
+            await AddInst.InvokeAsync(inst);
+        }
+        else
+        {
+            inst.InstallatorID = i.InstallatorID;
+            await EditInst.InvokeAsync(inst);
+        }
+        Close();
+    }
+
+    private void Close() => isVisibleChanged.InvokeAsync();
 }

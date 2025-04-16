@@ -71,6 +71,11 @@
     }
 
     .button-cnt .button-left {
+        background-color: darkgray;
+        border: 1px solid darkgray
+    }
+
+    .button-cnt .button-left:hover {
         background-color: dimgray;
         border: 1px solid dimgray
     }
@@ -78,6 +83,11 @@
     .button-cnt .button-right {
         background-color: darkgreen;
         border: 1px solid darkgreen
+    }
+
+    .button-cnt .button-right:hover {
+        background-color: darkolivegreen;
+        border: 1px solid darkolivegreen
     }
 
 .right-cnt {

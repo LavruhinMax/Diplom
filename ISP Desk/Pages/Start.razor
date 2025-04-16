@@ -51,7 +51,7 @@
             error = "Неправильный формат электронной почты!";
             return;
         }
-        if (ViewModel.CheckPassword(pass))
+        if (ViewModel.CheckPassword(mail, pass))
         {
             switch (UserContext.status)
             {

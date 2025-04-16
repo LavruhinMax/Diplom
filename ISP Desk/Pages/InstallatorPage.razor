@@ -8,10 +8,10 @@
 <div class="main">
     <div class="schedule">
         <div class="schedule-time">
-            <p>Расписание на @ViewModel.selectedDate.ToString("d MMMM", ViewModel.culture)</p>
+            <p>Расписание на @ViewModel.selectedDate.ToString("d MMMM", Culture.culture)</p>
             <div class="time-cnt">
                 <img src="images/time.webp" />
-                <p>@DateTime.Now.ToString("ddd, d MMM", ViewModel.culture) | @DateTime.Now.ToString("HH:mm", ViewModel.culture)</p>
+                <p>@DateTime.Now.ToString("ddd, d MMM", Culture.culture) | @DateTime.Now.ToString("HH:mm", Culture.culture)</p>
             </div>
         </div>
         <div class="schedule-row">
@@ -42,8 +42,6 @@
                 }
             }
         }
-        
-        
     </div>
 </div>
 <Footer />

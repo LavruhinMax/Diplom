@@ -11,11 +11,9 @@ namespace ISP_Desk.ViewModel
         private readonly AppDbContext _context;
         public List<Request> requests = new List<Request>();
         public List<Request> filteredRequests = new List<Request>();
-        public List<Installator> installators = new List<Installator>();
         public List<Abonent> abonents = new List<Abonent>();
         public Dictionary<int, Abonent> abonentsDict => abonents.ToDictionary(a => a.AbonentID);
 
-        public System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("ru-RU");
         public string[] weekDays = new string[7] { "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС" };
         public int[] days = new int[7];
         public DateTime currentDay = DateTime.Today;
@@ -31,9 +29,8 @@ namespace ISP_Desk.ViewModel
 
         public async Task InitializeAsync()
         {
-            requests = await _context.Request.ToListAsync();
+            requests = await _context.Request.Where(r => r.InstallatorID == UserContext.ID).ToListAsync();
             abonents = await _context.Abonent.ToListAsync();
-            installators = await _context.Installator.ToListAsync();
             filteredRequests = requests.Where(r => r.Scheduled.Day == selectedDate.Day).ToList();
             DrawHeadRow();
         }

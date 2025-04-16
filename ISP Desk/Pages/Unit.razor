@@ -1,80 +1,71 @@
-﻿@page "/unit"
+﻿@page "/unit/{InstallatorID:int}"
+@inject Unit_VM ViewModel
 
 <link href="css/emp.css" rel="stylesheet" />
-<PageTitle>Сотрудник</PageTitle>
+<PageTitle>@ViewModel.inst.LastName @ViewModel.inst.FirstName</PageTitle>
 
 <Header />
 <div class="main">
     <div class="grid">
         <div class="head">
             <div class="left-cnt">
-                <p>Зиновьев Руслан Николаевич</p>
-                <p>+7 (905) 818 14 76 | zinoviev@gmail.com </p>
+                <p>@ViewModel.inst.LastName @ViewModel.inst.FirstName @ViewModel.inst.MiddleName</p>
+                <p>@ViewModel.phone | @ViewModel.inst.Email </p>
             </div>
             <div class="middle-cnt">
-                <button class="edit">Изменить данные</button>
+                <button class="edit" @onclick="Edit">Изменить данные</button>
                 <button class="delete">Удалить</button>
             </div>
             <div class="right-cnt">
                 <img src="images/income.png" />
-                <img src="new/stats.webp" />
+                <img src="images/stats.webp" />
             </div>
         </div>
         <div class="day">
-            <img src="images/arrow-left.png" />
+            <img src="images/arrow-left.png" @onclick="ViewModel.RemoveDay" />
             <div class="today">
-                <p class="num">8</p>
-                <p class="month">Июл</p>
+                <p class="num">@ViewModel.date.Day</p>
+                <p class="month">@ViewModel.date.ToString("MMM", Culture.culture)</p>
             </div>
-            <img src="images/arrow-right.png" />
+            <img src="images/arrow-right.png" @onclick="ViewModel.AddDay" />
         </div>
         <div class="list">
-            <p class="title">Назначено на 8 июля:</p>
-            <div class="card">
-                <div class="card-row">
-                    <img src="images/time.webp" />
-                    <p>15:30</p>
-                </div>
-                <div class="card-row">
-                    <img src="images/location.png" />
-                    <p>Какой-то там адрес, 28</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-row">
-                    <img src="images/time.webp" />
-                    <p>15:30</p>
-                </div>
-                <div class="card-row">
-                    <img src="images/location.png" />
-                    <p>Какой-то там адрес, 28</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-row">
-                    <img src="images/time.webp" />
-                    <p>15:30</p>
-                </div>
-                <div class="card-row">
-                    <img src="images/location.png" />
-                    <p>Какой-то там адрес, 28</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-row">
-                    <img src="images/time.webp" />
-                    <p>15:30</p>
-                </div>
-                <div class="card-row">
-                    <img src="images/location.png" />
-                    <p>Какой-то там адрес, 28</p>
-                </div>
-            </div>
+            <p class="title">Назначено на @ViewModel.date.ToString("dd MMMM", Culture.culture):</p>
+            @foreach (var r in ViewModel.filteredRequests)
+            {
+                @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a) && r.InstallatorID == ViewModel.inst.InstallatorID)
+                {
+                    <div class="card">
+                        <div class="card-row">
+                            <img src="images/time.webp" />
+                            <p>@r.Scheduled.ToString("HH:mm", Culture.culture)</p>
+                        </div>
+                        <div class="card-row">
+                            <img src="images/location.png" />
+                            <p>@a.City, @a.Street @a.House</p>
+                        </div>
+                    </div>
+                }
+            }
         </div>
     </div>
 </div>
 <Footer />
 
+<Add isVisible="isEditingVisible" isVisibleChanged="EditVisibility" isAddingOrEditing="false" EditInst="EditInst" i="ViewModel.inst" />
 @code {
+    [Parameter] public int InstallatorID { get; set; }
 
+    private bool isEditingVisible = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ViewModel.InitializeAsync(InstallatorID);
+    }
+
+    private void Edit() => isEditingVisible = true;
+
+    private async Task EditInst(Installator inst) => await ViewModel.EditInst(inst);
+
+    private void EditVisibility() => isEditingVisible = false;
 }
