@@ -11,8 +11,8 @@
             <div class="left-cnt">
                 <p>Добрый день, @UserContext.name</p>
                 <div class="button-cnt">
-                    <button class="button-left">Добавить нового сотрудника</button>
-                    <button class="button-right">Архив</button>
+                    <button class="button-left" @onclick="Add">Добавить нового сотрудника</button>
+                    <button class="button-right" @onclick="OpenArchive">Архив</button>
                 </div>
             </div>
             <div class="right-cnt">
@@ -52,8 +52,10 @@
 <Footer />
 
 <Add isVisible="isAddingVisible" isVisibleChanged="AddVisibility" isAddingOrEditing="true" AddInst="AddInst"/>
+<Archive isVisible="isArchiveVisible" isVisibleChanged="ArchiveVisibility" installators="ViewModel.GetArchived()"/>
 @code {
     private bool isAddingVisible = false;
+    private bool isArchiveVisible = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -67,8 +69,10 @@
 
     private void Add() => isAddingVisible = true;
 
+    private void OpenArchive() => isArchiveVisible = true;
+
     private async Task AddInst(Installator inst) => await ViewModel.AddInst(inst);
 
     private void AddVisibility() => isAddingVisible = false;
-
+    private void ArchiveVisibility() => isArchiveVisible = false;
 }

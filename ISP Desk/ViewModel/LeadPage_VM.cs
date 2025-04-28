@@ -18,7 +18,7 @@ namespace ISP_Desk.ViewModel
 
         public async Task InitializeAsync()
         {
-            installators = await _context.Installator.Where(i => i.LeadID == UserContext.ID).ToListAsync();
+            installators = await _context.Installator.Where(i => i.LeadID == UserContext.ID && i.Archived == 0).ToListAsync();
         }
 
         public async Task AddInst(Installator inst)
@@ -28,6 +28,10 @@ namespace ISP_Desk.ViewModel
             await _context.SaveChangesAsync();
         }
 
-        
+        public List<Installator> GetArchived()
+        {
+            return _context.Installator.Where(i => i.LeadID == UserContext.ID && i.Archived == 1).ToList();
+        }
+
     }
 }

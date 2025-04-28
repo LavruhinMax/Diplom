@@ -1,129 +1,134 @@
 ﻿<style>
     .add-popup {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: max-content;
-    width: 650px;
-    background-color: white;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    z-index: 100
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: max-content;
+        width: 750px;
+        background-color: white;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        z-index: 100
     }
 
     .add-head-row {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: lightgray;
-    column-gap: 10px;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 20px
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: lightgray;
+        column-gap: 10px;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 20px
     }
 
-    .add-head-row img {
-    width: 32px;
-    height: 32px
-    }
+        .add-head-row img {
+            width: 32px;
+            height: 32px
+        }
 
-    .add-head-row p {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 600
-    }
+        .add-head-row p {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600
+        }
 
     .add-field {
-    padding: 15px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: white;
-    justify-content: flex-start;
-    align-items: center;
-    row-gap: 30px;
-    box-sizing: border-box;
-    column-gap: 30px
+        padding: 15px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+        justify-content: flex-start;
+        align-items: center;
+        row-gap: 40px;
+        box-sizing: border-box;
+        column-gap: 30px
     }
 
-    .add-field input {
-    font-size: 20px;
-    font-weight: 600;
-    padding: 5px
-    }
+        .add-field input {
+            width: calc(50% - 40px);
+            font-size: 22px;
+            font-weight: 600;
+            padding: 10px
+        }
 
-    .add-field input:focus {
-    border-color: blue;
-    outline: none;
-    }
+            .add-field input:focus {
+                border-color: blue;
+                outline: none;
+            }
 
     .add-cnt {
-    display: flex;
-    width: 100%;
-    background-color: lightgray;
-    padding: 10px 0;
-    align-items: center;
-    justify-content: flex-end;
+        display: flex;
+        width: 100%;
+        background-color: lightgray;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: flex-end;
     }
 
-    .add-cnt .button-left, .add-cnt .button-right {
-    margin: 0 20px 0 0;
-    padding: 10px;
-    font-weight: 600;
-    color: white;
-    transition: 0.2s;
-    cursor: pointer
-    }
+        .add-cnt .button-left, .add-cnt .button-right {
+            margin: 0 20px 0 0;
+            padding: 10px;
+            font-weight: 600;
+            color: white;
+            transition: 0.2s;
+            cursor: pointer
+        }
 
-    .add-cnt .button-left {
-    background-color: red;
-    border: 1px solid red;
-    }
+        .add-cnt .button-left {
+            background-color: red;
+            border: 1px solid red;
+        }
 
-    .add-cnt .button-left:hover {
-    background-color: firebrick;
-    border: 1px solid firebrick
-    }
+            .add-cnt .button-left:hover {
+                background-color: firebrick;
+                border: 1px solid firebrick
+            }
 
-    .add-cnt .button-right {
-    background-color: slategray;
-    border: 1px solid slategray
-    }
+        .add-cnt .button-right {
+            background-color: slategray;
+            border: 1px solid slategray
+        }
 
-    .add-cnt .button-right:hover {
-    background-color: dimgray;
-    border: 1px solid dimgray
-    }
+            .add-cnt .button-right:hover {
+                background-color: dimgray;
+                border: 1px solid dimgray
+            }
 
     .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    height: 32px;
-    width: 32px;
-    cursor: pointer
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 32px;
+        width: 32px;
+        cursor: pointer
     }
 
     @@media (max-width: 768px) {
-    .add-popup {
-    width: 80%
-    }
+        .add-popup {
+            width: 80%
+        }
 
-    .add-field {
-    flex-direction: column;
-    }
+        .add-field {
+            flex-direction: column;
+        }
+
+        .add-field input {
+            width: 100%
+        }
     }
 </style>
 
 <div class="add-popup" style="display:@(isVisible ? "flex": "none")">
     <div class="add-head-row">
         <img src=@(isAddingOrEditing ? "images/add.png" : "images/edit.webp") />
-        <p>Новый сотрудник</p>
+        <p>@(isAddingOrEditing ? "Новый сотрудник" : "Изменить данные")</p>
     </div>
     <div class="add-field">
         <input placeholder="Фамилия" @bind="lName" />
@@ -153,7 +158,7 @@
 
     protected override void OnParametersSet()
     {
-        if(isAddingOrEditing)
+        if (isAddingOrEditing)
         {
             lName = string.Empty;
             mName = string.Empty;

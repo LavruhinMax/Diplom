@@ -16,6 +16,7 @@ wwwroot\images\delete.webp
 wwwroot\images\done.png
 wwwroot\images\edit.webp
 wwwroot\images\empty.png
+wwwroot\images\empty-archive.png
 wwwroot\images\income.png
 wwwroot\images\location.png
 wwwroot\images\opened-eye.png

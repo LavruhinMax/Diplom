@@ -2,16 +2,6 @@
 .main {
     width: 100%;
     background-color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
-
-.main {
-    width: 100%;
-    background-color: whitesmoke;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -159,7 +149,8 @@
 }
 
     .list-row:hover {
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        border: 1px solid #DD571C
     }
 
 .last {

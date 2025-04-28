@@ -10,16 +10,40 @@
         left: 15%;
         right: 15%;
         background-color: white;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
         overflow-y: auto;
         z-index: 100
     }
 
+        .archive-popup p {
+            font-size: 28px;
+            font-weight: 600
+        }
+
+    .empty {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: center;
+        justify-content: center
+    }
+
+        .empty img {
+            width: 300px
+        }
+
+        .empty p {
+            margin: 0;
+            font-size: 28px;
+            font-style: italic
+        }
+
     .archive-title {
         font-size: 32px;
         font-weight: 600;
-        margin: 40px 0
+        margin: 30px 0
     }
 
     .archive-row p, .head-row p {
@@ -35,8 +59,8 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        width: 85%;
-        min-height: 50px;
+        width: 90%;
+        min-height: max-content;
         background-color: dimgray
     }
 
@@ -49,7 +73,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        width: 85%;
+        width: 90%;
         min-height: max-content;
         border: 1px solid lightgray
     }
@@ -75,8 +99,8 @@
         position: absolute;
         top: 10px;
         right: 10px;
-        height: 32px;
-        width: 32px;
+        height: 40px;
+        width: 40px;
         cursor: pointer
     }
 
@@ -99,8 +123,16 @@
     }
 
     @@media (max-width: 1280px) {
+        .empty img {
+            width: 225px
+        }
+
+        .empty p {
+            font-size: 24px
+        }
+
         .archive-title {
-            font-size: 28px;
+            font-size: 24px;
             margin: 25px 0
         }
 
@@ -136,8 +168,16 @@
     }
 
     @@media (max-width: 768px) {
+        .empty img {
+            width: 150px
+        }
+
+        .empty p {
+            font-size: 20px
+        }
+
         .archive-title {
-            font-size: 24px;
+            font-size: 20px;
             margin: 25px 0
         }
 
@@ -173,48 +213,45 @@
     }
 </style>
 
-<div class="archive-popup">
+<div style="display: @(isVisible ? "flex" : "none")" class="archive-popup">
     <p class="archive-title">Архив</p>
-    <div class="head-row">
-        <p>ФИО</p>
-        <p>Email</p>
-        <p>Контактный телефон</p>
-        <p>Дата удаления</p>
-        <p style="width: 10%; flex: none"></p>
-    </div>
-    <div class="archive-row">
-        <p>Бардин Арсений Игоревич</p>
-        <p>bardin@yandex.ru</p>
-        <p>+79005671122</p>
-        <p>10.05.25 10:30</p>
-        <div>
-            <img src="images/recover.png" />
-            <img src="images/delete.webp" />
+    @if (installators == null || installators.Count == 0)
+    {
+        <div class="empty">
+            <img src="images/empty-archive.png" />
+            <p>Архив пуст</p>
         </div>
-    </div>
-    <div class="archive-row">
-        <p>Шишкин Иван Александрович</p>
-        <p>shishkin@gmail.com</p>
-        <p>+79001203570</p>
-        <p>04.08.24 13:30</p>
-        <div>
-            <img src="images/recover.png" />
-            <img src="images/delete.webp" />
+    }
+    else
+    {
+        <div class="head-row">
+            <p>ФИО</p>
+            <p>Email</p>
+            <p>Контактный телефон</p>
+            <p>Дата удаления</p>
+            <p style="width: 10%; flex: none"></p>
         </div>
-    </div>
-    <div class="archive-row">
-        <p>Марьин Лев Алексеевич</p>
-        <p>bardin@yandex.ru</p>
-        <p>+79052125511</p>
-        <p>16.10.24 08:40</p>
-        <div>
-            <img src="images/recover.png" />
-            <img src="images/delete.webp" />
-        </div>
-    </div>
-    <img class="close" src="images/close.png" />
+        @foreach (var i in installators)
+        {
+            <div class="archive-row">
+                <p>@i.LastName @i.FirstName @i.MiddleName</p>
+                <p>@i.Email</p>
+                <p>@i.PhoneNumber</p>
+                <p>Удален(а): @i.RemovalDate</p>
+                <div>
+                    <img src="images/recover.png" />
+                    <img src="images/delete.webp" />
+                </div>
+            </div>
+        }
+    }
+    <img class="close" @onclick="Close" src="images/close.png" />
 </div>
 
 @code {
+    [Parameter] public bool isVisible { get; set; }
+    [Parameter] public EventCallback isVisibleChanged { get; set; }
+    [Parameter] public List<Installator> installators { get; set; }
 
+    public void Close() => isVisibleChanged.InvokeAsync();
 }

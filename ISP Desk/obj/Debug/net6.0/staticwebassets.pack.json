@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\edit.webp"
     },
     {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\empty-archive.png",
+      "PackagePath": "staticwebassets\\images\\empty-archive.png"
+    },
+    {
       "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\empty.png",
       "PackagePath": "staticwebassets\\images\\empty.png"
     },

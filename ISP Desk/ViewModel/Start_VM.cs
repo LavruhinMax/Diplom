@@ -21,11 +21,7 @@ namespace ISP_Desk.ViewModel
         
         public async Task InitializeAsync() 
         {
-            UserContext.ID = null;
-            UserContext.status = null;
-            UserContext.name = null;
-            UserContext.phone = null;
-            UserContext.email = null;
+            ContextSetter();
             accounts = await _context.Account.ToListAsync();
             installators = await _context.Installator.ToListAsync();
             leads = await _context.Lead.ToListAsync();
@@ -65,7 +61,7 @@ namespace ISP_Desk.ViewModel
             return false;
         }
 
-        private void ContextSetter(int ID, string status, string name, string phone, string email)
+        private void ContextSetter(int? ID = null, string? status = null, string? name = null, string? phone = null, string? email = null)
         {
             UserContext.ID = ID;
             UserContext.status = status;
