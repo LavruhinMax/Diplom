@@ -1,4 +1,4 @@
-﻿@page "/lead"
+﻿@page "/lead/{Transfer?}"
 @inject LeadPage_VM ViewModel
 
 <link href="css/lead.css" rel="stylesheet" />
@@ -52,27 +52,56 @@
 <Footer />
 
 <Add isVisible="isAddingVisible" isVisibleChanged="AddVisibility" isAddingOrEditing="true" AddInst="AddInst"/>
-<Archive isVisible="isArchiveVisible" isVisibleChanged="ArchiveVisibility" installators="ViewModel.GetArchived()"/>
+<Archive isVisible="isArchiveVisible" isVisibleChanged="ArchiveVisibility" recoverInst="Recover" deleteInst="Delete" installators="ViewModel.GetArchived()"/>
+<Ok isVisible="isOkVisible" isVisibleChanged="OkVisibility" message="@message" />
+
 @code {
+    [Parameter] public string? Transfer { get; set; }
     private bool isAddingVisible = false;
     private bool isArchiveVisible = false;
+    private bool isOkVisible = false;
+    public string message = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        ViewModel.InitializeAsync();
+        await ViewModel.InitializeAsync();
+        if (!string.IsNullOrEmpty(Transfer))
+        {
+            message = Transfer;
+            isOkVisible = true;
+        }
     }
 
     private void Select(int id)
     {
-        NavManager.NavigateTo($"Unit/{id}");
+        NavManager.NavigateTo($"unit/{id}");
+    }
+
+    private void OpenArchive() => isArchiveVisible = true;
+
+    private async Task Recover(Installator inst)
+    {
+        await ViewModel.Recover(inst);
+        message = $"{inst.LastName} {inst.FirstName[0]}.{inst.MiddleName[0]}. восстановлен";
+        if (inst.Gender == "Ж") message += "а";
+        message += ".";
+        isOkVisible = true;
+    }
+
+    private async Task Delete(Installator inst)
+    {
+        await ViewModel.Delete(inst);
+        message = $"{inst.LastName} {inst.FirstName[0]}.{inst.MiddleName[0]}. удален";
+        if (inst.Gender == "Ж") message += "а";
+        message += ".";
+        isOkVisible = true;
     }
 
     private void Add() => isAddingVisible = true;
-
-    private void OpenArchive() => isArchiveVisible = true;
 
     private async Task AddInst(Installator inst) => await ViewModel.AddInst(inst);
 
     private void AddVisibility() => isAddingVisible = false;
     private void ArchiveVisibility() => isArchiveVisible = false;
+    private void OkVisibility() => isOkVisible = false;
 }

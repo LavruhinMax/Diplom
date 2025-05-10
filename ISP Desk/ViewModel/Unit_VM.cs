@@ -27,7 +27,6 @@ namespace ISP_Desk.ViewModel
             inst = _context.Installator.First(i => i.InstallatorID == id);
             requests = await _context.Request.Where(r => r.InstallatorID == id).ToListAsync();
             abonents = await _context.Abonent.ToListAsync();
-
             phone = $"+7 ({inst.PhoneNumber.Substring(2, 3)}) {inst.PhoneNumber.Substring(5, 3)} {inst.PhoneNumber.Substring(8, 2)} {inst.PhoneNumber.Substring(10, 2)}";
             FilterRequestsByDay();
         }
@@ -55,6 +54,14 @@ namespace ISP_Desk.ViewModel
             installator.Email = i.Email;
             installator.PhoneNumber = i.PhoneNumber;
             inst = i;
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteInst()
+        {
+            inst.Archived = 1;
+            inst.RemovalDate = DateOnly.FromDateTime(DateTime.Now);
+            await _context.SaveChangesAsync();
         }
 
     }

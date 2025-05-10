@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Diplom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\model\\installator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\model\\installator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\pages\\leadpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\pages\\leadpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\viewmodel\\installator_vm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\viewmodel\\installator_vm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\pages\\installatorpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\pages\\installatorpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\shared\\archive.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\shared\\archive.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\viewmodel\\leadpage_vm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\viewmodel\\leadpage_vm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\pages\\leadpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\pages\\leadpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|c:\\diplom\\isp desk\\wwwroot\\css\\inst.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0B03CD2A-7E26-49E3-AB27-ED17B1F8E36C}|ISP Desk\\ISP Desk.csproj|solutionrelative:isp desk\\wwwroot\\css\\inst.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,66 +47,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Installator.cs",
-              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Model\\Installator.cs",
-              "RelativeDocumentMoniker": "ISP Desk\\Model\\Installator.cs",
-              "ToolTip": "C:\\Diplom\\ISP Desk\\Model\\Installator.cs",
-              "RelativeToolTip": "ISP Desk\\Model\\Installator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T20:27:35.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InstallatorPage.razor",
-              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Pages\\InstallatorPage.razor",
-              "RelativeDocumentMoniker": "ISP Desk\\Pages\\InstallatorPage.razor",
-              "ToolTip": "C:\\Diplom\\ISP Desk\\Pages\\InstallatorPage.razor",
-              "RelativeToolTip": "ISP Desk\\Pages\\InstallatorPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-28T20:27:01.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LeadPage_VM.cs",
-              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\ViewModel\\LeadPage_VM.cs",
-              "RelativeDocumentMoniker": "ISP Desk\\ViewModel\\LeadPage_VM.cs",
-              "ToolTip": "C:\\Diplom\\ISP Desk\\ViewModel\\LeadPage_VM.cs",
-              "RelativeToolTip": "ISP Desk\\ViewModel\\LeadPage_VM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T20:12:10.588Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "LeadPage.razor",
               "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Pages\\LeadPage.razor",
               "RelativeDocumentMoniker": "ISP Desk\\Pages\\LeadPage.razor",
               "ToolTip": "C:\\Diplom\\ISP Desk\\Pages\\LeadPage.razor",
               "RelativeToolTip": "ISP Desk\\Pages\\LeadPage.razor",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-28T19:55:38.633Z",
+              "WhenOpened": "2025-05-10T19:44:04.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "inst.css",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
+              "RelativeDocumentMoniker": "ISP Desk\\wwwroot\\css\\inst.css",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
+              "RelativeToolTip": "ISP Desk\\wwwroot\\css\\inst.css",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAFMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-10T19:08:28.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Installator_VM.cs",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\ViewModel\\Installator_VM.cs",
+              "RelativeDocumentMoniker": "ISP Desk\\ViewModel\\Installator_VM.cs",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\ViewModel\\Installator_VM.cs",
+              "RelativeToolTip": "ISP Desk\\ViewModel\\Installator_VM.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAcwF8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T18:52:21.155Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Archive.razor",
-              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Shared\\Archive.razor",
-              "RelativeDocumentMoniker": "ISP Desk\\Shared\\Archive.razor",
-              "ToolTip": "C:\\Diplom\\ISP Desk\\Shared\\Archive.razor",
-              "RelativeToolTip": "ISP Desk\\Shared\\Archive.razor",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAAAOwAAAA9AAAAAAAAAA==",
+              "Title": "InstallatorPage.razor",
+              "DocumentMoniker": "C:\\Diplom\\ISP Desk\\Pages\\InstallatorPage.razor",
+              "RelativeDocumentMoniker": "ISP Desk\\Pages\\InstallatorPage.razor",
+              "ToolTip": "C:\\Diplom\\ISP Desk\\Pages\\InstallatorPage.razor",
+              "RelativeToolTip": "ISP Desk\\Pages\\InstallatorPage.razor",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-28T19:52:41.473Z",
+              "WhenOpened": "2025-05-10T18:48:57.762Z",
               "EditorCaption": ""
             }
           ]

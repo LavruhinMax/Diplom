@@ -2,6 +2,7 @@
 using ISP_Desk.Model;
 using ISP_Desk.Service;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace ISP_Desk.ViewModel
 {
@@ -10,6 +11,7 @@ namespace ISP_Desk.ViewModel
         private readonly AppDbContext _context;
         public List<Installator> installators = new List<Installator>();
         public DateTime date = DateTime.Now;
+        
 
         public LeadPage_VM(AppDbContext context)
         {
@@ -33,5 +35,19 @@ namespace ISP_Desk.ViewModel
             return _context.Installator.Where(i => i.LeadID == UserContext.ID && i.Archived == 1).ToList();
         }
 
+        public async Task Recover(Installator inst)
+        {
+            inst.Archived = 0;
+            inst.RemovalDate = null;
+            installators.Add(inst);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task Delete(Installator inst)
+        {
+            installators.Remove(inst);
+            _context.Installator.Remove(inst);
+            await _context.SaveChangesAsync();
+        }
     }
 }

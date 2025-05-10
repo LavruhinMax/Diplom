@@ -12,7 +12,6 @@ var connectionString = builder.Configuration.GetConnectionString("ConnectionStri
 builder.Services.AddDbContext<AppDbContext>(c => c.UseSqlite(connectionString));
 
 builder.Services.AddScoped<Start_VM>();
-builder.Services.AddScoped<Stats_VM>();
 builder.Services.AddScoped<Dispatcher_VM>();
 builder.Services.AddScoped<Installator_VM>();
 builder.Services.AddScoped<LeadPage_VM>();

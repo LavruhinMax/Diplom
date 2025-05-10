@@ -1,107 +1,138 @@
 ﻿<style>
     .delete-popup {
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        top: 50%;
-        left: 50%;
-        height: max-content;
-        transform: translate(-50%, -50%);
-        width: 800px;
-        background-color: whitesmoke;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-        overflow: hidden;
-        z-index: 200
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    height: max-content;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 200
     }
 
-        .delete-popup p {
-            margin: 20px;
-            font-size: 20px;
-            line-height: 25px;
-            font-weight: 600
-        }
-
-
-    .delete-popup input {
-        width: calc(100% - 40px);
-        margin: 0 20px 20px 20px;
-        font-size: 20px;
-        font-weight: 600;
-        padding: 10px
+    .delete-popup p {
+    margin: 20px;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 600
     }
 
-        .delete-popup input:focus {
-                border-color: red;
-                outline: none
-            }
+    .delete-popup .input, .error-input {
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px
+    }
+
+    .delete-popup .input:focus {
+    border-color: purple;
+    outline: none
+    }
+
+    .delete-popup .error-input {
+    border-color: red
+    }
+
+    .delete-popup .error-input:focus {
+    border-color: red;
+    }
 
     .delete-cnt {
-        display: flex;
-        width: 100%;
-        background-color: lightgray;
-        padding: 10px 0;
-        align-items: center;
-        justify-content: flex-end;
+    display: flex;
+    width: 100%;
+    background-color: lightgray;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: flex-end;
     }
 
-        .delete-cnt .button-left, .delete-cnt .button-right {
-            margin: 0 20px 0 0;
-            padding: 10px;
-            font-weight: 600;
-            color: white;
-            transition: 0.2s;
-            cursor: pointer
-        }
+    .delete-cnt .button-left, .delete-cnt .button-right {
+    margin: 0 20px 0 0;
+    padding: 10px;
+    font-weight: 600;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer
+    }
 
-        .delete-cnt .button-left {
-            background-color: red;
-            border: 1px solid red;
-        }
+    .delete-cnt .button-left {
+    background-color: red;
+    border: 1px solid red;
+    }
 
-        .delete-cnt .button-left:hover {
-            background-color: firebrick;
-            border: 1px solid firebrick
-        }
+    .delete-cnt .button-left:hover {
+    background-color: firebrick;
+    border: 1px solid firebrick
+    }
 
-        .delete-cnt .button-right {
-            background-color: slategray;
-            border: 1px solid slategray
-        }
+    .delete-cnt .button-right {
+    background-color: slategray;
+    border: 1px solid slategray
+    }
 
-        .delete-cnt .button-right:hover {
-            background-color: dimgray;
-            border: 1px solid dimgray
-        }
+    .delete-cnt .button-right:hover {
+    background-color: dimgray;
+    border: 1px solid dimgray
+    }
 
     .delete-popup img {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        height: 32px;
-        width: 32px;
-        cursor: pointer
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer
     }
 
     @@media (max-width: 900px) {
-        .delete-popup {
-            width: 90%
-        }
+    .delete-popup {
+    width: 90%
+    }
     }
 </style>
 
-<div class="delete-popup">
-    <p>Бардин А.И. будет удален. Для продолжения введите "Подтверждаю"</p>
-    <input />
-    <div class="delete-cnt">
-        <button class="button-left">Принять</button>
-        <button class="button-right">Отмена</button>
+@if (inst != null)
+{
+    <div style="display: @(isVisible ? "flex" : "none")" class="delete-popup">
+        <p>@inst.LastName @inst.FirstName[0].@inst.MiddleName[0]. будет удален навсегда. Для продолжения введите "Подтверждаю"</p>
+        <input class="@(error ? "error-input" : "input")" @bind="textbox" />
+        <div class="delete-cnt">
+            <button class="button-left" @onclick="Confirm">Принять</button>
+            <button class="button-right" @onclick="Close">Отмена</button>
+        </div>
+        <img src="images/close.png" @onclick="Close" />
     </div>
-    <img src="images/close.png" />
-</div>
+}
 
 @code {
+    [Parameter] public bool isVisible { get; set; }
+    [Parameter] public Installator? inst { get; set; }
+    [Parameter] public EventCallback isVisibleChanged { get; set; }
+    [Parameter] public EventCallback<bool> isConfirmed { get; set; }
+    private string textbox = string.Empty;
+    private bool error = false;
 
+    public void Confirm()
+    {
+        if (textbox.ToLower() == "подтверждаю")
+        {
+            isConfirmed.InvokeAsync(true);
+            Close();
+        }
+        else error = true;
+    }
+
+    public void Close()
+    {
+        isConfirmed.InvokeAsync(false);
+        isVisibleChanged.InvokeAsync();
+    }
 }

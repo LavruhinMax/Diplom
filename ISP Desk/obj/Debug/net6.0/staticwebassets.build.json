@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WpuBJKCFTwvTaNj0D2mDY9Cr/4/R9+Gcv7clwP8bMuI=",
+  "Hash": "KuF3dYYE9Q1T4vomt9EQceHnHiisqtNBbq7ndVX7cmo=",
   "Source": "ISP Desk",
   "BasePath": "_content/ISP Desk",
   "Mode": "Default",
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "rgiqvx9q3f",
-      "Integrity": "BW3KnL+YQ7urFBE7o0kgPIpYg61JZxoo1VhaSnd+e0U=",
+      "Fingerprint": "d42ubldxku",
+      "Integrity": "wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\inst.css"
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "nx9aff3dbn",
-      "Integrity": "NTRbwQ1KajytbuKECtG0x+eCgTZPVqRglE5LxidzmSk=",
+      "Fingerprint": "5qnj44o90k",
+      "Integrity": "3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\lead.css"
@@ -905,7 +905,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3603"
+          "Value": "3752"
         },
         {
           "Name": "Content-Type",
@@ -913,11 +913,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"BW3KnL+YQ7urFBE7o0kgPIpYg61JZxoo1VhaSnd+e0U=\""
+          "Value": "\"wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 11:18:44 GMT"
+          "Value": "Sat, 10 May 2025 19:42:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -927,12 +927,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-BW3KnL+YQ7urFBE7o0kgPIpYg61JZxoo1VhaSnd+e0U="
+          "Value": "sha256-wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A="
         }
       ]
     },
     {
-      "Route": "css/inst.rgiqvx9q3f.css",
+      "Route": "css/inst.d42ubldxku.css",
       "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -942,7 +942,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3603"
+          "Value": "3752"
         },
         {
           "Name": "Content-Type",
@@ -950,11 +950,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"BW3KnL+YQ7urFBE7o0kgPIpYg61JZxoo1VhaSnd+e0U=\""
+          "Value": "\"wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 11:18:44 GMT"
+          "Value": "Sat, 10 May 2025 19:42:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -964,7 +964,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rgiqvx9q3f"
+          "Value": "d42ubldxku"
         },
         {
           "Name": "label",
@@ -972,7 +972,52 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-BW3KnL+YQ7urFBE7o0kgPIpYg61JZxoo1VhaSnd+e0U="
+          "Value": "sha256-wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A="
+        }
+      ]
+    },
+    {
+      "Route": "css/lead.5qnj44o90k.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\lead.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6850"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 20:52:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5qnj44o90k"
+        },
+        {
+          "Name": "label",
+          "Value": "css/lead.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA="
         }
       ]
     },
@@ -987,7 +1032,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6854"
+          "Value": "6850"
         },
         {
           "Name": "Content-Type",
@@ -995,11 +1040,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NTRbwQ1KajytbuKECtG0x+eCgTZPVqRglE5LxidzmSk=\""
+          "Value": "\"3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:47:20 GMT"
+          "Value": "Thu, 08 May 2025 20:52:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1009,52 +1054,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NTRbwQ1KajytbuKECtG0x+eCgTZPVqRglE5LxidzmSk="
-        }
-      ]
-    },
-    {
-      "Route": "css/lead.nx9aff3dbn.css",
-      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\lead.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6854"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NTRbwQ1KajytbuKECtG0x+eCgTZPVqRglE5LxidzmSk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:47:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "nx9aff3dbn"
-        },
-        {
-          "Name": "label",
-          "Value": "css/lead.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-NTRbwQ1KajytbuKECtG0x+eCgTZPVqRglE5LxidzmSk="
+          "Value": "sha256-3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA="
         }
       ]
     },

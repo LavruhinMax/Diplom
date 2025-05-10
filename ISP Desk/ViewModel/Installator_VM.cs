@@ -87,5 +87,12 @@ namespace ISP_Desk.ViewModel
                 days[i] = date.Day;
             }
         }
+
+        public bool CheckIfDayoff(DateOnly date)
+        {
+            foreach(var day in Dayoffs.dayoffs)
+                if(date.Month == day.Month && date.Day == day.Day) return true;
+            return false;
+        }
     }
 }

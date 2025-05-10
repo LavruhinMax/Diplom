@@ -80,14 +80,18 @@
     padding: 15px;
 }
 
-    .column-day .day:hover {
+.column-day .day-short, .column-day .selected-day-short {
+    padding: 15px 20px
+}
+
+    .column-day .day:hover, .column-day .day-short:hover {
         background-color: gainsboro;
-        border-radius: 200px
+        border-radius: 100%
     }
 
-.column-day .selected-day {
+.column-day .selected-day, .column-day .selected-day-short {
     background-color: darkslateblue;
-    border-radius: 200px;
+    border-radius: 100%;
     color: white
 }
 

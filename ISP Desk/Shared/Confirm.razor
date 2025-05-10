@@ -71,22 +71,39 @@
         cursor: pointer
     }
 
-    @@media (max-width: 768px) {
+    @@media (max-width: 900px) {
         .recover-popup {
-            width: 80%
+            width: 90%
         }
     }
 </style>
 
-<div class="recover-popup">
-    <p>Бардин А.И. будет восстановлен. Продолжить?</p>
+
+<div style="display: @(isVisible ? "flex" : "none")" class="recover-popup">
+    <p>@message</p>
     <div class="recover-cnt">
-        <button class="button-left">Подтвердить</button>
-        <button class="button-right">Отмена</button>
+        <button class="button-left" @onclick="Conf">Подтвердить</button>
+        <button class="button-right" @onclick="Close">Отмена</button>
     </div>
-    <img src="images/close.png" />
+    <img src="images/close.png" @onclick="Close" />
 </div>
 
-@code {
 
+@code {
+    [Parameter] public bool isVisible { get; set; }
+    [Parameter] public EventCallback isVisibleChanged { get; set; }
+    [Parameter] public EventCallback<bool> isConfirmed { get; set; }
+    [Parameter] public string message { get; set; }
+
+    public void Conf()
+    {
+        isConfirmed.InvokeAsync(true);
+        Close();
+    }
+
+    public void Close()
+    {
+        isConfirmed.InvokeAsync(false);
+        isVisibleChanged.InvokeAsync();
+    }
 }

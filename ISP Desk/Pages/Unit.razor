@@ -14,7 +14,7 @@
             </div>
             <div class="middle-cnt">
                 <button class="edit" @onclick="Edit">Изменить данные</button>
-                <button class="delete">Удалить</button>
+                <button class="delete" @onclick="OpenDelete">Удалить</button>
             </div>
             <div class="right-cnt">
                 <img src="images/income.png" />
@@ -53,19 +53,45 @@
 <Footer />
 
 <Add isVisible="isEditingVisible" isVisibleChanged="EditVisibility" isAddingOrEditing="false" EditInst="EditInst" i="ViewModel.inst" />
+<Confirm isVisible="isConfirmVisible" isVisibleChanged="ConfirmVisibility" message="@message" isConfirmed="Delete" />
+
 @code {
     [Parameter] public int InstallatorID { get; set; }
-
     private bool isEditingVisible = false;
+    private bool isConfirmVisible = false;
+    private bool isOkVisible = false;
+    private string message = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        ViewModel.InitializeAsync(InstallatorID);
+        await ViewModel.InitializeAsync(InstallatorID);
     }
 
     private void Edit() => isEditingVisible = true;
-
     private async Task EditInst(Installator inst) => await ViewModel.EditInst(inst);
 
+
+    private void OpenDelete()
+    {
+        message = $"{ViewModel.inst.LastName} {ViewModel.inst.FirstName[0]}.{ViewModel.inst.MiddleName[0]}. будет перемещен";
+        if (ViewModel.inst.Gender == "Ж") message += "а";
+        message += " в архив. Продолжить?";
+        isConfirmVisible = true;
+    }
+
+    private async Task Delete(bool isConfirmed)
+    {
+        if (isConfirmed)
+        {
+            await ViewModel.DeleteInst();
+            string transfer = $"{ViewModel.inst.LastName} {ViewModel.inst.FirstName[0]}.{ViewModel.inst.MiddleName[0]}. перемещен";
+            if (ViewModel.inst.Gender == "Ж") transfer += "а";
+            transfer += " в архив.";
+            NavManager.NavigateTo($"lead/{transfer}");
+        }
+    }
+
+    private void ConfirmVisibility() => isConfirmVisible = false;
     private void EditVisibility() => isEditingVisible = false;
+    private void OkVisibility() => isOkVisible = false;
 }

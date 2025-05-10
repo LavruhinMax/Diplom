@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFyY2hpdmUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Diplom/ISP Desk/Shared/Confirm.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENvbmZpcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Diplom/ISP Desk/Shared/Delete.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXERlbGV0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -82,10 +86,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Diplom/ISP Desk/Shared/Ok.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE9rLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Diplom/ISP Desk/Shared/Recover.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlY292ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Diplom/ISP Desk/Shared/RequestCard.razor]

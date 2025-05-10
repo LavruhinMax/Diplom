@@ -41,12 +41,13 @@
 
     public void Enter()
     {
+        mail = mail.Trim();
         if (string.IsNullOrWhiteSpace(mail) || string.IsNullOrWhiteSpace(pass))
         {
             error = "Заполните все поля!";
             return;
         }
-        if (!FormatChecker.validateMail(mail))
+        if (!isFormatCorrect)
         {
             error = "Неправильный формат электронной почты!";
             return;
@@ -76,7 +77,7 @@
     private void MailChanged(ChangeEventArgs e)
     {
         mail = e.Value?.ToString();
-        isFormatCorrect = FormatChecker.validateMail(mail);
+        isFormatCorrect = FormatChecker.validateMail(mail.Trim());
     }
 
     private void PassChanged(ChangeEventArgs e) => error = string.Empty;

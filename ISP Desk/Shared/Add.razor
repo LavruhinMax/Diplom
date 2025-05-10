@@ -52,16 +52,42 @@
     }
 
         .add-field input {
-            width: calc(50% - 40px);
+            width: calc(50% - 15px);
             font-size: 22px;
             font-weight: 600;
-            padding: 10px
+            padding: 10px;
+            box-sizing: border-box
         }
 
             .add-field input:focus {
                 border-color: blue;
                 outline: none;
             }
+
+    .radio-cnt {
+        display: flex;
+        width: calc(50% - 15px);
+        column-gap: 20px;
+        box-sizing: border-box;
+        padding: 10px
+    }
+
+        .radio-cnt div {
+            display: flex;
+            align-items: center;
+            column-gap: 10px
+        }
+        
+        .radio-cnt input {
+            cursor: pointer;
+            transform: scale(1.5);
+            margin: 0
+        }
+
+        .radio-cnt label {
+            font-size: 22px;
+            font-weight: 600
+        }
 
     .add-cnt {
         display: flex;
@@ -119,9 +145,9 @@
             flex-direction: column;
         }
 
-        .add-field input {
-            width: 100%
-        }
+            .add-field input, .radio-cnt {
+                width: calc(100% - 30px);
+            }
     }
 </style>
 
@@ -133,6 +159,19 @@
     <div class="add-field">
         <input placeholder="Фамилия" @bind="lName" />
         <input placeholder="Имя" @bind="fName" />
+        @if (isAddingOrEditing)
+        {
+            <div class="radio-cnt">
+                <div>
+                    <input type="radio" id="M" name="gender" @bind="gender" checked />
+                    <label for="M">Муж</label>
+                </div>
+                <div>
+                    <input type="radio" id="Ж" name="gender" @bind="gender" />
+                    <label for="Ж">Жен</label>
+                </div>
+            </div>
+        }
         <input placeholder="Отчество" @bind="mName" />
         <input placeholder="Номер телефона" @bind="phone" />
         <input placeholder="Электронная почта" @bind="email" />
@@ -153,7 +192,7 @@
     [Parameter] public bool isAddingOrEditing { get; set; }
 
 
-    private string lName = string.Empty, mName = string.Empty, fName = string.Empty,
+    private string lName = string.Empty, mName = string.Empty, fName = string.Empty, gender = "М",
         phone = string.Empty, email = string.Empty;
 
     protected override void OnParametersSet()
@@ -201,6 +240,7 @@
                 FirstName = fName,
                 MiddleName = mName,
                 LastName = lName,
+                Gender = gender,
                 PhoneNumber = phone,
                 Email = email
             };
@@ -211,6 +251,7 @@
         else
         {
             inst.InstallatorID = i.InstallatorID;
+            inst.Gender = i.Gender;
             await EditInst.InvokeAsync(inst);
         }
         Close();

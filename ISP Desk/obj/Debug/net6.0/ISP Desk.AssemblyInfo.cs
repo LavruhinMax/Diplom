@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ISP Desk")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+add183a6b980b6487fa29457ac5d4377f3aed118")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76cbaf3560bb510085852adf6343e234503aca19")]
 [assembly: System.Reflection.AssemblyProductAttribute("ISP Desk")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ISP Desk")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
