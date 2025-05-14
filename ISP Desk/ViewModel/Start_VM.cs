@@ -21,7 +21,6 @@ namespace ISP_Desk.ViewModel
         
         public async Task InitializeAsync() 
         {
-
             ContextSetter();
             accounts = await _context.Account.ToListAsync();
             installators = await _context.Installator.ToListAsync();

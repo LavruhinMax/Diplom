@@ -12,6 +12,7 @@ namespace ISP_Desk.ViewModel
         public List<Request> requests = new List<Request>();
         public List<Request> filteredRequests = new List<Request>();
         public List<Abonent> abonents = new List<Abonent>();
+        public List<Message> messages = new List<Message>();
         public Dictionary<int, Abonent> abonentsDict => abonents.ToDictionary(a => a.AbonentID);
 
         public DateTime date = DateTime.Now;
@@ -27,6 +28,7 @@ namespace ISP_Desk.ViewModel
             inst = _context.Installator.First(i => i.InstallatorID == id);
             requests = await _context.Request.Where(r => r.InstallatorID == id).ToListAsync();
             abonents = await _context.Abonent.ToListAsync();
+            messages = await _context.Message.Where(m => m.LeadID == UserContext.ID).ToListAsync();
             phone = $"+7 ({inst.PhoneNumber.Substring(2, 3)}) {inst.PhoneNumber.Substring(5, 3)} {inst.PhoneNumber.Substring(8, 2)} {inst.PhoneNumber.Substring(10, 2)}";
             FilterRequestsByDay();
         }
@@ -43,6 +45,12 @@ namespace ISP_Desk.ViewModel
         {
             date = date.AddDays(-1);
             FilterRequestsByDay();
+        }
+
+        public async Task Send(Message message)
+        {
+            await _context.Message.AddAsync(message);
+            await _context.SaveChangesAsync();
         }
 
         public async Task EditInst(Installator i)
@@ -64,5 +72,10 @@ namespace ISP_Desk.ViewModel
             await _context.SaveChangesAsync();
         }
 
+        public void DeleteMes(Message m)
+        {
+            _context.Message.Remove(m);
+            _context.SaveChanges();
+        }
     }
 }

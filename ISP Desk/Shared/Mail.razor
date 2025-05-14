@@ -1,0 +1,238 @@
+﻿<style>
+    .message-popup {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    top: 30%;
+    bottom: 30%;
+    left: 25%;
+    right: 25%;
+    background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    z-index: 100
+    }
+
+    .message-head-row {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    background-color: lightgray;
+    justify-content: center;
+    box-sizing: border-box;
+    column-gap: 20px
+    }
+
+    .message-head-row img {
+    width: 40px;
+    height: 30px
+    }
+
+    .message-head-row p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600
+    }
+
+    .mail-list {
+    flex: 1;
+    width: 95%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    border-bottom: 1px solid red
+    }
+
+    .mail-list p {
+        font-size: 24px;
+        font-weight: 600
+    }
+
+    .mail-list img {
+        width: 48px;
+        height: 48px
+    }
+
+    .row {
+    display: flex;
+    column-gap: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center
+    }
+
+    .row p {
+    padding: 15px;
+    margin: 10px;
+    flex: 1;
+    font-size: 18px;
+    background-color: gainsboro;
+    border-radius: 5px
+    }
+
+    .row img {
+    height: 36px;
+    width: 36px;
+    cursor: pointer
+    }
+
+    .txtbox-cnt {
+    display: flex;
+    width: 95%;
+    column-gap: 30px;
+    align-items: center;
+    justify-content: center
+    }
+
+    .txtbox-cnt input {
+    margin: 20px 0;
+    flex: 1;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px 5px 80px 5px;
+    border: 1px solid black
+    }
+
+    .txtbox-cnt input:focus {
+    border-color: blue;
+    outline: none
+    }
+
+    .txtbox-cnt img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer
+    }
+
+    .message-cnt {
+    display: flex;
+    width: 100%;
+    background-color: lightgray;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: flex-end
+    }
+
+    .message-cnt button {
+    background-color: slategray;
+    border: 1px solid slategray;
+    margin: 0 10px 0 0;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer
+    }
+
+    .message-cnt button:hover {
+    background-color: dimgray;
+    border: 1px solid dimgray
+    }
+
+    .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer
+    }
+
+    @@media (max-width: 1280px) {
+    .message-popup {
+    left: 20%;
+    right: 20%
+    }
+    }
+
+    @@media (max-width: 768px) {
+    .message-popup {
+    left: 10%;
+    right: 10%
+    }
+    }
+</style>
+
+<div class="message-popup" style="display:@(isVisible ? "flex": "none")">
+    <div class="message-head-row">
+        <img src="images/income.png" />
+        <p>-></p>
+        <p>@i.LastName @i.FirstName[0].@i.MiddleName[0].</p>
+    </div>
+    <div style="justify-content: @(ms.Count == 0 ? "center" : "flex-start")" class="mail-list">
+        @if(ms.Count == 0)
+        {
+            <img src="images/nomail.png" />
+            <p>Нет сообщений</p>
+        }
+        @foreach(var m in ms)
+        {
+            <div class="row">
+                <p>@m.Text</p>
+                <img src="images/delete.webp" @onclick="() => OpenDel(m)" />
+            </div>
+        }
+    </div>
+    <div class="txtbox-cnt">
+        <input placeholder="Текст сообщения" @bind="text" />
+        <img src="images/send.png" @onclick="Send" />
+    </div>
+    <div class="message-cnt">
+        <button @onclick="Close">Отмена</button>
+    </div>
+    <img class="close" src="images/close.png" @onclick="Close" />
+</div>
+
+<Confirm isVisible="isDeleteVisible" isVisibleChanged="DeleteVisibility" message="Сообщение будет удалено. Продолжить?" isConfirmed="Delete" />
+
+@code {
+    [Parameter] public bool isVisible { get; set; }
+    [Parameter] public EventCallback isVisibleChanged { get; set; }
+    [Parameter] public EventCallback<Message> SendMessage { get; set; }
+    [Parameter] public EventCallback<Message> DeleteMessage { get; set; }
+    [Parameter] public List<Message> ms { get; set; }
+    [Parameter] public Installator i { get; set; }
+    private Message selectedMessage = new Message();
+    private bool isDeleteVisible = false;
+    private string text = string.Empty;
+
+    protected override void OnParametersSet()
+    {
+        text = string.Empty;
+        ms.Reverse();
+    }
+
+    private void OpenDel(Message m)
+    {
+        selectedMessage = m;
+        isDeleteVisible = true;
+    }
+
+    private void Delete(bool isConfirmed)
+    {
+        if (isConfirmed)
+        {
+            ms.Remove(selectedMessage);
+            DeleteMessage.InvokeAsync(selectedMessage);
+        }
+    }
+
+    private async Task Send()
+    {
+        Message message = new Message()
+            {
+                LeadID = UserContext.ID.Value,
+                InstallatorID = i.InstallatorID,
+                Text = text,
+                IsRead = 0
+            };
+        ms.Add(message);
+        await SendMessage.InvokeAsync(message);
+    }
+
+    private void DeleteVisibility() => isDeleteVisible = false;
+    private void Close() => isVisibleChanged.InvokeAsync();
+}

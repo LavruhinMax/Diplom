@@ -17,8 +17,8 @@
                 <button class="delete" @onclick="OpenDelete">Удалить</button>
             </div>
             <div class="right-cnt">
-                <img src="images/income.png" />
-                <img src="images/stats.webp" />
+                <img src="images/income.png" @onclick="OpenMessageBox" />
+                <img src="images/stats.webp" @onclick="OpenStats" />
             </div>
         </div>
         <div class="day">
@@ -53,11 +53,15 @@
 <Footer />
 
 <Add isVisible="isEditingVisible" isVisibleChanged="EditVisibility" isAddingOrEditing="false" EditInst="EditInst" i="ViewModel.inst" />
-<Confirm isVisible="isConfirmVisible" isVisibleChanged="ConfirmVisibility" message="@message" isConfirmed="Delete" />
+<Confirm isVisible="isConfirmVisible" isVisibleChanged="ConfirmVisibility" message="@message" isConfirmed="DeleteInst" />
+<Mail isVisible = "isMessageVisible" isVisibleChanged="MessageVisibility" i="ViewModel.inst" ms="ViewModel.messages" SendMessage="SendMessage" DeleteMessage="DeleteMessage" />
+<Stats />
 
 @code {
     [Parameter] public int InstallatorID { get; set; }
     private bool isEditingVisible = false;
+    private bool isMessageVisible = false;
+    private bool areStatsVisible = false;
     private bool isConfirmVisible = false;
     private bool isOkVisible = false;
     private string message = string.Empty;
@@ -67,9 +71,10 @@
         await ViewModel.InitializeAsync(InstallatorID);
     }
 
+    private void OpenMessageBox() => isMessageVisible = true;
+    private async Task SendMessage(Message m) => await ViewModel.Send(m);
     private void Edit() => isEditingVisible = true;
     private async Task EditInst(Installator inst) => await ViewModel.EditInst(inst);
-
 
     private void OpenDelete()
     {
@@ -79,7 +84,12 @@
         isConfirmVisible = true;
     }
 
-    private async Task Delete(bool isConfirmed)
+    private void OpenStats()
+    {
+        areStatsVisible = true;
+    }
+
+    private async Task DeleteInst(bool isConfirmed)
     {
         if (isConfirmed)
         {
@@ -91,7 +101,13 @@
         }
     }
 
+    private void DeleteMessage(Message m)
+    {
+        ViewModel.DeleteMes(m);
+    }
+
     private void ConfirmVisibility() => isConfirmVisible = false;
     private void EditVisibility() => isEditingVisible = false;
-    private void OkVisibility() => isOkVisible = false;
+    private void MessageVisibility() => isMessageVisible = false;
+    private void StatsVisibility() => areStatsVisible = false;
 }

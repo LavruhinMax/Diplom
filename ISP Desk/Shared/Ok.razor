@@ -3,22 +3,29 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: max-content;
-    width: 400px;
+    width: 500px;
     background-color: white;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     z-index: 1000
     }
 
     .ok-popup p {
+    width: 80%;
     margin: 20px;
     font-size: 20px;
     font-weight: 600
+    }
+
+    .done {
+        margin: 30px 0 20px 0;
+        width: 72px;
+        height: 72px
     }
 
     .ok-cnt {
@@ -63,6 +70,7 @@
 </style>
 
 <div style="display: @(isVisible ? "flex" : "none")" class="ok-popup">
+    <img class="done" src="images/done.png" />
     <p>@message</p>
     <div class="ok-cnt">
         <button @onclick="Close">Ок</button>

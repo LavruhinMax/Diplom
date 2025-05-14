@@ -3,6 +3,7 @@ using ISP_Desk.Model;
 using ISP_Desk.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
+using System.Threading.Tasks;
 
 namespace ISP_Desk.ViewModel
 {
@@ -12,6 +13,10 @@ namespace ISP_Desk.ViewModel
         public List<Request> requests = new List<Request>();
         public List<Request> filteredRequests = new List<Request>();
         public List<Abonent> abonents = new List<Abonent>();
+        public List<Message> messages = new List<Message>();
+        public Installator me = new Installator();
+        public Lead lead = new Lead();
+        public int count;
         public Dictionary<int, Abonent> abonentsDict => abonents.ToDictionary(a => a.AbonentID);
 
         public string[] weekDays = new string[7] { "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС" };
@@ -31,7 +36,11 @@ namespace ISP_Desk.ViewModel
         {
             requests = await _context.Request.Where(r => r.InstallatorID == UserContext.ID).ToListAsync();
             abonents = await _context.Abonent.ToListAsync();
+            messages = await _context.Message.Where(m => m.InstallatorID == UserContext.ID).ToListAsync();
+            count = messages.Where(m => m.IsRead == 0).Count();
             filteredRequests = requests.Where(r => r.Scheduled.Day == selectedDate.Day).ToList();
+            me = _context.Installator.First(i => i.InstallatorID == UserContext.ID);
+            lead = _context.Lead.First(l => l.LeadID == me.LeadID);
             DrawHeadRow();
         }
 
@@ -93,6 +102,14 @@ namespace ISP_Desk.ViewModel
             foreach(var day in Dayoffs.dayoffs)
                 if(date.Month == day.Month && date.Day == day.Day) return true;
             return false;
+        }
+        
+        public void SetZero()
+        {
+            count = 0;
+            foreach(var m in messages)
+                m.IsRead = 1;
+            _context.SaveChanges();
         }
     }
 }

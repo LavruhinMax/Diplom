@@ -85,6 +85,14 @@
       "PackagePath": "staticwebassets\\images\\location.png"
     },
     {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\no results.png",
+      "PackagePath": "staticwebassets\\images\\no results.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\nomail.png",
+      "PackagePath": "staticwebassets\\images\\nomail.png"
+    },
+    {
       "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\opened-eye.png",
       "PackagePath": "staticwebassets\\images\\opened-eye.png"
     },
@@ -105,8 +113,12 @@
       "PackagePath": "staticwebassets\\images\\red-arrow-right.png"
     },
     {
-      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.webp",
-      "PackagePath": "staticwebassets\\images\\schedule.webp"
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.png",
+      "PackagePath": "staticwebassets\\images\\schedule.png"
+    },
+    {
+      "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\send.png",
+      "PackagePath": "staticwebassets\\images\\send.png"
     },
     {
       "Id": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\stats.webp",

@@ -45,12 +45,22 @@
         }
     </div>
 </div>
-<Footer />
+<Footer GetMessages="OpenMail" newOnes="ViewModel.count" />
+
+<Mailbox isVisible="isMessageVisible" isVisibleChanged="MessageVisibility" messageList="ViewModel.messages" l="ViewModel.lead" />
 
 @code {
+    private bool isMessageVisible = false;
 
     protected override async Task OnInitializedAsync()
     {
-        ViewModel.InitializeAsync();
+        await ViewModel.InitializeAsync();
+    }
+
+    private void OpenMail() => isMessageVisible = true;
+    private void MessageVisibility()
+    {
+        isMessageVisible = false;
+        ViewModel.SetZero();
     }
 }

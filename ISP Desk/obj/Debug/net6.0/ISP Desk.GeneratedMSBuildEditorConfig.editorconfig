@@ -72,6 +72,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEhlYWRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Diplom/ISP Desk/Shared/Mail.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Diplom/ISP Desk/Shared/Mailbox.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haWxib3gucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -80,16 +84,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Diplom/ISP Desk/Shared/Message.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1lc3NhZ2UucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Diplom/ISP Desk/Shared/Ok.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE9rLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Diplom/ISP Desk/Shared/RequestCard.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlcXVlc3RDYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Diplom/ISP Desk/Shared/Stats.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN0YXRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Diplom/ISP Desk/_Imports.razor]

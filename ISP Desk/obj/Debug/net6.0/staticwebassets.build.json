@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KuF3dYYE9Q1T4vomt9EQceHnHiisqtNBbq7ndVX7cmo=",
+  "Hash": "6a5OHigiy8g23r8nPTJlHK963ukMcCRt7Yllz8QkMC8=",
   "Source": "ISP Desk",
   "BasePath": "_content/ISP Desk",
   "Mode": "Default",
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d42ubldxku",
-      "Integrity": "wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A=",
+      "Fingerprint": "byn07s7flz",
+      "Integrity": "QwAORypjpvRYLB2TqaU6PTX82ZqANzB9peefZ7ow8Pg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\inst.css"
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5qnj44o90k",
-      "Integrity": "3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA=",
+      "Fingerprint": "gxsp2ng2bv",
+      "Integrity": "TCNBhbaxkwuPZL4lfGi1z5uhytTVvxubtIdVO9z8HYY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\lead.css"
@@ -458,6 +458,48 @@
       "OriginalItemSpec": "wwwroot\\images\\location.png"
     },
     {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\no results.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/no results#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "v5s83vxj6c",
+      "Integrity": "k88CR6M0V7MUkhdtrJp81RLPVHx3J07xy4G62FFt9FE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\no results.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\nomail.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/nomail#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "52o6brxn6m",
+      "Integrity": "szkrfa3DFViQOanvwfsyyk7cRdoOQ6zwR4UZRbzvz9g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\nomail.png"
+    },
+    {
       "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\opened-eye.png",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
@@ -563,12 +605,12 @@
       "OriginalItemSpec": "wwwroot\\images\\red-arrow-right.png"
     },
     {
-      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.webp",
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.png",
       "SourceId": "ISP Desk",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
       "BasePath": "_content/ISP Desk",
-      "RelativePath": "images/schedule#[.{fingerprint}]?.webp",
+      "RelativePath": "images/schedule#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -577,11 +619,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "pd3qzd2kdy",
-      "Integrity": "Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM=",
+      "Fingerprint": "pqofs65s5c",
+      "Integrity": "Ae+XtnvzBrdnZNkxdLHGC2Q000fMROgIqlA4fjAk3Dk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\schedule.webp"
+      "OriginalItemSpec": "wwwroot\\images\\schedule.png"
+    },
+    {
+      "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\send.png",
+      "SourceId": "ISP Desk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Diplom\\ISP Desk\\wwwroot\\",
+      "BasePath": "_content/ISP Desk",
+      "RelativePath": "images/send#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vxauhc8t3i",
+      "Integrity": "HUz2XF/tug6NyakmpewQ+LArjmET2SZ9CGql7k0QvXU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\send.png"
     },
     {
       "Identity": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\stats.webp",
@@ -895,6 +958,51 @@
       ]
     },
     {
+      "Route": "css/inst.byn07s7flz.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3752"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QwAORypjpvRYLB2TqaU6PTX82ZqANzB9peefZ7ow8Pg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 12:01:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "byn07s7flz"
+        },
+        {
+          "Name": "label",
+          "Value": "css/inst.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QwAORypjpvRYLB2TqaU6PTX82ZqANzB9peefZ7ow8Pg="
+        }
+      ]
+    },
+    {
       "Route": "css/inst.css",
       "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
       "Selectors": [],
@@ -913,11 +1021,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A=\""
+          "Value": "\"QwAORypjpvRYLB2TqaU6PTX82ZqANzB9peefZ7ow8Pg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 19:42:44 GMT"
+          "Value": "Wed, 14 May 2025 12:01:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -927,97 +1035,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A="
-        }
-      ]
-    },
-    {
-      "Route": "css/inst.d42ubldxku.css",
-      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\inst.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3752"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 19:42:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d42ubldxku"
-        },
-        {
-          "Name": "label",
-          "Value": "css/inst.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-wyoLJM7s282PgYOp5/wCAzBS+GNcpE3r9MGW2xFfP4A="
-        }
-      ]
-    },
-    {
-      "Route": "css/lead.5qnj44o90k.css",
-      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\lead.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6850"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 20:52:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "5qnj44o90k"
-        },
-        {
-          "Name": "label",
-          "Value": "css/lead.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA="
+          "Value": "sha256-QwAORypjpvRYLB2TqaU6PTX82ZqANzB9peefZ7ow8Pg="
         }
       ]
     },
@@ -1032,7 +1050,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6850"
+          "Value": "7124"
         },
         {
           "Name": "Content-Type",
@@ -1040,11 +1058,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA=\""
+          "Value": "\"TCNBhbaxkwuPZL4lfGi1z5uhytTVvxubtIdVO9z8HYY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 20:52:47 GMT"
+          "Value": "Tue, 13 May 2025 22:00:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1054,7 +1072,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3dI49n6h0M1dadfLEjMj/hsAgBzFD+VUAusYZX+MmiA="
+          "Value": "sha256-TCNBhbaxkwuPZL4lfGi1z5uhytTVvxubtIdVO9z8HYY="
+        }
+      ]
+    },
+    {
+      "Route": "css/lead.gxsp2ng2bv.css",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\css\\lead.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7124"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TCNBhbaxkwuPZL4lfGi1z5uhytTVvxubtIdVO9z8HYY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 22:00:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gxsp2ng2bv"
+        },
+        {
+          "Name": "label",
+          "Value": "css/lead.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TCNBhbaxkwuPZL4lfGi1z5uhytTVvxubtIdVO9z8HYY="
         }
       ]
     },
@@ -2371,6 +2434,170 @@
       ]
     },
     {
+      "Route": "images/no results.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\no results.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28194"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k88CR6M0V7MUkhdtrJp81RLPVHx3J07xy4G62FFt9FE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 18:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-k88CR6M0V7MUkhdtrJp81RLPVHx3J07xy4G62FFt9FE="
+        }
+      ]
+    },
+    {
+      "Route": "images/no results.v5s83vxj6c.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\no results.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28194"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k88CR6M0V7MUkhdtrJp81RLPVHx3J07xy4G62FFt9FE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 18:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v5s83vxj6c"
+        },
+        {
+          "Name": "label",
+          "Value": "images/no results.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-k88CR6M0V7MUkhdtrJp81RLPVHx3J07xy4G62FFt9FE="
+        }
+      ]
+    },
+    {
+      "Route": "images/nomail.52o6brxn6m.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\nomail.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"szkrfa3DFViQOanvwfsyyk7cRdoOQ6zwR4UZRbzvz9g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 21:02:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "52o6brxn6m"
+        },
+        {
+          "Name": "label",
+          "Value": "images/nomail.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-szkrfa3DFViQOanvwfsyyk7cRdoOQ6zwR4UZRbzvz9g="
+        }
+      ]
+    },
+    {
+      "Route": "images/nomail.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\nomail.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"szkrfa3DFViQOanvwfsyyk7cRdoOQ6zwR4UZRbzvz9g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 21:02:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-szkrfa3DFViQOanvwfsyyk7cRdoOQ6zwR4UZRbzvz9g="
+        }
+      ]
+    },
+    {
       "Route": "images/opened-eye.b4tk9psowf.png",
       "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\opened-eye.png",
       "Selectors": [],
@@ -2781,8 +3008,8 @@
       ]
     },
     {
-      "Route": "images/schedule.pd3qzd2kdy.webp",
-      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.webp",
+      "Route": "images/schedule.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2791,64 +3018,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19094"
+          "Value": "27081"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/webp"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM=\""
+          "Value": "\"Ae+XtnvzBrdnZNkxdLHGC2Q000fMROgIqlA4fjAk3Dk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 08:44:15 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "pd3qzd2kdy"
-        },
-        {
-          "Name": "label",
-          "Value": "images/schedule.webp"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM="
-        }
-      ]
-    },
-    {
-      "Route": "images/schedule.webp",
-      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.webp",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "19094"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/webp"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 08:44:15 GMT"
+          "Value": "Wed, 14 May 2025 12:04:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2858,7 +3040,134 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Y/VhRpb59FPveFBcZEwFQjPFH/ixJ+MxMe7wxNgB8SM="
+          "Value": "sha256-Ae+XtnvzBrdnZNkxdLHGC2Q000fMROgIqlA4fjAk3Dk="
+        }
+      ]
+    },
+    {
+      "Route": "images/schedule.pqofs65s5c.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\schedule.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27081"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ae+XtnvzBrdnZNkxdLHGC2Q000fMROgIqlA4fjAk3Dk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 12:04:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pqofs65s5c"
+        },
+        {
+          "Name": "label",
+          "Value": "images/schedule.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ae+XtnvzBrdnZNkxdLHGC2Q000fMROgIqlA4fjAk3Dk="
+        }
+      ]
+    },
+    {
+      "Route": "images/send.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\send.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6194"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HUz2XF/tug6NyakmpewQ+LArjmET2SZ9CGql7k0QvXU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:26:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HUz2XF/tug6NyakmpewQ+LArjmET2SZ9CGql7k0QvXU="
+        }
+      ]
+    },
+    {
+      "Route": "images/send.vxauhc8t3i.png",
+      "AssetFile": "C:\\Diplom\\ISP Desk\\wwwroot\\images\\send.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6194"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HUz2XF/tug6NyakmpewQ+LArjmET2SZ9CGql7k0QvXU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:26:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vxauhc8t3i"
+        },
+        {
+          "Name": "label",
+          "Value": "images/send.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HUz2XF/tug6NyakmpewQ+LArjmET2SZ9CGql7k0QvXU="
         }
       ]
     },

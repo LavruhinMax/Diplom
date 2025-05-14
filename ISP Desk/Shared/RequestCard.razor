@@ -30,7 +30,7 @@
 
         .info p {
             white-space: nowrap;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 600;
             margin: 0
         }
@@ -42,7 +42,7 @@
 
     @@media (max-width: 1920px) {
         .info p {
-            font-size: 20px
+            font-size: 26px
         }
 
         .card {
@@ -61,7 +61,7 @@
 
     @@media (max-width: 1280px) {
         .info p {
-            font-size: 15px;
+            font-size: 20px;
         }
 
         .card {
@@ -80,7 +80,7 @@
 
     @@media (max-width: 768px) {
         .info p {
-            font-size: 14px
+            font-size: 16px
         }
 
         .card {
@@ -107,7 +107,7 @@
             <p>@(ab.Flat == null ? $"{@ab.Region}, г. {@ab.City}, ул. {@ab.Street} {@ab.House}" : $"{@ab.Region}, г. {@ab.City}, ул. {@ab.Street} {@ab.House}-{@ab.Flat}")</p>
         </div>
         <div class="info">
-            <img src="images/schedule.webp"/>
+            <img src="images/schedule.png" />
             <p>@req.Scheduled.ToString("HH:mm", culture)</p>
         </div>
     </div>

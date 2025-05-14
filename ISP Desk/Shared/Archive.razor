@@ -272,9 +272,9 @@
     public void OpenRec(Installator i)
     {
         selectedInstallator = i;
-        message = $"{selectedInstallator.LastName} {selectedInstallator.FirstName[0]}.{selectedInstallator.MiddleName[0]}.будет восстановлен";
-        if (selectedInstallator.Gender == "Ж") message.Concat("а");
-        message.Concat(". Продолжить?");
+        message = $"{selectedInstallator.LastName} {selectedInstallator.FirstName[0]}.{selectedInstallator.MiddleName[0]}. будет восстановлен";
+        if (selectedInstallator.Gender == "Ж") message += "а";
+        message += ". Продолжить?";
         isRecoverVisible = true;
     }
 

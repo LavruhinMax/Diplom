@@ -19,12 +19,15 @@ wwwroot\images\empty.png
 wwwroot\images\empty-archive.png
 wwwroot\images\income.png
 wwwroot\images\location.png
+wwwroot\images\no results.png
+wwwroot\images\nomail.png
 wwwroot\images\opened-eye.png
 wwwroot\images\problem.webp
 wwwroot\images\recover.png
 wwwroot\images\red-arrow-left.png
 wwwroot\images\red-arrow-right.png
-wwwroot\images\schedule.webp
+wwwroot\images\schedule.png
+wwwroot\images\send.png
 wwwroot\images\stats.webp
 wwwroot\images\time.webp
 wwwroot\images\trouble.webp
