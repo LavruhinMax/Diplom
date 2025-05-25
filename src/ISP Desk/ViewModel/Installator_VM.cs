@@ -1,6 +1,8 @@
-﻿using ISP_Desk.Data;
+﻿using ISP_Desk.Constants;
+using ISP_Desk.Context;
+using ISP_Desk.Data;
 using ISP_Desk.Model;
-using ISP_Desk.Service;
+using ISP_Desk.Model.Navigation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using System.Threading.Tasks;
@@ -10,11 +12,8 @@ namespace ISP_Desk.ViewModel
     public class Installator_VM
     {
         private readonly AppDbContext _context;
-        public List<Request> requests = new List<Request>();
         public List<Request> filteredRequests = new List<Request>();
         public List<Abonent> abonents = new List<Abonent>();
-        public List<Message> messages = new List<Message>();
-        public Installator me = new Installator();
         public Lead lead = new Lead();
         public int count;
         public Dictionary<int, Abonent> abonentsDict => abonents.ToDictionary(a => a.AbonentID);
@@ -26,6 +25,7 @@ namespace ISP_Desk.ViewModel
         public DateTime selectedDate = DateTime.Today;
         public bool pastWeek = false;
         public bool futureWeek = false;
+        public List<NavItem> NavItems = new List<NavItem>();
 
         public Installator_VM(AppDbContext context)
         {
@@ -34,14 +34,19 @@ namespace ISP_Desk.ViewModel
 
         public async Task InitializeAsync()
         {
-            requests = await _context.Request.Where(r => r.InstallatorID == UserContext.ID).ToListAsync();
+            UserContext.Installator.Requests = await _context.Request.Where(r => r.InstallatorID == UserContext.Installator.InstallatorID).ToListAsync();
             abonents = await _context.Abonent.ToListAsync();
-            messages = await _context.Message.Where(m => m.InstallatorID == UserContext.ID).ToListAsync();
-            count = messages.Where(m => m.IsRead == 0).Count();
-            filteredRequests = requests.Where(r => r.Scheduled.Day == selectedDate.Day).ToList();
-            me = _context.Installator.First(i => i.InstallatorID == UserContext.ID);
-            lead = _context.Lead.First(l => l.LeadID == me.LeadID);
+            UserContext.Installator.Messages = await _context.Message.Where(m => m.InstallatorID == UserContext.Installator.InstallatorID).ToListAsync();
+            count = UserContext.Installator.Messages.Where(m => m.IsRead == 0).Count();
+            filteredRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Day == selectedDate.Day).ToList();
+            lead = _context.Lead.First(l => l.LeadID == UserContext.Installator.LeadID);
+            SetNavItems();
             DrawHeadRow();
+        }
+
+        private void SetNavItems()
+        {
+            NavItems.Add(new NavItem() { linkName = "Расписание", Url = "inst" });
         }
 
         public void DrawHeadRow()
@@ -85,7 +90,7 @@ namespace ISP_Desk.ViewModel
         public void SelectDate(DateTime Date)
         {
             selectedDate = Date;
-            filteredRequests = requests.Where(r => r.Scheduled.Day == selectedDate.Day).ToList();
+            filteredRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Day == selectedDate.Day).ToList();
         }
 
         private void UpdateWeekDays()
@@ -107,7 +112,7 @@ namespace ISP_Desk.ViewModel
         public void SetZero()
         {
             count = 0;
-            foreach(var m in messages)
+            foreach(var m in UserContext.Installator.Messages)
                 m.IsRead = 1;
             _context.SaveChanges();
         }

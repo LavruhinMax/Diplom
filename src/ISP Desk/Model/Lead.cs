@@ -10,5 +10,8 @@
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Region { get; set; }
+        public Account Account { get; set; }
+        public List<Installator> Installators { get; set; }
+        public List<Message> Messages { get; set; }
     }
 }

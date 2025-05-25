@@ -54,19 +54,12 @@
         }
         if (ViewModel.CheckPassword(mail, pass))
         {
-            switch (UserContext.status)
-            {
-                case "Руководитель":
-                    NavManager.NavigateTo("lead");
-                    break;
-                case "Инсталлятор":
-                    NavManager.NavigateTo("inst");
-                    break;
-                case "Диспетчер":
-                    NavManager.NavigateTo("disp");
-                    break;
-                default: break;
-            }
+            if (UserContext.Installator != null)
+                NavManager.NavigateTo("inst", forceLoad: true);
+            else if (UserContext.Lead != null)
+                NavManager.NavigateTo("lead", forceLoad: true);
+            else
+                NavManager.NavigateTo("disp", forceLoad: true);
         }
         else
         {

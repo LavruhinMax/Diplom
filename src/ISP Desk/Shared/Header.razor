@@ -1,24 +1,67 @@
-﻿<style>
+﻿@using ISP_Desk.Model.Navigation
+<style>
     .header {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 9vh;
-        background-color: rgb(60, 110, 160)
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color: rgb(60, 110, 160)
     }
 
-        .header img {
-            margin: 0 0 0 20px;
-            height: 80%;
-            cursor: pointer
-        }
+    .header img {
+    margin: 0 20px;
+    height: 80%;
+    cursor: pointer
+    }
+
+    .header a, .header p {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px 0;
+    text-decoration: none;
+    margin: 0 0 0 5px;
+    color: gainsboro
+    }
+
+    .header a {
+    cursor: pointer
+    }
+
+    .header a:hover {
+    color: #DAA520;
+    transition: 0.1s
+    }
 </style>
 
 <div class="header">
-    <img src="images/bird.png" />
+    <img src="images/bird.png" @onclick="Return"/>
+    @if (NavItems != null)
+    {
+        foreach (var NI in NavItems)
+        {
+            <a @onclick="() => GoTo(NI.Url)">@NI.linkName</a>
+            if (NI != NavItems.Last())
+            {
+                <p>/</p>
+            }
+        }
+    }
 </div>
 
 
 @code {
+    [Parameter] public List<NavItem> NavItems { get; set; }
+
+    private void Return()
+    {
+        if (NavItems == null)
+            NavManager.NavigateTo("/", forceLoad: true);
+        else
+        {
+            NavManager.NavigateTo(NavItems[0].Url, forceLoad: true);
+        }
+    }
+
+    private void GoTo(string url) => NavManager.NavigateTo(url, forceLoad: true);
 
 }

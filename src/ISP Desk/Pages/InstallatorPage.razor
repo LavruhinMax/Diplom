@@ -4,7 +4,7 @@
 <link href="css/inst.css" rel="stylesheet" />
 <PageTitle>Расписание</PageTitle>
 
-<Header />
+<Header NavItems="ViewModel.NavItems"/>
 <div class="main">
     <div class="schedule">
         <div class="schedule-time">
@@ -20,7 +20,7 @@
             {
                 var dayDate = ViewModel.currentWeekStart.AddDays(i);
                 bool check = ViewModel.CheckIfDayoff(DateOnly.FromDateTime(dayDate));
-                <div class="column-day" @onclick="() => ViewModel.SelectDate(dayDate)">
+                <div class="column-day" @onclick="() => { if (!isMessageVisible) ViewModel.SelectDate(dayDate); }">
                     <p>@ViewModel.weekDays[i]</p>
                     <p style="color: @(check ? "red" : ""); color: @(check && dayDate == ViewModel.selectedDate ? "pink" : "");" class="@(dayDate == ViewModel.selectedDate && dayDate.Day < 10 ? "selected-day-short" : dayDate == ViewModel.selectedDate ? "selected-day" : dayDate.Day < 10 ? "day-short" : "day")">@ViewModel.days[i]</p>
                 </div>
@@ -37,9 +37,9 @@
         else {
             foreach (var r in ViewModel.filteredRequests)
             {
-                @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a) && r.InstallatorID == UserContext.ID)
+                @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a) && r.InstallatorID == UserContext.Installator.InstallatorID)
                 {
-                    <RequestCard ab="a" req="r" />
+                    <RequestCard ab="a" req="r" isDisabled="isMessageVisible" />
                 }
             }
         }
@@ -47,7 +47,7 @@
 </div>
 <Footer GetMessages="OpenMail" newOnes="ViewModel.count" />
 
-<Mailbox isVisible="isMessageVisible" isVisibleChanged="MessageVisibility" messageList="ViewModel.messages" l="ViewModel.lead" />
+<Mailbox isVisible="isMessageVisible" isVisibleChanged="MessageVisibility" messageList="UserContext.Installator.Messages" l="ViewModel.lead" />
 
 @code {
     private bool isMessageVisible = false;

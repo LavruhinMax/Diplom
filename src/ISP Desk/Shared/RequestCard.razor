@@ -1,100 +1,100 @@
 ﻿<style>
     .req-card {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        border: 1px solid gray;
-        border-radius: 10px;
-        padding: 15px 50px;
-        row-gap: 30px;
-        cursor: pointer;
-        box-sizing: border-box
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 15px 50px;
+    row-gap: 30px;
+    cursor: pointer;
+    box-sizing: border-box
     }
 
-        .req-card:hover {
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
+    .req-card:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
 
     .card-row {
-        display: flex;
-        justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     }
 
     .card-info {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        column-gap: 20px
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 20px
     }
 
-        .card-info p {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 10px
-        }
+    .card-info p {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px
+    }
 
-        .card-info img {
-            width: 35px;
-            height: 35px
-        }
+    .card-info img {
+    width: 35px;
+    height: 35px
+    }
 
     @@media (max-width: 1920px) {
-        .card-info p {
-            font-size: 22px
-        }
+    .card-info p {
+    font-size: 22px
+    }
 
-        .req-card {
-            padding: 15px 30px
-        }
+    .req-card {
+    padding: 15px 30px
+    }
 
-        .card-info {
-            column-gap: 15px;
-        }
+    .card-info {
+    column-gap: 15px;
+    }
 
-        .card-info img {
-            width: 30px;
-            height: 30px
-        }
+    .card-info img {
+    width: 30px;
+    height: 30px
+    }
     }
 
     @@media (max-width: 1280px) {
-        .card-info p {
-            font-size: 20px;
-        }
+    .card-info p {
+    font-size: 20px;
+    }
 
-        .req-card {
-            padding: 15px
-        }
+    .req-card {
+    padding: 15px
+    }
 
-        .card-info {
-            column-gap: 5px;
-        }
+    .card-info {
+    column-gap: 5px;
+    }
 
-        .card-info img {
-            width: 20px;
-            height: 20px
-        }
+    .card-info img {
+    width: 20px;
+    height: 20px
+    }
     }
 
     @@media (max-width: 768px) {
-        .card-info p {
-            font-size: 16px
-        }
+    .card-info p {
+    font-size: 16px
+    }
 
-        .req-card {
-            row-gap: 20px;
-            padding: 10px
-        }
+    .req-card {
+    row-gap: 20px;
+    padding: 10px
+    }
 
-        .card-row {
-            width: 100%;
-            flex-wrap: wrap;
-            row-gap: 20px
-        }
+    .card-row {
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 20px
+    }
 
-        .card-info {
-            width: 100%
-        }
+    .card-info {
+    width: 100%
+    }
     }
 </style>
 
@@ -120,4 +120,5 @@
 @code {
     [Parameter] public Abonent ab { get; set; }
     [Parameter] public Request req { get; set; }
+    [Parameter] public bool isDisabled { get; set; }
 }

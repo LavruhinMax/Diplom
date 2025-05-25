@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Spreadsheet;
+using ISP_Desk.Context;
 using ISP_Desk.Data;
 using ISP_Desk.Model;
 using ISP_Desk.Service;
@@ -21,7 +22,6 @@ namespace ISP_Desk.ViewModel
         
         public async Task InitializeAsync() 
         {
-            ContextSetter();
             accounts = await _context.Account.ToListAsync();
             installators = await _context.Installator.ToListAsync();
             leads = await _context.Lead.ToListAsync();
@@ -37,7 +37,8 @@ namespace ISP_Desk.ViewModel
                 {
                     if (mail == i.Email && CryptoService.Decrypt(account.Password) == pass)
                     {
-                        ContextSetter(i.InstallatorID, "Инсталлятор", i.FirstName, i.PhoneNumber, i.Email);
+                        SetContext(null, i, null);
+                        UserContext.Installator.Account = account;
                         return true;
                     }
                 }
@@ -45,7 +46,8 @@ namespace ISP_Desk.ViewModel
                 {
                     if(mail == l.Email && CryptoService.Decrypt(account.Password) == pass)
                     {
-                        ContextSetter(l.LeadID, "Руководитель", l.FirstName, l.PhoneNumber, l.Email);
+                        SetContext(l, null, null);
+                        UserContext.Lead.Account = account;
                         return true;
                     }
                 }
@@ -53,7 +55,8 @@ namespace ISP_Desk.ViewModel
                 {
                     if (mail == d.Email && CryptoService.Decrypt(account.Password) == pass)
                     {
-                        ContextSetter(d.DispatcherID, "Диспетчер", d.FirstName, d.PhoneNumber, d.Email);
+                        SetContext(null, null, d);
+                        UserContext.Dispatcher.Account = account;
                         return true;
                     }
                 }
@@ -61,13 +64,11 @@ namespace ISP_Desk.ViewModel
             return false;
         }
 
-        private void ContextSetter(int? ID = null, string? status = null, string? name = null, string? phone = null, string? email = null)
+        private void SetContext(Lead? l, Installator? i, Dispatcher? d)
         {
-            UserContext.ID = ID;
-            UserContext.status = status;
-            UserContext.name = name;
-            UserContext.phone = phone;
-            UserContext.email = email;
+            UserContext.Lead = l;
+            UserContext.Installator = i;
+            UserContext.Dispatcher = d;
         }
     }
 }

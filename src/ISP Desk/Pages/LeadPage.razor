@@ -4,15 +4,15 @@
 <link href="css/lead.css" rel="stylesheet" />
 <PageTitle>Главная</PageTitle>
 
-<Header />
+<Header NavItems="ViewModel.NavItems"/>
 <div class="main">
     <div class="grid">
         <div class="head">
             <div class="left-cnt">
-                <p>Добрый день, @UserContext.name</p>
+                <p>Добрый день, @UserContext.Lead.FirstName</p>
                 <div class="button-cnt">
-                    <button class="button-left" @onclick="Add">Добавить нового сотрудника</button>
-                    <button class="button-right" @onclick="OpenArchive">Архив</button>
+                    <button class="button-left" @onclick="Add" disabled="@(isAddingVisible || isArchiveVisible || isOkVisible)">Добавить нового сотрудника</button>
+                    <button class="button-right" @onclick="OpenArchive" disabled="@(isAddingVisible || isArchiveVisible || isOkVisible)">Архив</button>
                 </div>
             </div>
             <div class="right-cnt">
@@ -29,7 +29,7 @@
             }
             @foreach (var i in ViewModel.filteredInstallators)
             {
-                <div class="list-row" @onclick="() => Select(i.InstallatorID)">
+                <div class="list-row" @onclick="() => { if(!isAddingVisible && !isArchiveVisible && !isOkVisible) Select(i.InstallatorID); }">
                     <p>@i.LastName @i.FirstName @i.MiddleName</p>
                     @if (@ViewModel.requests.Where(r => r.InstallatorID == i.InstallatorID).LastOrDefault() != null)
                     {
@@ -45,15 +45,15 @@
             <p style="color: dimgray">Сегодня:</p>
             <div class="window-row">
                 <img src="images/done.png" />
-                <p>Завершено: @ViewModel.requests.Where(r => r.Closed != null).Count()/@ViewModel.requests.Count()</p>
+                <p>Завершено: @ViewModel.filteredRequests.Where(r => r.Closed != null).Count()/@ViewModel.requests.Count()</p>
             </div>
             <div class="window-row">
                 <img src="images/time.webp" />
-                <p>Ожидают: @ViewModel.requests.Where(r => r.Closed == null).Count()/@ViewModel.requests.Count()</p>
+                <p>Ожидают: @ViewModel.filteredRequests.Where(r => r.Closed == null).Count()/@ViewModel.requests.Count()</p>
             </div>
             <div class="window-row">
                 <img src="images/trouble.webp" />
-                <p>Отложено: @ViewModel.requests.Where(r => r.isDelayed == 1).Count()/@ViewModel.requests.Count()</p>
+                <p>Отложено: @ViewModel.filteredRequests.Where(r => r.isDelayed == 1).Count()/@ViewModel.requests.Count()</p>
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@
 
     private void Select(int id)
     {
-        NavManager.NavigateTo($"unit/{id}");
+        NavManager.NavigateTo($"unit/{id}", forceLoad: true);
     }
 
     private void OpenArchive() => isArchiveVisible = true;

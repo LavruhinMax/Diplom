@@ -1,137 +1,257 @@
 ﻿<style>
     .mailbox-popup {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    top: 30%;
-    bottom: 30%;
-    left: 30%;
-    right: 30%;
-    background-color: white;
-    
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    z-index: 100
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        top: 30%;
+        bottom: 30%;
+        left: 30%;
+        right: 30%;
+        background-color: white;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        z-index: 100
     }
 
     .title {
-    padding: 15px;
-    width: 100%;
-    display: flex;
-    background-color: lightgray;
-    justify-content: center;
-    box-sizing: border-box;
+        position: relative;
+        padding: 15px;
+        width: 100%;
+        display: flex;
+        background-color: lightgray;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
     }
 
-    .title p {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 600
-    }
+        .title p {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600
+        }
 
     .list {
-    flex: 1;
-    align-items: center;
-    width: 95%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column
+        flex: 1;
+        align-items: center;
+        width: 95%;
+        padding: 10px;
+        display: flex;
+        overflow-y: auto;
+        flex-direction: column
     }
 
-    .list p {
-        font-size: 24px;
-        font-weight: 600;
-    }
+        .list p {
+            font-size: 24px;
+            font-weight: 600;
+        }
 
-    .list img {
-        width: 48px;
-        height: 48px
-    }
+        .list img {
+            width: 48px;
+            height: 48px
+        }
 
     .card {
-    width: 100%;
-    border-radius: 5px;
-    margin: 15px 0;
-    background-color: whitesmoke;
-    height: max-content
+        width: 100%;
+        border-radius: 5px;
+        margin: 10px 0;
+        background-color: whitesmoke;
+        height: max-content
     }
 
-    .card p {
-    margin: 10px;
-    font-size: 18px;
-    font-weight: 500
-    }
+        .card p {
+            margin: 10px;
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 500
+        }
 
-    .card h1 {
-    margin: 20px 10px 0 10px;
-    font-size: 20px;
-    font-weight: 600
-    }
+        .card h1 {
+            margin: 10px 10px 0 10px;
+            font-size: 20px;
+            font-weight: 600
+        }
 
     .mailbox-cnt {
-    display: flex;
-    width: 100%;
-    background-color: lightgray;
-    padding: 10px 0;
-    align-items: center;
-    justify-content: center;
+        display: flex;
+        width: 100%;
+        background-color: lightgray;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: center;
     }
 
-    .mailbox-cnt button {
-    padding: 10px 40px;
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    transition: 0.2s;
-    border-radius: 10px;
-    background-color: red;
-    border: 1px solid red;
-    cursor: pointer
-    }
+        .mailbox-cnt button {
+            padding: 10px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            transition: 0.2s;
+            border-radius: 10px;
+            background-color: red;
+            border: 1px solid red;
+            cursor: pointer
+        }
 
-    .mailbox-cnt button:hover {
-    background-color: firebrick;
-    border: 1px solid firebrick
-    }
+            .mailbox-cnt button:hover {
+                background-color: firebrick;
+                border: 1px solid firebrick
+            }
 
     .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    height: 32px;
-    width: 32px;
-    cursor: pointer
+        position: absolute;
+        right: 2%;
+        width: 30px;
+        cursor: pointer
     }
 
     @@media (max-width: 1920px) {
-    .mailbox-popup {
-    left: 25%;
-    right: 25%
-    }
+        .mailbox-popup {
+            left: 25%;
+            right: 25%
+        }
+
+        .title {
+            padding: 10px;
+        }
+
+            .title p {
+                font-size: 16px;
+            }
+
+        .list {
+            padding: 10px
+        }
+
+            .list p {
+                font-size: 20px
+            }
+
+        .card {
+            margin: 5px 0
+        }
+
+            .card p {
+                margin: 5px;
+                font-size: 18px;
+                line-height: 25px
+            }
+
+            .card h1 {
+                font-size: 22px;
+                margin: 10px 5px 0 5px
+            }
+
+            .mailbox-cnt button {
+                padding: 10px 40px;
+                font-size: 16px
+            }
+
+        .close {
+            width: 25px
+        }
     }
 
     @@media (max-width: 1280px) {
-    .mailbox-popup {
-    left: 20%;
-    right: 20%
-    }
+        .mailbox-popup {
+            left: 20%;
+            right: 20%
+        }
+
+        .title {
+            padding: 10px;
+        }
+
+            .title p {
+                font-size: 14px;
+            }
+
+        .list {
+            padding: 5px
+        }
+
+            .list p {
+                font-size: 16px
+            }
+
+        .card {
+            margin: 5px 0
+        }
+
+            .card p {
+                margin: 5px;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .card h1 {
+                font-size: 20px;
+                margin: 10px 5px 0 5px;
+            }
+
+            .mailbox-cnt button {
+                padding: 5px 20px
+            }
+
+        .close {
+            width: 20px
+        }
     }
 
     @@media (max-width: 768px) {
-    .mailbox-popup {
-    left: 10%;
-    right: 10%
-    }
+        .mailbox-popup {
+            left: 10%;
+            right: 10%
+        }
+
+        .title {
+            padding: 10px;
+        }
+
+            .title p {
+                font-size: 12px;
+            }
+
+        .list {
+            padding: 5px
+        }
+
+        .list p {
+            font-size: 16px
+        }
+
+        .card {
+            margin: 5px 0
+        }
+
+            .card p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px
+            }
+
+            .card h1 {
+                font-size: 18px;
+                margin: 5px 5px 0 5px
+            }
+
+            .mailbox-cnt button {
+                padding: 5px 20px
+            }
+
+        .close {
+            width: 15px
+        }
     }
 </style>
 
 <div class="mailbox-popup" style="display:@(isVisible ? "flex": "none")">
     <div class="title">
         <p>Входящие</p>
+        <img class="close" src="images/close.png" @onclick="Close" />
     </div>
     <div style="justify-content: @(messageList.Count == 0 ? "center" : "flex-start")" class="list">
-        @if(messageList.Count == 0)
+        @if (messageList.Count == 0)
         {
             <img src="images/nomail.png" />
             <p>Нет новых сообщений</p>
@@ -139,7 +259,7 @@
         @foreach (var m in messageList)
         {
             <div class="card">
-                <p>От: @l.LastName @l.FirstName[0].@l.MiddleName[0].</p>
+                <p>От: @l.LastName @l.FirstName[0].@l.MiddleName[0]. (@m.SendingTime.ToString("dd/MM/yyyy HH:mm"))</p>
                 <h1>Текст сообщения:</h1>
                 <p>@m.Text</p>
             </div>
@@ -148,7 +268,6 @@
     <div class="mailbox-cnt">
         <button @onclick="Close">Ок</button>
     </div>
-    <img class="close" src="images/close.png" @onclick="Close" />
 </div>
 
 

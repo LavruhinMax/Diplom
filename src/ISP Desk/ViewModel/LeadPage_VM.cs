@@ -1,6 +1,8 @@
-﻿using ISP_Desk.Data;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using ISP_Desk.Context;
+using ISP_Desk.Data;
 using ISP_Desk.Model;
-using ISP_Desk.Service;
+using ISP_Desk.Model.Navigation;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
@@ -9,11 +11,12 @@ namespace ISP_Desk.ViewModel
     public class LeadPage_VM
     {
         private readonly AppDbContext _context;
-        public List<Installator> installators = new List<Installator>();
         public List<Installator> filteredInstallators = new List<Installator>();
         public List<Request> requests = new List<Request>();
         public List<Request> filteredRequests = new List<Request>();
         public DateTime date = DateTime.Now;
+        public List<NavItem> NavItems = new List<NavItem>();
+
         
         public LeadPage_VM(AppDbContext context)
         {
@@ -22,16 +25,22 @@ namespace ISP_Desk.ViewModel
 
         public async Task InitializeAsync()
         {
-            installators = await _context.Installator.Where(i => i.LeadID == UserContext.ID && i.Archived == 0).ToListAsync();
-            filteredInstallators = installators;
-            var installatorIds = installators.Select(i => i.InstallatorID).ToList();
-            requests = await _context.Request.ToListAsync();
+            UserContext.Lead.Installators = await _context.Installator.Where(i => i.LeadID == UserContext.Lead.LeadID && i.Archived == 0).ToListAsync();
+            filteredInstallators = UserContext.Lead.Installators;
+            var installatorIds = UserContext.Lead.Installators.Select(i => i.InstallatorID).ToList();
+            requests = await _context.Request.Where(r => installatorIds.Contains(r.InstallatorID)).ToListAsync();
             filteredRequests = requests.Where(r => installatorIds.Contains(r.InstallatorID) && r.Scheduled.Day == date.Day).ToList();
+            SetNavItems();
+        }
+
+        private void SetNavItems()
+        {
+            NavItems.Add(new NavItem() { linkName = "Сотрудники", Url = "lead" });
         }
 
         public async Task AddInst(Installator inst)
         {
-            installators.Add(inst);
+            UserContext.Lead.Installators.Add(inst);
             _context.Installator.Add(inst);
             await _context.SaveChangesAsync();
         }
@@ -40,11 +49,11 @@ namespace ISP_Desk.ViewModel
         {
             if (string.IsNullOrEmpty(searchOption))
             {
-                filteredInstallators = installators;
+                filteredInstallators = UserContext.Lead.Installators;
             }
             else
             {
-                filteredInstallators = installators.Where(i => i.FirstName.Contains(searchOption, StringComparison.OrdinalIgnoreCase) ||
+                filteredInstallators = UserContext.Lead.Installators.Where(i => i.FirstName.Contains(searchOption, StringComparison.OrdinalIgnoreCase) ||
                 i.LastName.Contains(searchOption, StringComparison.OrdinalIgnoreCase) ||
                 i.MiddleName.Contains(searchOption, StringComparison.OrdinalIgnoreCase))
                 .OrderBy(i => i.LastName)
@@ -56,20 +65,20 @@ namespace ISP_Desk.ViewModel
 
         public List<Installator> GetArchived()
         {
-            return _context.Installator.Where(i => i.LeadID == UserContext.ID && i.Archived == 1).ToList();
+            return _context.Installator.Where(i => i.LeadID == UserContext.Lead.LeadID && i.Archived == 1).ToList();
         }
 
         public async Task Recover(Installator inst)
         {
             inst.Archived = 0;
             inst.RemovalDate = null;
-            installators.Add(inst);
+            UserContext.Lead.Installators.Add(inst);
             await _context.SaveChangesAsync();
         }
 
         public async Task Delete(Installator inst)
         {
-            installators.Remove(inst);
+            UserContext.Lead.Installators.Remove(inst);
             _context.Installator.Remove(inst);
             await _context.SaveChangesAsync();
         }

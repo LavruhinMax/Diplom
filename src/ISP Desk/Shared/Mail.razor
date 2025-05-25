@@ -1,189 +1,303 @@
 ﻿<style>
     .message-popup {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    top: 30%;
-    bottom: 30%;
-    left: 25%;
-    right: 25%;
-    background-color: white;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    z-index: 100
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        top: 20%;
+        bottom: 20%;
+        left: 25%;
+        right: 25%;
+        background-color: white;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        z-index: 100
     }
 
     .message-head-row {
-    padding: 15px;
-    width: 100%;
-    display: flex;
-    background-color: lightgray;
-    justify-content: center;
-    box-sizing: border-box;
-    column-gap: 20px
+        position: relative;
+        padding: 15px;
+        width: 100%;
+        display: flex;
+        background-color: lightgray;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        column-gap: 20px
     }
 
-    .message-head-row img {
-    width: 40px;
-    height: 30px
-    }
+        .message-head-row .mail-img {
+            width: 48px;
+            height: 32px
+        }
 
-    .message-head-row p {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 600
-    }
+        .message-head-row p {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600
+        }
 
     .mail-list {
-    flex: 1;
-    width: 95%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto;
-    border-bottom: 1px solid red
+        flex: 1;
+        width: 95%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        border-bottom: 1px solid red
     }
 
-    .mail-list p {
-        font-size: 24px;
-        font-weight: 600
-    }
+        .mail-list p {
+            font-size: 24px;
+            font-weight: 600
+        }
 
-    .mail-list img {
-        width: 48px;
-        height: 48px
-    }
+        .mail-list img {
+            width: 48px;
+            height: 48px
+        }
 
     .row {
-    display: flex;
-    column-gap: 20px;
-    width: 100%;
-    align-items: center;
-    justify-content: center
+        display: flex;
+        column-gap: 20px;
+        margin: 0 0 10px 0;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: whitesmoke
     }
 
-    .row p {
-    padding: 15px;
-    margin: 10px;
-    flex: 1;
-    font-size: 18px;
-    background-color: gainsboro;
-    border-radius: 5px
+        .row img {
+            padding: 10px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer
+        }
+
+    .text {
+        display: flex;
+        flex: 1;
+        margin: 10px;
+        padding: 10px;
+        flex-direction: column;
+        row-gap: 10px
     }
 
-    .row img {
-    height: 36px;
-    width: 36px;
-    cursor: pointer
-    }
+        .text .txt, .text .date {
+            font-size: 20px; 
+            margin: 0;
+            font-weight: 600;
+            line-height: 30px;
+            overflow-y: auto;
+            overflow-wrap: break-word;
+            white-space: pre-wrap
+        }
+
+        .text .date {
+            font-weight: 500
+        }
 
     .txtbox-cnt {
-    display: flex;
-    width: 95%;
-    column-gap: 30px;
-    align-items: center;
-    justify-content: center
+        display: flex;
+        width: 95%;
+        column-gap: 30px;
+        align-items: center;
+        justify-content: center
     }
 
-    .txtbox-cnt input {
-    margin: 20px 0;
-    flex: 1;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 5px 5px 80px 5px;
-    border: 1px solid black
-    }
+        .txtbox-cnt textarea {
+            margin: 20px 0;
+            flex: 1;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 5px 5px 80px 5px;
+            resize: none;
+            border: 1px solid black
+        }
 
-    .txtbox-cnt input:focus {
-    border-color: blue;
-    outline: none
-    }
+            .txtbox-cnt textarea:focus {
+                border-color: blue;
+                outline: none
+            }
 
-    .txtbox-cnt img {
-    width: 32px;
-    height: 32px;
-    cursor: pointer
-    }
+        .txtbox-cnt img {
+            width: 30px;
+            cursor: pointer
+        }
 
     .message-cnt {
-    display: flex;
-    width: 100%;
-    background-color: lightgray;
-    padding: 10px 0;
-    align-items: center;
-    justify-content: flex-end
+        display: flex;
+        width: 100%;
+        background-color: lightgray;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: flex-end
     }
 
-    .message-cnt button {
-    background-color: slategray;
-    border: 1px solid slategray;
-    margin: 0 10px 0 0;
-    padding: 10px 20px;
-    font-weight: 600;
-    color: white;
-    transition: 0.2s;
-    cursor: pointer
+        .message-cnt button {
+            background-color: slategray;
+            border: 1px solid slategray;
+            margin: 0 10px 0 0;
+            padding: 10px 20px;
+            font-weight: 600;
+            color: white;
+            transition: 0.2s;
+            cursor: pointer
+        }
+
+            .message-cnt button:hover {
+                background-color: dimgray;
+                border: 1px solid dimgray
+            }
+
+    .message-close {
+        position: absolute;
+        right: 2%;
+        width: 30px;
+        cursor: pointer
     }
 
-    .message-cnt button:hover {
-    background-color: dimgray;
-    border: 1px solid dimgray
-    }
+    @@media (max-width: 1920px) {
+        .message-head-row {
+            padding: 10px
+        }
 
-    .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    height: 32px;
-    width: 32px;
-    cursor: pointer
+            .message-head-row .mail-img {
+                width: 42px;
+                height: 28px
+            }
+
+            .message-head-row p {
+                font-size: 18px
+            }
+
+        .text .txt, .text .date {
+            font-size: 18px;
+            line-height: 25px
+        }
+
+        .txtbox-cnt textarea {
+            margin: 15px 0;
+            font-size: 18px;
+            padding: 5px 5px 50px 5px
+        }
+
+        .row img {
+            padding: 10px
+        }
     }
 
     @@media (max-width: 1280px) {
-    .message-popup {
-    left: 20%;
-    right: 20%
-    }
+        .message-popup {
+            left: 20%;
+            right: 20%
+        }
+
+        .message-head-row {
+            padding: 10px
+        }
+
+            .message-head-row .mail-img {
+                width: 36px;
+                height: 24px
+            }
+
+            .message-head-row p {
+                font-size: 16px
+            }
+
+        .text .txt, .text .date {
+            font-size: 16px;
+            line-height: 24px
+        }
+
+        .row img {
+            padding: 10px
+        }
+
+        .txtbox-cnt textarea {
+            margin: 10px 0;
+            font-size: 16px;
+            padding: 5px 5px 30px 5px
+        }
+
+        .message-close {
+            width: 25px
+        }
     }
 
     @@media (max-width: 768px) {
-    .message-popup {
-    left: 10%;
-    right: 10%
-    }
+        .message-popup {
+            left: 10%;
+            right: 10%
+        }
+
+        .message-head-row {
+            padding: 10px
+        }
+
+            .message-head-row .mail-img {
+                width: 30px;
+                height: 20px
+            }
+
+            .message-head-row p {
+                font-size: 14px
+            }
+
+        .text .txt, .text .date {
+            font-size: 14px;
+            line-height: 22px
+        }
+
+        .row img {
+            padding: 7px
+        }
+
+        .txtbox-cnt textarea {
+            margin: 10px 0;
+            font-size: 14px;
+            padding: 5px 5px 20px 5px
+        }
+
+        .message-close {
+            width: 20px
+        }
     }
 </style>
 
 <div class="message-popup" style="display:@(isVisible ? "flex": "none")">
     <div class="message-head-row">
-        <img src="images/income.png" />
+        <img class="mail-img" src="images/income.png" />
         <p>-></p>
         <p>@i.LastName @i.FirstName[0].@i.MiddleName[0].</p>
+        <img class="message-close" src="images/close.png" @onclick="Close" />
     </div>
     <div style="justify-content: @(ms.Count == 0 ? "center" : "flex-start")" class="mail-list">
-        @if(ms.Count == 0)
+        @if (ms.Count == 0)
         {
             <img src="images/nomail.png" />
             <p>Нет сообщений</p>
         }
-        @foreach(var m in ms)
+        @foreach (var m in ms)
         {
             <div class="row">
-                <p>@m.Text</p>
+                <div class="text">
+                    <p class="date">@m.SendingTime.ToString("dd/MM/yyyy HH:mm")</p>
+                    <p class="txt">@m.Text</p>
+                </div>
                 <img src="images/delete.webp" @onclick="() => OpenDel(m)" />
             </div>
         }
     </div>
     <div class="txtbox-cnt">
-        <input placeholder="Текст сообщения" @bind="text" />
+        <textarea placeholder="Текст сообщения" @bind="text" />
         <img src="images/send.png" @onclick="Send" />
     </div>
     <div class="message-cnt">
         <button @onclick="Close">Отмена</button>
     </div>
-    <img class="close" src="images/close.png" @onclick="Close" />
 </div>
 
 <Confirm isVisible="isDeleteVisible" isVisibleChanged="DeleteVisibility" message="Сообщение будет удалено. Продолжить?" isConfirmed="Delete" />
@@ -224,10 +338,11 @@
     {
         Message message = new Message()
             {
-                LeadID = UserContext.ID.Value,
+                LeadID = UserContext.Lead.LeadID,
                 InstallatorID = i.InstallatorID,
                 Text = text,
-                IsRead = 0
+                IsRead = 0,
+                SendingTime = DateTime.Now
             };
         ms.Add(message);
         await SendMessage.InvokeAsync(message);

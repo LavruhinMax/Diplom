@@ -6,5 +6,6 @@
         public int RequestID { get; set; }
         public string Status { get; set; }
         public string Commentary { get; set; }
+        public Request Request { get; set; }
     }
 }

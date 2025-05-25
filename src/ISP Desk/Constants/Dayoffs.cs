@@ -1,4 +1,4 @@
-﻿namespace ISP_Desk.Service
+﻿namespace ISP_Desk.Constants
 {
     public static class Dayoffs
     {

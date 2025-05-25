@@ -1,64 +1,61 @@
 ﻿<style>
     .footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 5vh;
-    background-color: rgb(60, 110, 160)
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(60, 110, 160)
     }
 
-    .footer p {
-    font-size: 16px;
-    font-weight: 600;
-    color: whitesmoke;
-    margin: 0 0 0 20px
-    }
+        .footer p {
+            font-size: 16px;
+            font-weight: 600;
+            color: whitesmoke;
+            margin: 0 0 0 20px
+        }
 
     .new {
-    position: relative;
-    margin: 0 50px 0 0
+        display: flex;
+        height: 100%;
+        align-items: center;
+        position: relative;
+        margin: 0 2% 0 0
     }
 
-    .new img {
-    width: 60px;
-    height: 40px;
-    cursor: pointer
-    }
+        .new img {
+            height: 70%;
+            cursor: pointer
+        }
 
-    .new p {
-    position: absolute;
-    font-size: 15px;
-    color: white;
-    background-color: firebrick;
-    border-radius: 100px;
-    margin: 0;
-    top: 10%;
-    right: 10%;
-    padding: 2px 6px;
-    cursor: pointer;
-    z-index: 1
-    }
+        .new p {
+            position: absolute;
+            font-size: 15px;
+            color: white;
+            background-color: firebrick;
+            border-radius: 100px;
+            margin: 0;
+            top: 10%;
+            right: 10%;
+            padding: 2px 6px;
+            cursor: pointer;
+            z-index: 1
+        }
 
     @@media (max-width: 768px) {
-    .new img {
-    width: 45px;
-    height: 30px
-    }
-
-    .new p {
-    font-size: 10px
-    }
+        .new p {
+            font-size: 10px
+        }
     }
 </style>
 
 <div class="footer">
     <p>© 2025</p>
-    @if (UserContext.status == "Инсталлятор")
+    @if (UserContext.Installator != null)
     {
         <div class="new">
             <img src="images/income.png" @onclick="OpenMailBox" />
-            @if(newOnes != 0)
+            @if (newOnes != 0)
             {
                 <p>@newOnes</p>
             }

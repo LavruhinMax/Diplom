@@ -13,5 +13,6 @@
         public string House { get; set; }
         public int? Flat { get; set; }
         public string PhoneNumber { get; set; }
+        public Tariff Tariff { get; set; }
     }
 }

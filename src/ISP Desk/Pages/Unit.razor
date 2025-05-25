@@ -4,7 +4,7 @@
 <link href="css/emp.css" rel="stylesheet" />
 <PageTitle>@ViewModel.inst.LastName @ViewModel.inst.FirstName</PageTitle>
 
-<Header />
+<Header NavItems="ViewModel.NavItems" />
 <div class="main">
     <div class="grid">
         <div class="head">
@@ -13,24 +13,24 @@
                 <p>@ViewModel.phone | @ViewModel.inst.Email </p>
             </div>
             <div class="middle-cnt">
-                <button class="edit" @onclick="Edit">Изменить данные</button>
-                <button class="delete" @onclick="OpenDelete">Удалить</button>
+                <button class="edit" @onclick="Edit" disabled="@(isEditingVisible || isMessageVisible || areStatsVisible || isConfirmVisible)">Изменить данные</button>
+                <button class="delete" @onclick="OpenDelete" disabled="@(isEditingVisible || isMessageVisible || areStatsVisible || isConfirmVisible)">Удалить</button>
             </div>
             <div class="right-cnt">
-                <img src="images/income.png" @onclick="OpenMessageBox" />
-                <img src="images/stats.webp" @onclick="OpenStats" />
+                <img src="images/income.png" @onclick="() => { if(!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) OpenMessageBox(); }" />
+                <img src="images/stats.webp" @onclick="() => { if(!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) OpenStats(); }" />
             </div>
         </div>
         <div class="day">
-            <img src="images/arrow-left.png" @onclick="ViewModel.RemoveDay" />
+            <img src="images/arrow-left.png" @onclick="() => { if(!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) ViewModel.RemoveDay(); }" />
             <div class="today">
                 <p class="num">@ViewModel.date.Day</p>
                 <p class="month">@ViewModel.date.ToString("MMM", Culture.culture)</p>
             </div>
-            <img src="images/arrow-right.png" @onclick="ViewModel.AddDay" />
+            <img src="images/arrow-right.png" @onclick="() => { if(!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) ViewModel.AddDay(); }" />
         </div>
         <div class="list">
-            <p class="title">Назначено на @ViewModel.date.ToString("dd MMMM", Culture.culture):</p>
+            <p class="title">Назначено на @ViewModel.date.ToString("d MMMM", Culture.culture):</p>
             @foreach (var r in ViewModel.filteredRequests)
             {
                 @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a) && r.InstallatorID == ViewModel.inst.InstallatorID)
@@ -54,8 +54,7 @@
 
 <Add isVisible="isEditingVisible" isVisibleChanged="EditVisibility" isAddingOrEditing="false" EditInst="EditInst" i="ViewModel.inst" />
 <Confirm isVisible="isConfirmVisible" isVisibleChanged="ConfirmVisibility" message="@message" isConfirmed="DeleteInst" />
-<Mail isVisible = "isMessageVisible" isVisibleChanged="MessageVisibility" i="ViewModel.inst" ms="ViewModel.messages" SendMessage="SendMessage" DeleteMessage="DeleteMessage" />
-<Stats />
+<Mail isVisible = "isMessageVisible" isVisibleChanged="MessageVisibility" i="ViewModel.inst" ms="UserContext.Lead.Messages" SendMessage="SendMessage" DeleteMessage="DeleteMessage" />
 
 @code {
     [Parameter] public int InstallatorID { get; set; }
@@ -63,7 +62,6 @@
     private bool isMessageVisible = false;
     private bool areStatsVisible = false;
     private bool isConfirmVisible = false;
-    private bool isOkVisible = false;
     private string message = string.Empty;
 
     protected override async Task OnInitializedAsync()
@@ -97,7 +95,7 @@
             string transfer = $"{ViewModel.inst.LastName} {ViewModel.inst.FirstName[0]}.{ViewModel.inst.MiddleName[0]}. перемещен";
             if (ViewModel.inst.Gender == "Ж") transfer += "а";
             transfer += " в архив.";
-            NavManager.NavigateTo($"lead/{transfer}");
+            NavManager.NavigateTo($"lead/{transfer}", forceLoad: true);
         }
     }
 

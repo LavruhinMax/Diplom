@@ -1,6 +1,8 @@
-﻿using ISP_Desk.Data;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using ISP_Desk.Context;
+using ISP_Desk.Data;
 using ISP_Desk.Model;
-using ISP_Desk.Service;
+using ISP_Desk.Model.Navigation;
 using Microsoft.EntityFrameworkCore;
 
 namespace ISP_Desk.ViewModel
@@ -12,12 +14,13 @@ namespace ISP_Desk.ViewModel
         public List<Request> requests = new List<Request>();
         public List<Request> filteredRequests = new List<Request>();
         public List<Abonent> abonents = new List<Abonent>();
-        public List<Message> messages = new List<Message>();
         public Dictionary<int, Abonent> abonentsDict => abonents.ToDictionary(a => a.AbonentID);
 
         public DateTime date = DateTime.Now;
         public string phone;
 
+        public List<NavItem> NavItems = new List<NavItem>();
+ 
         public Unit_VM(AppDbContext context)
         {
             _context = context;
@@ -28,9 +31,16 @@ namespace ISP_Desk.ViewModel
             inst = _context.Installator.First(i => i.InstallatorID == id);
             requests = await _context.Request.Where(r => r.InstallatorID == id).ToListAsync();
             abonents = await _context.Abonent.ToListAsync();
-            messages = await _context.Message.Where(m => m.LeadID == UserContext.ID).ToListAsync();
+            UserContext.Lead.Messages = await _context.Message.Where(m => m.LeadID == UserContext.Lead.LeadID && m.InstallatorID == inst.InstallatorID).ToListAsync();
             phone = $"+7 ({inst.PhoneNumber.Substring(2, 3)}) {inst.PhoneNumber.Substring(5, 3)} {inst.PhoneNumber.Substring(8, 2)} {inst.PhoneNumber.Substring(10, 2)}";
             FilterRequestsByDay();
+            SetNavItems();
+        }
+
+        private void SetNavItems()
+        {
+            NavItems.Add(new NavItem() { linkName = "Сотрудники", Url = "lead" });
+            NavItems.Add(new NavItem() { linkName = $"{inst.LastName} {inst.FirstName[0]}.{inst.MiddleName[0]}.", Url = $"unit/{inst.InstallatorID}" });
         }
 
         public void FilterRequestsByDay() => filteredRequests = requests.Where(r => r.Scheduled.Day == date.Day).ToList();
