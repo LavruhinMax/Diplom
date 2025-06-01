@@ -1,4 +1,4 @@
-﻿@page "/lead/{Transfer?}"
+﻿@page "/lead"
 @inject LeadPage_VM ViewModel
 
 <link href="css/lead.css" rel="stylesheet" />
@@ -20,12 +20,17 @@
                 <p class="day">@ViewModel.date.Day</p>
             </div>
         </div>
-        <div style="justify-content: @(ViewModel.filteredInstallators.Count == 0 ? "center" : "flex-start")" class="list">
+        <div style="align-items: @(!ViewModel.filteredInstallators.Any() ? "center" : "flex-start")" class="list">
             <input placeholder="Поиск" @oninput="FilterChanged" />
-            @if (ViewModel.filteredInstallators.Count() == 0)
+            @if (!UserContext.Lead.Installators.Any())
+            {
+                <img src="images/team.png" />
+                <p class="title">Список пуст. Проверьте архив</p>
+            }
+            else if (!ViewModel.filteredInstallators.Any())
             {
                 <img src="images/no results.png" />
-                <p>Ничего не найдено</p>
+                <p class="title">Ничего не найдено!</p>
             }
             @foreach (var i in ViewModel.filteredInstallators)
             {
@@ -45,15 +50,15 @@
             <p style="color: dimgray">Сегодня:</p>
             <div class="window-row">
                 <img src="images/done.png" />
-                <p>Завершено: @ViewModel.filteredRequests.Where(r => r.Closed != null).Count()/@ViewModel.requests.Count()</p>
+                <p>Завершено: @ViewModel.filteredRequests.Where(r => r.Closed != null).Count()/@ViewModel.filteredRequests.Count()</p>
             </div>
             <div class="window-row">
-                <img src="images/time.webp" />
-                <p>Ожидают: @ViewModel.filteredRequests.Where(r => r.Closed == null).Count()/@ViewModel.requests.Count()</p>
+                <img src="images/time.png" />
+                <p>Ожидают: @ViewModel.filteredRequests.Where(r => r.Closed == null).Count()/@ViewModel.filteredRequests.Count()</p>
             </div>
             <div class="window-row">
-                <img src="images/trouble.webp" />
-                <p>Отложено: @ViewModel.filteredRequests.Where(r => r.isDelayed == 1).Count()/@ViewModel.requests.Count()</p>
+                <img src="images/trouble.png" />
+                <p>Отложено: @ViewModel.filteredRequests.Where(r => r.isDelayed == 1).Count()/@ViewModel.filteredRequests.Count()</p>
             </div>
         </div>
     </div>
@@ -75,11 +80,6 @@
     protected override async Task OnInitializedAsync()
     {
         await ViewModel.InitializeAsync();
-        if (!string.IsNullOrEmpty(Transfer))
-        {
-            message = Transfer;
-            isOkVisible = true;
-        }
     }
 
     private void Select(int id)

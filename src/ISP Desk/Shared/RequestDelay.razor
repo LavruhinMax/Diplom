@@ -1,0 +1,170 @@
+﻿<style>
+    .delay-popup {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: max-content;
+        width: 700px;
+        background-color: white;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        padding: 10px;
+        row-gap: 10px;
+        overflow-y: hidden;
+        z-index: 200
+    }
+
+    h4 {
+        width: 90%;
+        margin: 10px 0
+    }
+
+    .head-delay {
+        display: flex;
+        align-items: center
+    }
+
+    .option, .delay-option {
+        display: flex;
+        align-items: center;
+        column-gap: 20px
+    }
+
+        .option input, .delay-option input {
+            accent-color: purple;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .delay-option input {
+            accent-color: blue
+        }
+
+    label {
+        margin: 0;
+        flex: 1;
+        cursor: pointer;
+        font-size: 18px
+    }
+
+    textarea {
+        box-sizing: border-box;
+        width: 100%;
+        resize: none;
+        font-size: 16px;
+        padding: 5px 5px 40px 5px;
+        margin: 10px 0
+    }
+
+        textarea:focus {
+            border-color: blue;
+            outline: none
+        }
+
+    .delay-button-row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        column-gap: 30px
+    }
+
+        .delay-button-row .delay, .delay-button-row .cancel {
+            padding: 7px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: 0.1s;
+            color: white;
+            cursor: pointer
+        }
+
+        .delay-button-row .delay {
+            background-color: red;
+            border: 1px solid red
+        }
+
+            .delay-button-row .delay:hover {
+                background-color: firebrick;
+                border: 1px solid firebrick
+            }
+
+        .delay-button-row .cancel {
+            background-color: slategray;
+            border: 1px solid slategray
+        }
+
+            .delay-button-row .cancel:hover {
+                background-color: dimgray;
+                border: 1px solid dimgray
+            }
+
+    .delay-close {
+        position: absolute;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        cursor: pointer
+    }
+
+    @@media(max-width: 768px) {
+        .delay-popup {
+            width: 95%;
+            row-gap: 5px
+        }
+
+        h4, label, textarea {
+            font-size: 14px
+        }
+
+        .delay-button-row .delay, .delay-button-row .cancel {
+            font-size: 10px;
+        }
+    }
+</style>
+
+<div class="delay-popup">
+    <div class="head-delay">
+        <h4>Вызов будет перенесен на другое время. Укажите причину переноса:</h4>
+        <img class="delay-close" src="images/close.png" />
+    </div>
+    <div class="option">
+        <input type="radio" id="one" name="reason" checked>
+        <label for="one">Не успеваю в срок</label>
+    </div>
+    <div class="option">
+        <input type="radio" id="two" name="reason">
+        <label for="two">Неверный адрес</label>
+    </div>
+    <div class="option">
+        <input type="radio" id="three" name="reason">
+        <label for="three">Клиент отсутствует</label>
+    </div>
+    <div class="option">
+        <input type="radio" id="four" name="reason">
+        <label for="four">Не удается устранить проблему</label>
+    </div>
+
+    <div class="delay-option" style="margin: 20px 0 0 0">
+        <input type="radio" id="one" name="delay" checked>
+        <label for="one">Оставить вызов за мной (будет выбрана новая дата и время, доступные в вашем расписании)</label>
+    </div>
+    <div class="delay-option" style="margin: 0 0 20px 0">
+        <input type="radio" id="two" name="delay">
+        <label for="two">Передать заявку другому инсталлятору</label>
+    </div>
+
+    <textarea placeholder="Дополнительная информация для другого сотрудника" disabled></textarea>
+    <div class="delay-button-row">
+        <button class="delay">Отложить</button>
+        <button class="cancel">Отмена</button>
+    </div>
+</div>
+
+@code {
+
+}

@@ -1,0 +1,188 @@
+﻿<style>
+    .import-popup {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: max-content;
+        width: 500px;
+        background-color: white;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        border-radius: 5px;
+        overflow-y: hidden;
+        z-index: 100
+    }
+
+    .import-head-row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        background-color: gainsboro
+    }
+
+        .import-head-row p {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 15px 0
+        }
+
+    .import-list {
+        width: 100%;
+        display: flex;
+        padding: 20px;
+        row-gap: 25px;
+        flex-direction: column;
+        align-items: start;
+        box-sizing: border-box
+    }
+
+    .import-checkbox {
+        display: flex;
+        align-items: center;
+        column-gap: 20px
+    }
+
+        .import-checkbox input {
+            cursor: pointer;
+            accent-color: darkblue;
+            height: 20px;
+            width: 20px
+        }
+
+        .import-checkbox label {
+            font-size: 22px;
+            cursor: pointer
+        }
+
+    .import-file {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        padding: 0 20px 20px 20px;
+        box-sizing: border-box;
+    }
+
+        .import-file img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer
+        }
+
+        .import-file p {
+            flex: 1;
+            overflow-x: auto;
+            font-size: 20px;
+            border: 1px solid black;
+            padding: 10px 15px;
+            border-radius: 5px
+        }
+
+    .import-button-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 10px 0;
+        width: 100%;
+        background-color: gainsboro
+    }
+
+        .import-button-row .apply, .import-button-row .cancel {
+            margin: 0 20px 0 0;
+            padding: 7px 20px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s
+        }
+
+        .import-button-row .apply {
+            background-color: red;
+            border: 1px solid red;
+        }
+
+            .import-button-row .apply:hover {
+                background-color: firebrick;
+                border: 1px solid firebrick;
+            }
+
+        .import-button-row .cancel {
+            background-color: slategray;
+            border: 1px solid slategray
+        }
+
+            .import-button-row .cancel:hover {
+                background-color: dimgray;
+                border: 1px solid dimgray
+            }
+
+    .import-close {
+        position: absolute;
+        right: 10px;
+        height: 24px;
+        width: 24px;
+        cursor: pointer
+    }
+
+    @@media(max-width: 768px) {
+        .import-popup {
+            width: 80%
+        }
+    }
+</style>
+
+<div class="import-popup" style="display: @(isVisible ? "flex" : "none")">
+    <div class="import-head-row">
+        <p>Импортировать в Excel</p>
+        <img @onclick="Close" src="images/close.png" class="import-close" />
+    </div>
+    <div class="import-list">
+        <div class="import-checkbox">
+            <input type="checkbox" id="week" checked />
+            <label for="week">Статистика за 01.06 - 08.06</label>
+        </div>
+        <div class="import-checkbox">
+            <input type="checkbox" id="month" />
+            <label for="month">Статистика за 01.06 - 30.06</label>
+        </div>
+        <div class="import-checkbox">
+            <input type="checkbox" id="year" />
+            <label for="year">Статистика за 01.01 - 03.06</label>
+        </div>
+    </div>
+    <div class="import-file">
+        <img @onclick="OpenFolderDialog" src="images/explorer.png" />
+        <p>@selectedPath</p>
+    </div>
+    <div class="import-button-row">
+        <button class="apply">Применить</button>
+        <button @onclick="Close" class="cancel">Отмена</button>
+    </div>
+</div>
+
+
+
+@code {
+    [Inject] private IJSRuntime JSRuntime { get; set; }
+    [Parameter] public bool isVisible { get; set; }
+    [Parameter] public EventCallback isVisibleChanged { get; set; }
+    private string selectedPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
+
+    private async Task OpenFolderDialog()
+    {
+        var path = await JSRuntime.InvokeAsync<string>("showFolderPicker");
+        if (!string.IsNullOrEmpty(path))
+        {
+            selectedPath = path;
+        }
+    }
+
+    private void Close() => isVisibleChanged.InvokeAsync();
+}

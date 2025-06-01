@@ -21,7 +21,7 @@
             font-weight: 600
         }
 
-    .empty {
+    .archive-empty {
         display: flex;
         flex: 1;
         flex-direction: column;
@@ -30,23 +30,33 @@
         justify-content: center
     }
 
-        .empty img {
+        .archive-empty img {
             width: 300px
         }
 
-        .empty p {
+        .archive-empty p {
+            width: 100%;
             margin: 0;
             font-size: 28px;
+            text-align: center;
             font-style: italic
         }
 
+    .archive-title-row {
+        width: 100%;
+        display: flex;
+        align-items: center
+    }
+
     .archive-title {
+        width: 100%;
+        text-align: center;
         font-size: 32px;
         font-weight: 600;
         margin: 30px 0
     }
 
-    .archive-row p, .head-row p {
+    .archive-row p, .archive-head-row p {
         width: 22.5%;
         padding: 20px 0 20px 15px;
         font-size: 18px;
@@ -55,7 +65,7 @@
         box-sizing: border-box;
     }
 
-    .head-row {
+    .archive-head-row {
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -64,7 +74,7 @@
         background-color: dimgray
     }
 
-        .head-row p {
+        .archive-head-row p {
             font-size: 16px;
             color: white
         }
@@ -97,10 +107,9 @@
 
     .archive-close {
         position: absolute;
-        top: 20px;
         right: 20px;
-        height: 50px;
-        width: 50px;
+        height: 30px;
+        width: 30px;
         cursor: pointer
     }
 
@@ -111,17 +120,15 @@
         }
 
         .archive-popup {
-            top: 25%;
-            bottom: 25%;
             left: 10%;
             right: 10%;
         }
 
-        .empty img {
-            width: 200px
+        .archive-empty img {
+            width: 250px
         }
 
-        .empty p {
+        .archive-empty p {
             font-size: 24px
         }
 
@@ -131,11 +138,11 @@
     }
 
     @@media (max-width: 1280px) {
-        .empty img {
+        .archive-empty img {
             width: 225px
         }
 
-        .empty p {
+        .archive-empty p {
             font-size: 20px
         }
 
@@ -145,13 +152,13 @@
         }
 
         .archive-popup {
-            top: 25%;
-            bottom: 25%;
+            top: 20%;
+            bottom: 20%;
             left: 10%;
             right: 10%;
         }
 
-        .head-row {
+        .archive-head-row {
             display: none;
         }
 
@@ -176,11 +183,11 @@
     }
 
     @@media (max-width: 768px) {
-        .empty img {
+        .archive-empty img {
             width: 150px
         }
 
-        .empty p {
+        .archive-empty p {
             font-size: 16px
         }
 
@@ -190,13 +197,13 @@
         }
 
         .archive-popup {
-            top: 25%;
-            bottom: 25%;
+            top: 20%;
+            bottom: 20%;
             left: 5%;
             right: 5%
         }
 
-        .head-row {
+        .archive-head-row {
             display: none;
         }
 
@@ -218,26 +225,24 @@
             .archive-row div {
                 padding: 0 0 0 15px
             }
-
-        .archive-close {
-            height: 30px;
-            width: 30px;
-        }
     }
 </style>
 
 <div style="display: @(isVisible ? "flex" : "none")" class="archive-popup">
-    <p class="archive-title">Архив</p>
+    <div class="archive-title-row">
+        <p class="archive-title">Архив</p>
+        <img class="archive-close" @onclick="(() => { if (!isRecoverVisible && !isDeleteVisible) Close(); })" src="images/close.png" />
+    </div>
     @if (installators == null || installators.Count == 0)
     {
-        <div class="empty">
+        <div class="archive-empty">
             <img src="images/empty-archive.png" />
             <p>Архив пуст</p>
         </div>
     }
     else
     {
-        <div class="head-row">
+        <div class="archive-head-row">
             <p>ФИО</p>
             <p>Email</p>
             <p>Контактный телефон</p>
@@ -252,13 +257,12 @@
                 <p>@i.PhoneNumber</p>
                 <p>Удален(а): @i.RemovalDate</p>
                 <div>
-                    <img src="images/recover.png" @onclick="() => OpenRec(i)" />
-                    <img src="images/delete.webp" @onclick="() => OpenDel(i)" />
+                    <img src="images/recover.png" @onclick="() => { if (!isDeleteVisible) OpenRec(i); }" />
+                    <img src="images/delete.png" @onclick="() => { if (!isRecoverVisible) OpenDel(i); }" />
                 </div>
             </div>
         }
     }
-    <img class="archive-close" @onclick="Close" src="images/close.png" />
 </div>
 
 <Confirm isVisible="isRecoverVisible" isVisibleChanged="RecoverVisibility" isConfirmed="Recover" message="@message" />

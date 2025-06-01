@@ -138,7 +138,6 @@
 .list {
     display: flex;
     flex: 1;
-    justify-content: flex-start;
     flex-wrap: wrap;
     row-gap: 50px;
     column-gap: 50px;
@@ -153,6 +152,11 @@
         font-size: 22px;
         font-weight: 600;
         margin: 0
+    }
+
+    .list img {
+        width: 300px;
+        height: 135px
     }
 
 .card {
@@ -280,7 +284,7 @@
     }
 
         .left-cnt p {
-            font-size: 18px
+            font-size: 15px
         }
 
     .middle-cnt {
@@ -306,6 +310,11 @@
 
         .list .title {
             font-size: 20px
+        }
+
+        .list img {
+            width: 200px;
+            height: 90px
         }
 
     .card {
@@ -372,6 +381,11 @@
 
         .list .title {
             font-size: 18px
+        }
+
+        .list img {
+            width: 150px;
+            height: 67.5px
         }
 
     .card {

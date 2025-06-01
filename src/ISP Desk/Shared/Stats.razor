@@ -1,31 +1,388 @@
 ﻿<style>
     .stats-popup {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: max-content;
-    width: 1000px;
-    background-color: white;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    z-index: 100
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: max-content;
+        width: 1000px;
+        background-color: white;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        z-index: 100
+    }
+
+    .stats-head-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: #333333
+    }
+
+        .stats-head-row p {
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 15px 0
+        }
+
+    .stats-button-row {
+        width: 100%;
+        display: flex
+    }
+
+        .stats-button-row button, .stats-button-row .selected {
+            flex: 1;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 20px 0;
+            background-color: whitesmoke;
+            transition: 0.1s;
+            border: none;
+            cursor: pointer
+        }
+
+            .stats-button-row button:hover {
+                background-color: gray
+            }
+
+        .stats-button-row .selected {
+            background-color: #CD5700;
+            color: white
+        }
+
+            .stats-button-row .selected:hover {
+                background-color: darkorange
+            }
+
+    .stats-title-row {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: gainsboro
+    }
+
+        .stats-title-row p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600
+        }
+
+    .stats-diag-row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        justify-content: space-between
+    }
+
+    .stats-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .stats-cnt {
+        display: flex;
+        align-items: center;
+        column-gap: 20px
+    }
+
+        .stats-cnt div {
+            width: 20px;
+            height: 20px
+        }
+
+        .stats-cnt p {
+            font-size: 18px;
+            margin: 10px 0
+        }
+
+    .stats-diag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 175px;
+        width: 350px;
+    }
+
+    .stats-ok {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: gainsboro
+    }
+
+        .stats-ok img {
+            height: 40px;
+            margin: 0 0 0 20px;
+            cursor: pointer
+        }
+
+        .stats-ok button {
+            background-color: red;
+            padding: 10px 30px;
+            margin: 10px 30px 10px 0;
+            border: 1px solid red;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer
+        }
+
+            .stats-ok button:hover {
+                background-color: firebrick;
+                border: 1px solid firebrick
+            }
+
+    .stats-close {
+        position: absolute;
+        right: 10px;
+        height: 24px;
+        width: 24px;
+        cursor: pointer
+    }
+
+    .stats-dropdown {
+        display: none
+    }
+
+    @@media(max-width: 1280px) {
+        .stats-popup {
+            width: 500px
+        }
+
+        .stats-head-row p {
+            font-size: 20px;
+            margin: 10px 0
+        }
+
+        .stats-button-row button, .stats-button-row .selected {
+            font-size: 16px;
+            padding: 15px 0;
+        }
+
+        .stats-title-row {
+            width: 100%;
+            padding: 15px;
+        }
+
+            .stats-title-row p {
+                font-size: 15px;
+                font-weight: 600
+            }
+
+        .stats-diag-row {
+            padding: 7.5px 15px;
+        }
+
+        .stats-cnt {
+            column-gap: 15px
+        }
+
+            .stats-cnt div {
+                width: 15px;
+                height: 15px
+            }
+
+            .stats-cnt p {
+                font-size: 15px;
+                margin: 7.5px 0
+            }
+
+        .stats-diag {
+            height: 100px;
+            width: 200px
+        }
+
+        .stats-ok img {
+            height: 30px;
+            margin: 0 0 0 15px;
+            cursor: pointer
+        }
+
+        .stats-ok button {
+            background-color: red;
+            padding: 10px 30px;
+            margin: 10px 30px 10px 0;
+            border: 1px solid red;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer
+        }
+
+            .stats-ok button:hover {
+                background-color: firebrick;
+                border: 1px solid firebrick
+            }
+    }
+
+    @@media(max-width: 768px) {
+        .stats-popup {
+            width: 90%
+        }
+
+        .stats-button-row {
+            display: none;
+        }
+
+        .stats-dropdown {
+            width: 100%;
+            display: flex;
+        }
+
+            .stats-dropdown select {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                font-size: 18px;
+                font-weight: 600;
+                border: none;
+                background-color: #CD5700;
+                cursor: pointer;
+                color: white
+            }
+
+                .stats-dropdown select option {
+                    background-color: whitesmoke;
+                    color: black;
+                }
+
+        .stats-cnt p {
+            font-size: 12px;
+            margin: 5px
+        }
+
+        .stats-diag {
+            height: 75px;
+            width: 150px
+        }
     }
 </style>
 
 <div style="display: @(isVisible ? "flex" : "none")" class="stats-popup">
-
+    <div class="stats-head-row">
+        <p>Статистика</p>
+        <img @onclick="(() => { if (!isImportVisible) Close(); })" src="images/close.png" class="stats-close" />
+    </div>
+    <div class="stats-button-row">
+        <button disabled="@isImportVisible">2025</button>
+        <button disabled="@isImportVisible">Июнь</button>
+        <button disabled="@isImportVisible" class="selected">02.06 - 08.06</button>
+    </div>
+    <div class="stats-dropdown">
+        <select>
+            <option value="year">2025</option>
+            <option value="month">Июнь</option>
+            <option value="week">26.05 - 01.06</option>
+        </select>
+    </div>
+    <div class="stats-title-row">
+        <p>Осуществлено выездов: 17</p>
+    </div>
+    <div class="stats-diag-row">
+        <div class="stats-column">
+            <div class="stats-cnt">
+                <div style="background-color: green;"></div>
+                <p>Выполнено: 15</p>
+            </div>
+            <div class="stats-cnt">
+                <div style="background-color: red;"></div>
+                <p>Ожидают: 8</p>
+            </div>
+            <div class="stats-cnt">
+                <div style="background-color: yellow"></div>
+                <p>Передано другим сотрудникам: 2</p>
+            </div>
+        </div>
+        <div class="stats-diag">
+            <Chart Config="InstData" />
+        </div>
+    </div>
+    <div class="stats-title-row">
+        <p>Характер проблем</p>
+    </div>
+    <div class="stats-diag-row">
+        <div class="stats-column">
+            <div class="stats-cnt">
+                <div style="background-color: blue;"></div>
+                <p>Нестабильное соединение: 13</p>
+            </div>
+            <div class="stats-cnt">
+                <div style="background-color: brown"></div>
+                <p>Нет сигнала ТВ: 6</p>
+            </div>
+            <div class="stats-cnt">
+                <div style="background-color: olive"></div>
+                <p>Неполадки с мобильной связью: 2</p>
+            </div>
+            <div class="stats-cnt">
+                <div style="background-color: orange"></div>
+                <p>Аппаратные проблемы: 4</p>
+            </div>
+        </div>
+        <div class="stats-diag">
+            <Chart Config="GeneralData" />
+        </div>
+    </div>
+    <div class="stats-ok">
+        <img @onclick="OpenImport" src="images/excel.png" />
+        <button @onclick="(() => { if (!isImportVisible) Close(); })">Ок</button>
+    </div>
 </div>
+
+<Import isVisible="isImportVisible" isVisibleChanged="ImportVisibility" />
 
 @code {
     [Parameter] public bool isVisible { get; set; }
     [Parameter] public EventCallback isVisibleChanged { get; set; }
+    private bool isImportVisible = false;
+    private PieConfig InstData;
+    private PieConfig GeneralData;
 
+    protected override void OnInitialized()
+    {
+        DrawCharts();
+    }
 
+    private void DrawCharts()
+    {
+        InstData = new PieConfig();
+        PieDataset<int> instset = new PieDataset<int>(new[] { 20, 20, 10 })
+        {
+            BackgroundColor = new[]
+            {
+            ColorUtil.ColorHexString(0, 128, 0),
+            ColorUtil.ColorHexString(255, 0, 0),
+            ColorUtil.ColorHexString(255, 255, 0),
+            }
+        };
+        InstData.Data.Datasets.Add(instset);
+
+        GeneralData = new PieConfig();
+        PieDataset<int> genset = new PieDataset<int>(new[] { 10, 10, 10, 10 })
+        {
+            BackgroundColor = new[]
+            {
+            ColorUtil.ColorHexString(0, 0, 255),
+            ColorUtil.ColorHexString(165, 42, 42),
+            ColorUtil.ColorHexString(128, 128, 0),
+            ColorUtil.ColorHexString(255, 165, 0),
+            }
+        };
+        GeneralData.Data.Datasets.Add(genset);
+    }
+
+    private void OpenImport() => isImportVisible = true;
+    private void ImportVisibility() => isImportVisible = false;
 
     private void Close() => isVisibleChanged.InvokeAsync();
 }

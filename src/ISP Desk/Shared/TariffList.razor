@@ -1,0 +1,180 @@
+﻿<style>
+    .tariff-popup {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 30%;
+        bottom: 30%;
+        left: 37.5%;
+        right: 37.5%;
+        background-color: #FFF9F5;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        z-index: 100;
+        overflow: hidden
+    }
+
+    .tariff-head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: purple;
+        box-sizing: border-box;
+        width: 100%
+    }
+
+        .tariff-head p {
+            font-size: 18px;
+            color: white
+        }
+
+    .tariff-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+        padding: 20px 0;
+        overflow-y: auto
+    }
+
+    .tariff {
+        width: 90%;
+        display: flex;
+        padding: 10px;
+        row-gap: 10px;
+        flex-direction: column;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background-color: #FFF1E6
+    }
+
+        .tariff p {
+            width: 100%;
+            font-size: 16px;
+            line-height: 24px;
+            color: #A64B2A;
+            margin: 0
+        }
+
+    .tariff-row {
+        display: flex;
+        justify-content: space-between
+    }
+
+    h4 {
+        margin: 0
+    }
+
+    .tariff-close {
+        position: absolute;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        cursor: pointer
+    }
+
+    @@media(max-width: 1920px) {
+        .tariff-popup {
+            left: 30%;
+            right: 30%
+        }
+    }
+
+    @@media(max-width: 1280px) {
+        .tariff-popup {
+            top: 20%;
+            bottom: 20%;
+            left: 25%;
+            right: 25%;
+        }
+
+        .tariff-head p {
+            font-size: 16px
+        }
+
+        .tariff p {
+            font-size: 14px;
+            line-height: 21px
+        }
+
+        h4 {
+            font-size: 16px
+        }
+    }
+
+    @@media(max-width: 768px) {
+        .tariff-popup {
+            top: 20%;
+            bottom: 20%;
+            left: 15%;
+            right: 15%
+        }
+
+        .tariff-head p {
+            font-size: 16px
+        }
+
+        .tariff p {
+            font-size: 14px;
+            line-height: 21px
+        }
+
+        h4 {
+            font-size: 16px
+        }
+    }
+</style>
+
+<div class="tariff-popup">
+    <div class="tariff-head">
+        <p>Список тарифов</p>
+        <img class="tariff-close" src="images/close.png" />
+    </div>
+    <div class="tariff-content">
+        <div class="tariff">
+            <div class="tariff-row">
+                <h4>Базовый</h4>
+                <h4>500 р/мес</h4>
+            </div>
+            <p>Интернет 100 Мбит/с</p>
+        </div>
+        <div class="tariff">
+            <div class="tariff-row">
+                <h4>Для дома</h4>
+                <h4>600 р/мес</h4>
+            </div>
+            <p>Интернет 100 Мбит/с</p>
+            <p>IPTV (160 каналов + кинотеатр)</p>
+        </div>
+        <div class="tariff">
+            <div class="tariff-row">
+                <h4>Комбинированный</h4>
+                <h4>750 р/мес</h4>
+            </div>
+            <p>Интернет 100 Мбит/с</p>
+            <p>IPTV (160 каналов + кинотеатр)</p>
+            <p>1 SIM (50 ГБ + 500 минут)</p>
+        </div>
+        <div class="tariff">
+            <div class="tariff-row">
+                <h4>Ультра</h4>
+                <h4>1050 р/мес</h4>
+            </div>
+            <p>Интернет 100 Мбит/с</p>
+            <p>IPTV (160 каналов + кинотеатр)</p>
+            <p>3 SIM (50 ГБ + 500 минут)</p>
+        </div>
+        <div class="tariff">
+            <div class="tariff-row">
+                <h4>4 в 1</h4>
+                <h4>1200 р/мес</h4>
+            </div>
+            <p>Интернет 300 Мбит/с</p>
+            <p>IPTV (160 каналов + кинотеатр)</p>
+            <p>1 SIM (50 ГБ + 500 минут)</p>
+            <p>Видеонаблюдение</p>
+        </div>
+    </div>
+</div>

@@ -17,7 +17,6 @@ namespace ISP_Desk.ViewModel
         public DateTime date = DateTime.Now;
         public List<NavItem> NavItems = new List<NavItem>();
 
-        
         public LeadPage_VM(AppDbContext context)
         {
             _context = context;
@@ -25,12 +24,17 @@ namespace ISP_Desk.ViewModel
 
         public async Task InitializeAsync()
         {
+            await GetRequests();
+            SetNavItems();
+        }
+
+        private async Task GetRequests()
+        {
             UserContext.Lead.Installators = await _context.Installator.Where(i => i.LeadID == UserContext.Lead.LeadID && i.Archived == 0).ToListAsync();
             filteredInstallators = UserContext.Lead.Installators;
             var installatorIds = UserContext.Lead.Installators.Select(i => i.InstallatorID).ToList();
             requests = await _context.Request.Where(r => installatorIds.Contains(r.InstallatorID)).ToListAsync();
             filteredRequests = requests.Where(r => installatorIds.Contains(r.InstallatorID) && r.Scheduled.Day == date.Day).ToList();
-            SetNavItems();
         }
 
         private void SetNavItems()
@@ -72,8 +76,8 @@ namespace ISP_Desk.ViewModel
         {
             inst.Archived = 0;
             inst.RemovalDate = null;
-            UserContext.Lead.Installators.Add(inst);
             await _context.SaveChangesAsync();
+            await GetRequests();
         }
 
         public async Task Delete(Installator inst)

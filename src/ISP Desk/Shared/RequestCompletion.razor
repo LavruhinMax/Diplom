@@ -1,0 +1,117 @@
+﻿<style>
+    .completion-popup {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: max-content;
+        width: 500px;
+        background-color: white;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        padding: 10px;
+        overflow: hidden;
+        z-index: 200
+    }
+
+    .completion-head {
+        display: flex;
+        align-items: center
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 24px;
+        width: 100%;
+    }
+
+    textarea {
+        box-sizing: border-box;
+        width: 100%;
+        resize: none;
+        font-size: 16px;
+        padding: 5px 5px 40px 5px;
+        margin: 10px 0
+    }
+
+        textarea:focus {
+            border-color: blue;
+            outline: none
+        }
+
+    h3 {
+        margin: 0
+    }
+
+    .completion-button-row {
+        width: 100%;
+        margin: 7px 0;
+        display: flex;
+        justify-content: center;
+        column-gap: 30px;
+    }
+
+        .completion-button-row .finish, .completion-button-row .cancel {
+            padding: 7px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: 0.1s;
+            color: white;
+            cursor: pointer
+        }
+
+        .completion-button-row .finish {
+            background-color: green;
+            border: 1px solid green;
+        }
+
+            .completion-button-row .finish:hover {
+                background-color: olive;
+                border: 1px solid olive;
+            }
+
+        .completion-button-row .cancel {
+            background-color: slategray;
+            border: 1px solid slategray
+        }
+
+            .completion-button-row .cancel:hover {
+                background-color: dimgray;
+                border: 1px solid dimgray
+            }
+
+    .completion-close {
+        position: absolute;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        cursor: pointer
+    }
+
+    @@media(max-width: 768px) {
+        .completion-popup {
+            width: 80%
+        }
+    }
+</style>
+
+<div class="completion-popup">
+    <div class="completion-head">
+        <h3>Вызов будет завершен</h3>
+        <img class="completion-close" src="images/close.png" />
+    </div>
+    <p>Опишите в комментарии, из-за чего возникла проблема и как она была устранена</p>
+    <textarea placeholder="Комментарий (опционально)"></textarea>
+    <div class="completion-button-row">
+        <button class="finish">Завершить</button>
+        <button class="cancel">Отмена</button>
+    </div>
+</div>
+
+@code {
+
+}

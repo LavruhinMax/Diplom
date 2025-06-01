@@ -17,27 +17,32 @@
                 <button class="delete" @onclick="OpenDelete" disabled="@(isEditingVisible || isMessageVisible || areStatsVisible || isConfirmVisible)">Удалить</button>
             </div>
             <div class="right-cnt">
-                <img src="images/income.png" @onclick="() => { if(!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) OpenMessageBox(); }" />
-                <img src="images/stats.webp" @onclick="() => { if(!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) OpenStats(); }" />
+                <img src="images/income.png" @onclick="() => { if (!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) OpenMessageBox(); }" />
+                <img src="images/stats.png" @onclick="() => { if (!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) OpenStats(); }" />
             </div>
         </div>
         <div class="day">
-            <img src="images/arrow-left.png" @onclick="() => { if(!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) ViewModel.RemoveDay(); }" />
+            <img src="images/arrow-left.png" @onclick="() => { if (!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) ViewModel.RemoveDay(); }" />
             <div class="today">
                 <p class="num">@ViewModel.date.Day</p>
                 <p class="month">@ViewModel.date.ToString("MMM", Culture.culture)</p>
             </div>
-            <img src="images/arrow-right.png" @onclick="() => { if(!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) ViewModel.AddDay(); }" />
+            <img src="images/arrow-right.png" @onclick="() => { if (!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) ViewModel.AddDay(); }" />
         </div>
-        <div class="list">
+        <div class="list" style="justify-content: @(!ViewModel.filteredRequests.Any() ? "center" : "flex-start")">
             <p class="title">Назначено на @ViewModel.date.ToString("d MMMM", Culture.culture):</p>
+            @if (!ViewModel.filteredRequests.Any())
+            {
+                <img src="images/empty.png" />
+                <p style="text-align: center" class="title">Выездов не запланировано</p>
+            }
             @foreach (var r in ViewModel.filteredRequests)
             {
                 @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a) && r.InstallatorID == ViewModel.inst.InstallatorID)
                 {
                     <div class="card">
                         <div class="card-row">
-                            <img src="images/time.webp" />
+                            <img src="images/time.png" />
                             <p>@r.Scheduled.ToString("HH:mm", Culture.culture)</p>
                         </div>
                         <div class="card-row">
@@ -54,7 +59,8 @@
 
 <Add isVisible="isEditingVisible" isVisibleChanged="EditVisibility" isAddingOrEditing="false" EditInst="EditInst" i="ViewModel.inst" />
 <Confirm isVisible="isConfirmVisible" isVisibleChanged="ConfirmVisibility" message="@message" isConfirmed="DeleteInst" />
-<Mail isVisible = "isMessageVisible" isVisibleChanged="MessageVisibility" i="ViewModel.inst" ms="UserContext.Lead.Messages" SendMessage="SendMessage" DeleteMessage="DeleteMessage" />
+<Mail isVisible="isMessageVisible" isVisibleChanged="MessageVisibility" i="ViewModel.inst" ms="UserContext.Lead.Messages" SendMessage="SendMessage" DeleteMessage="DeleteMessage" />
+<Stats isVisible="areStatsVisible" isVisibleChanged="StatsVisibility"/>
 
 @code {
     [Parameter] public int InstallatorID { get; set; }
@@ -82,20 +88,14 @@
         isConfirmVisible = true;
     }
 
-    private void OpenStats()
-    {
-        areStatsVisible = true;
-    }
+    private void OpenStats() => areStatsVisible = true;
 
     private async Task DeleteInst(bool isConfirmed)
     {
         if (isConfirmed)
         {
             await ViewModel.DeleteInst();
-            string transfer = $"{ViewModel.inst.LastName} {ViewModel.inst.FirstName[0]}.{ViewModel.inst.MiddleName[0]}. перемещен";
-            if (ViewModel.inst.Gender == "Ж") transfer += "а";
-            transfer += " в архив.";
-            NavManager.NavigateTo($"lead/{transfer}", forceLoad: true);
+            NavManager.NavigateTo($"lead/", forceLoad: true);
         }
     }
 
