@@ -11,6 +11,7 @@
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public int Archived { get; set; }
+        public int isActive { get; set; }
         public DateOnly? RemovalDate { get; set; }
         public Account Account { get; set; }
         public List<Report> Reports { get; set; }
