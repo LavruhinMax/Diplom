@@ -185,6 +185,8 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+$*.bkp
+*.bkp
 OpenCover/
 ASALocalRun/
 *.binlog
