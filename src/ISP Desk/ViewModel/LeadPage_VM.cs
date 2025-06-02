@@ -30,7 +30,7 @@ namespace ISP_Desk.ViewModel
 
         private async Task GetRequests()
         {
-            UserContext.Lead.Installators = await _context.Installator.Where(i => i.LeadID == UserContext.Lead.LeadID && i.Archived == 0).ToListAsync();
+            UserContext.Lead.Installators = await _context.Installator.Where(i => i.LeadID == UserContext.Lead.LeadID && i.isArchived == false).ToListAsync();
             filteredInstallators = UserContext.Lead.Installators;
             var installatorIds = UserContext.Lead.Installators.Select(i => i.InstallatorID).ToList();
             requests = await _context.Request.Where(r => installatorIds.Contains(r.InstallatorID)).ToListAsync();
@@ -69,12 +69,12 @@ namespace ISP_Desk.ViewModel
 
         public List<Installator> GetArchived()
         {
-            return _context.Installator.Where(i => i.LeadID == UserContext.Lead.LeadID && i.Archived == 1).ToList();
+            return _context.Installator.Where(i => i.LeadID == UserContext.Lead.LeadID && i.isArchived == true).ToList();
         }
 
         public async Task Recover(Installator inst)
         {
-            inst.Archived = 0;
+            inst.isArchived = false;
             inst.RemovalDate = null;
             await _context.SaveChangesAsync();
             await GetRequests();

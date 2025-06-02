@@ -77,7 +77,7 @@ namespace ISP_Desk.ViewModel
 
         public async Task DeleteInst()
         {
-            inst.Archived = 1;
+            inst.isArchived = true;
             inst.RemovalDate = DateOnly.FromDateTime(DateTime.Now);
             await _context.SaveChangesAsync();
         }

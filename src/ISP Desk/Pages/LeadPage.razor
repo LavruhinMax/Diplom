@@ -58,7 +58,7 @@
             </div>
             <div class="window-row">
                 <img src="images/trouble.png" />
-                <p>Отложено: @ViewModel.filteredRequests.Where(r => r.isDelayed == 1).Count()/@ViewModel.filteredRequests.Count()</p>
+                <p>Отложено: @ViewModel.filteredRequests.Where(r => r.isDelayed == true).Count()/@ViewModel.filteredRequests.Count()</p>
             </div>
         </div>
     </div>

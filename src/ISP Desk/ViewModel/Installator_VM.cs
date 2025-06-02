@@ -37,7 +37,7 @@ namespace ISP_Desk.ViewModel
             UserContext.Installator.Requests = await _context.Request.Where(r => r.InstallatorID == UserContext.Installator.InstallatorID).ToListAsync();
             abonents = await _context.Abonent.ToListAsync();
             UserContext.Installator.Messages = await _context.Message.Where(m => m.InstallatorID == UserContext.Installator.InstallatorID).ToListAsync();
-            count = UserContext.Installator.Messages.Where(m => m.IsRead == 0).Count();
+            count = UserContext.Installator.Messages.Where(m => m.isRead == false).Count();
             filteredRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Day == selectedDate.Day).ToList();
             lead = _context.Lead.First(l => l.LeadID == UserContext.Installator.LeadID);
             SetNavItems();
@@ -113,7 +113,7 @@ namespace ISP_Desk.ViewModel
         {
             count = 0;
             foreach(var m in UserContext.Installator.Messages)
-                m.IsRead = 1;
+                m.isRead = true;
             _context.SaveChanges();
         }
     }
