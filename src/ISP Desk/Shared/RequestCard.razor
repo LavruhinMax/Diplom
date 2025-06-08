@@ -73,7 +73,7 @@
     <div class="card-row">
         <div class="card-info">
             <img src="images/location.png" />
-            <p>@req.Type</p>
+            <p>@(ab.Flat == null ? $"{@ab.Region}, г. {@ab.City}, ул. {@ab.Street} {@ab.House}" : $"{@ab.Region}, г. {@ab.City}, ул. {@ab.Street} {@ab.House}-{@ab.Flat}")</p>
         </div>
         <div class="card-info">
             <img src="images/schedule.png" />
@@ -83,7 +83,7 @@
     <div class="card-row">
         <div class="card-info">
             <img src="images/problem.png" />
-            <p>@(ab.Flat == null ? $"{@ab.Region}, г. {@ab.City}, ул. {@ab.Street} {@ab.House}" : $"{@ab.Region}, г. {@ab.City}, ул. {@ab.Street} {@ab.House}-{@ab.Flat}")</p>
+            <p>@req.Type</p>
         </div>
     </div>
 </div>

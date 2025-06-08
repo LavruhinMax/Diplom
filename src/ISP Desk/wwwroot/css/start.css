@@ -61,17 +61,6 @@
     align-items: center
 }
 
-.main a {
-    width: 75%;
-    color: blue;
-    margin: 25px 0 0 0;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: start;
-    text-decoration: underline;
-    cursor: pointer
-}
-
 .auto-cnt button {
     width: 50%;
     background-color: blue;
@@ -123,11 +112,6 @@ button:hover {
             font-size: 16px;
             padding: 10px 50px 10px 5px
         }
-
-    .main a {
-        margin: 15px 0 0 0;
-        font-size: 14px
-    }
 
     .auto-cnt button {
         font-size: 20px;

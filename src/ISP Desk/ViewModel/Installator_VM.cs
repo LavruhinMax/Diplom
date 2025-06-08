@@ -38,7 +38,7 @@ namespace ISP_Desk.ViewModel
             abonents = await _context.Abonent.ToListAsync();
             UserContext.Installator.Messages = await _context.Message.Where(m => m.InstallatorID == UserContext.Installator.InstallatorID).ToListAsync();
             count = UserContext.Installator.Messages.Where(m => m.isRead == false).Count();
-            filteredRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Day == selectedDate.Day).ToList();
+            filteredRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Date == selectedDate).ToList();
             lead = _context.Lead.First(l => l.LeadID == UserContext.Installator.LeadID);
             SetNavItems();
             DrawHeadRow();
@@ -90,7 +90,7 @@ namespace ISP_Desk.ViewModel
         public void SelectDate(DateTime Date)
         {
             selectedDate = Date;
-            filteredRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Day == selectedDate.Day).ToList();
+            filteredRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Date == selectedDate).ToList();
         }
 
         private void UpdateWeekDays()

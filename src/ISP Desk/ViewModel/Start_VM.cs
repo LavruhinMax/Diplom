@@ -19,9 +19,12 @@ namespace ISP_Desk.ViewModel
         {
             _context = context;
         }
-        
+
         public async Task InitializeAsync() 
         {
+            UserContext.Installator = null;
+            UserContext.Lead = null;
+            UserContext.Dispatcher = null;
             accounts = await _context.Account.ToListAsync();
             installators = await _context.Installator.ToListAsync();
             leads = await _context.Lead.ToListAsync();

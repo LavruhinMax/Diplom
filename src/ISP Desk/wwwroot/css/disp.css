@@ -75,6 +75,10 @@
         background-color: darkgray
     }
 
+.bottom {
+    row-gap: 50px
+}
+
 .filter-row {
     width: 100%;
     display: flex;
@@ -83,7 +87,7 @@
 
     .filter-row select {
         font-size: 24px;
-        padding: 5px;
+        padding: 0 5px;
         width: 30%;
         cursor: pointer
     }
@@ -120,7 +124,7 @@
         color: white;
         font-size: 20px;
         margin: 25px 0;
-        width: 12%
+        width: 15%
     }
 
     .list-row p {

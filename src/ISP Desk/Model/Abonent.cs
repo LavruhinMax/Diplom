@@ -4,6 +4,7 @@
     {
         public int AbonentID { get; set; }
         public int TariffID { get; set; }
+        public int PA { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }

@@ -1,5 +1,5 @@
 ﻿<style>
-    .day {
+    .day, .day-lite {
         display: flex;
         width: 175px;
         height: max-content;
@@ -17,14 +17,28 @@
             cursor: pointer
         }
 
-    .today {
+    .day-lite {
+        width: 125px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        box-shadow: none;
+        padding: 5px 10px
+    }
+
+        .day-lite img {
+            height: 25px;
+            width: 25px;
+            cursor: pointer
+        }
+
+    .today, .today-lite {
         display: flex;
         flex-direction: column;
         row-gap: 15px;
         align-items: center;
     }
 
-        .today .num, .today .month {
+        .today .num, .today .month, .today-lite .num, .today-lite .month {
             margin: 0;
             font-weight: 600
         }
@@ -37,6 +51,18 @@
             font-size: 18px
         }
 
+    .today-lite {
+        row-gap: 10px
+    }
+
+        .today-lite .num {
+            font-size: 26px
+        }
+
+        .today-lite .month {
+            font-size: 12px
+        }
+
     @@media(max-width: 1920px) {
         .day {
             width: 100%
@@ -46,10 +72,27 @@
                 height: 20px;
                 width: 20px
             }
+
+        .day-lite {
+            width: 100px
+        }
+
+            .day-lite img {
+                height: 20px;
+                width: 20px
+            }
+
+            .today-lite .num {
+                font-size: 20px;
+            }
+
+            .today-lite .month {
+                font-size: 10px
+            }
     }
 
     @@media(max-width: 768px) {
-        .day {
+        .day, .today-lite {
             width: 100%
         }
 
@@ -67,9 +110,9 @@
     }
 </style>
 
-<div class="day">
+<div class=@(Lite ? "day-lite" : "day")>
     <img src="images/arrow-left.png" @onclick="() => { if (isClickable) Back(); }" />
-    <div class="today">
+    <div class=@(Lite ? "today-lite": "today")>
         <p class="num">@date.Day</p>
         <p class="month">@date.ToString("MMM", Culture.culture)</p>
     </div>
@@ -81,6 +124,7 @@
     [Parameter] public bool isClickable { get; set; }
     [Parameter] public EventCallback RemoveDay { get; set; }
     [Parameter] public EventCallback AddDay { get; set; }
+    [Parameter] public bool Lite { get; set; } = false;
 
     private void Back() => RemoveDay.InvokeAsync();
     private void Forward() => AddDay.InvokeAsync();
