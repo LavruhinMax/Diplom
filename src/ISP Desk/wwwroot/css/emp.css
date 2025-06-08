@@ -97,44 +97,6 @@
         cursor: pointer;
     }
 
-.day {
-    display: flex;
-    width: 175px;
-    height: max-content;
-    padding: 10px 20px;
-    background-color: white;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
-}
-
-    .day img {
-        height: 35px;
-        width: 35px;
-        cursor: pointer
-    }
-
-.today {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    align-items: center;
-}
-
-    .today .num, .today .month {
-        margin: 0;
-        font-weight: 600
-    }
-
-    .today .num {
-        font-size: 40px
-    }
-
-    .today .month {
-        font-size: 18px
-    }
-
 .list {
     display: flex;
     flex: 1;
@@ -199,75 +161,6 @@
 
 @media (max-width: 1920px) {
     .grid {
-        width: 90%;
-        column-gap: 15px
-    }
-
-    .head {
-        padding: 25px
-    }
-
-    .left-cnt p {
-        font-size: 22px
-    }
-
-    .right-cnt img {
-        width: 60px;
-        height: 40px
-    }
-
-    .day {
-        width: 10%
-    }
-
-        .day img {
-            height: 20px;
-            width: 20px
-        }
-
-    .today {
-        row-gap: 10px
-    }
-
-        .today .num {
-            font-size: 28px
-        }
-
-        .today .month {
-            font-size: 16px
-        }
-
-    .list {
-        padding: 30px 40px;
-        row-gap: 30px
-    }
-
-        .list .title {
-            font-size: 20px
-        }
-
-    .card {
-        width: calc((100% - 115px)/2);
-        padding: 15px;
-        row-gap: 20px
-    }
-
-    .card-row {
-        column-gap: 15px
-    }
-
-        .card-row p {
-            font-size: 18px
-        }
-
-        .card-row img {
-            height: 30px;
-            width: 30px
-        }
-}
-
-@media (max-width: 1280px) {
-    .grid {
         width: 90%
     }
 
@@ -280,6 +173,7 @@
     .left-cnt {
         flex-direction: row;
         column-gap: 30px;
+        row-gap: 20px;
         align-items: center
     }
 
@@ -297,10 +191,6 @@
         flex-direction: row;
         right: 0px;
         column-gap: 100px;
-    }
-
-    .day {
-        width: 100%
     }
 
     .list {
@@ -344,8 +234,8 @@
 
     .head {
         flex-direction: column;
-        row-gap: 30px;
-        padding: 20px;
+        row-gap: 20px;
+        padding: 15px;
     }
 
     .left-cnt {
@@ -355,55 +245,62 @@
     }
 
         .left-cnt p {
-            font-size: 16px
+            font-size: 12px
         }
 
     .middle-cnt {
         flex-direction: column;
+        row-gap: 20px;
         width: auto
     }
+
+        .middle-cnt .edit, .middle-cnt .delete {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
 
     .right-cnt {
         position: relative;
         flex-direction: row;
         right: 0px;
-        column-gap: 30px
+        column-gap: 20px
     }
 
-    .day {
-        width: 100%
-    }
+        .right-cnt img {
+            height: 30px;
+            width: 45px
+        }
 
     .list {
-        padding: 20px;
-        row-gap: 30px
+        padding: 15px;
+        row-gap: 20px
     }
 
         .list .title {
-            font-size: 18px
+            font-size: 12px
         }
 
         .list img {
-            width: 150px;
-            height: 67.5px
+            width: 100px;
+            height: 50px
         }
 
     .card {
         width: 100%;
-        padding: 10px;
-        row-gap: 10px
+        padding: 7px;
+        row-gap: 7px
     }
 
     .card-row {
-        column-gap: 15px
+        column-gap: 10px
     }
 
         .card-row p {
-            font-size: 16px
+            font-size: 12px
         }
 
         .card-row img {
-            height: 25px;
-            width: 25px
+            height: 20px;
+            width: 20px
         }
 }

@@ -1,0 +1,158 @@
+﻿.main {
+    width: 100%;
+    background-color: whitesmoke;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 0;
+    row-gap: 10px;
+    flex: 1;
+}
+
+.data-block {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 50px;
+    row-gap: 20px
+}
+
+h2, h3, p {
+    margin: 0
+}
+
+input, textarea, p, label, select {
+    font-size: 20px
+}
+
+.searcher {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0 0 0
+}
+
+.address {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px
+}
+
+    .address select {
+        padding: 10px 20px;
+        width: max-content;
+        cursor: pointer
+    }
+
+    .adress label {
+        cursor: pointer
+    }
+
+    .address input {
+        border-radius: 5px;
+        padding: 5px
+    }
+
+        .address input:focus {
+            border-color: #CD5700;
+            outline: none
+        }
+
+.abonent {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.abonent-card {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: max-content;
+    row-gap: 20px;
+    padding: 0 0 10px 0;
+    border: 1px solid gray;
+    border-radius: 5px
+}
+
+    .abonent-card p {
+        width: 100%;
+        padding: 0 10px;
+        font-weight: 600
+    }
+
+    .abonent-card h3 {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        background-color: dimgray;
+        color: white
+    }
+
+.problem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+    row-gap: 30px
+}
+
+.problem-row {
+    display: flex;
+    align-items: center;
+    column-gap: 20px
+}
+
+    .problem-row input[type="radio"] {
+        accent-color: #CD5700;
+        height: 20px;
+        width: 20px;
+        cursor: pointer
+    }
+
+    .problem-row label {
+        cursor: pointer
+    }
+
+    .problem-row input {
+        padding: 5px
+    }
+
+textarea {
+    padding: 5px 5px 50px 5px;
+    resize: none
+}
+
+.short-input {
+    width: 75px
+}
+
+.button-cnt {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end
+}
+
+    .button-cnt button {
+        background-color: red;
+        border: 1px solid red;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 10px 20px;
+        transition: 0.1s;
+        cursor: pointer
+    }
+
+        .button-cnt button:hover {
+            background-color: firebrick;
+            border: 1px solid firebrick
+        }

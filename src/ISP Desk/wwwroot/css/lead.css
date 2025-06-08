@@ -124,7 +124,6 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
 }
 
-
     .list input {
         width: 100%;
         padding: 15px;
@@ -228,56 +227,12 @@
 
 @media (max-width: 1920px) {
     .grid {
-        width: 85%
+        width: 90%;
+        margin: 20px 0
     }
 
-    .left-cnt p {
-        font-size: 25px
-    }
-
-    .button-cnt .button-left, .button-cnt .button-right {
-        font-size: 16px;
-        padding: 10px 40px
-    }
-
-    .right-cnt .month {
-        padding: 0 40px;
-        font-size: 20px;
-    }
-
-    .right-cnt .day {
-        font-size: 30px;
-    }
-
-    .list {
-        padding: 30px
-    }
-
-        .list input {
-            padding: 10px;
-            font-size: 20px
-        }
-
-    .list-row p, .last p {
-        padding: 25px
-    }
-
-    .window {
-        margin: 0 0 30px 0
-    }
-
-        .window p {
-            font-size: 16px
-        }
-
-    .window-row {
-        column-gap: 10px;
-    }
-}
-
-@media (max-width: 1280px) {
-    .grid {
-        width: 90%
+    .left-cnt {
+        row-gap: 30px
     }
 
     .left-cnt p {
@@ -324,22 +279,27 @@
 
 @media (max-width: 768px) {
     .grid {
-        width: 95%
+        width: 95%;
+        margin: 20px 0
+    }
+
+    .head {
+        padding: 20px
     }
 
     .left-cnt p {
-        font-size: 20px
+        font-size: 14px
     }
 
     .button-cnt {
         flex-wrap: wrap;
-        row-gap: 30px
+        row-gap: 20px
     }
 
         .button-cnt .button-left, .button-cnt .button-right {
             width: 80%;
-            font-size: 12px;
-            padding: 10px 0
+            font-size: 10px;
+            padding: 7px 0
         }
 
     .right-cnt {
@@ -347,21 +307,33 @@
     }
 
         .right-cnt .month {
-            padding: 0 25px;
-            font-size: 12px;
+            padding: 0 17px;
+            font-size: 10px;
         }
 
         .right-cnt .day {
-            font-size: 16px;
+            font-size: 12px;
         }
 
     .list {
-        width: 100%
+        width: 100%;
+        padding: 20px;
+        row-gap: 15px
     }
 
         .list input {
-            padding: 10px;
-            font-size: 15px
+            padding: 7px;
+            font-size: 10px;
+            margin: 0
+        }
+
+        .list p, .list .title {
+            font-size: 16px
+        }
+
+        .list img {
+            height: 100px;
+            width: 100px
         }
 
     .list-row {
@@ -371,23 +343,35 @@
 
         .list-row p, .last p {
             flex: none;
-            padding: 15px;
-            font-size: 14px
+            padding: 10px;
+            font-size: 10px
         }
 
     .last {
-        padding: 0 15px
+        padding: 0 10px
     }
 
     .window {
         flex-direction: column;
         justify-content: center;
-        margin: 0 0 30px 0
+        margin: 0 0 20px 0
     }
+
+        .window p {
+            font-size: 12px
+        }
 
     .window-row {
         justify-content: center;
-        column-gap: 30px;
-        font-size: 20px
+        column-gap: 20px
     }
+
+        .window-row p {
+            font-size: 12px
+        }
+
+        .window-row img {
+            height: 20px;
+            width: 20px
+        }
 }

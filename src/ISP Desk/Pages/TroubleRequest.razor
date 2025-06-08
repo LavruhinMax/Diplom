@@ -1,0 +1,89 @@
+﻿@page "/tr"
+
+<link href="css/tr.css" rel="stylesheet" />
+<PageTitle>Новая заявка</PageTitle>
+
+<Header />
+<div class="main">
+    <div class="data-block">
+        <h2>Новая заявка</h2>
+        <p>Все обязательные для заполнения поля отмечены знаком <span style="color:red">*</span></p>
+    </div>
+    <div class="data-block">
+        <h2>Адрес</h2>
+        <div class="searcher">
+            <div class="address">
+                <select>
+                    <option value="Vladimir">Владимирская область</option>
+                    <option value="Moscow">Московская область</option>
+                    <option value="Ivanovo">Ивановская область</option>
+                </select>
+                <label>
+                    Город<span style="color:red">*</span>
+                    <input />
+                </label>
+                <label>
+                    Улица<span style="color:red">*</span>
+                    <input />
+                </label>
+                <label>
+                    Дом<span style="color:red">*</span>
+                    <input class="short-input" />
+                </label>
+                <label>
+                    Квартира
+                    <input class="short-input" />
+                </label>
+            </div>
+            <div class="abonent">
+                <div class="abonent-card">
+                    <h3>Абонент</h3>
+                    <p>Номер л/c: н/д</p>
+                    <p>ФИО: н/д</p>
+                    <p>Технология: н/д</p>
+                    <p>Тариф: н/д</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-block">
+        <h2>Характер проблемы</h2>
+        <div class="problem">
+            <div class="problem-row">
+                <input type="radio" id="one" name="option">
+                <label for="one">Нестабильное соединение</label>
+            </div>
+            <div class="problem-row">
+                <input type="radio" id="two" name="option">
+                <label for="two">Нет сигнала ТВ</label>
+            </div>
+            <div class="problem-row">
+                <input type="radio" id="three" name="option">
+                <label for="three">Неполадки с мобильной связью</label>
+            </div>
+            <div class="problem-row">
+                <input type="radio" id="four" name="option">
+                <label for="four">Аппаратные проблемы</label>
+            </div>
+            <div class="problem-row">
+                <input type="radio" id="five" name="option">
+                <input placeholder="Другое" />
+            </div>
+            <textarea placeholder="Дополнительная информация" />
+        </div>
+    </div>
+    <div class="data-block">
+        <h2>Время посещения</h2>
+        <ScheduleComponent />
+    </div>
+    <div class="data-block">
+        <div class="button-cnt">
+            <button>Сохранить</button>
+        </div>
+    </div>
+</div>
+<Footer />
+
+@code {
+
+}

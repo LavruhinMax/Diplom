@@ -117,54 +117,6 @@
 
     @@media(max-width: 1920px) {
         .request-popup {
-            top: 25%;
-            bottom: 25%;
-            left: 25%;
-            right: 25%
-        }
-
-        p {
-            font-size: 14px;
-            line-height: 21px
-        }
-
-        h2, h3 {
-            padding: 8px 15px;
-        }
-
-        div {
-            padding: 0 15px
-        }
-
-        .request-button-row {
-            column-gap: 25px;
-            margin: 12px 0;
-        }
-
-            .request-button-row .request-start, .request-button-row .request-delay {
-                padding: 8px 25px;
-                font-size: 14px
-            }
-
-        .request-horizontal {
-            column-gap: 15px;
-            margin: 8px 0;
-        }
-
-            .request-horizontal img {
-                width: 28px;
-                height: 28px
-            }
-
-        .request-description, .request-commentary {
-            margin: 8px 0;
-            padding: 5px 15px;
-            row-gap: 8px
-        }
-    }
-
-    @@media(max-width: 1280px) {
-        .request-popup {
             top: 20%;
             bottom: 20%;
             left: 20%;
@@ -215,6 +167,49 @@
         .request-popup {
             left: 5%;
             right: 5%
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 18px
+        }
+
+        h2, h3 {
+            padding: 7px 15px
+        }
+
+        div {
+            padding: 0 15px
+        }
+
+        .request-button-row {
+            column-gap: 20px;
+            margin: 15px 0
+        }
+
+            .request-button-row .request-start, .request-button-row .request-delay {
+                padding: 7px 20px;
+                font-size: 12px
+            }
+
+        .request-horizontal {
+            column-gap: 15px;
+            margin: 7px 0
+        }
+
+            .request-horizontal h2 {
+                padding: 7px 0
+            }
+
+            .request-horizontal img {
+                width: 24px;
+                height: 24px
+            }
+
+        .request-description, .request-commentary {
+            margin: 7px 0;
+            padding: 5px 15px;
+            row-gap: 7px
         }
     }
 </style>

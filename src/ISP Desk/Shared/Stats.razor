@@ -89,7 +89,6 @@
         flex-direction: column;
     }
 
-
     .stats-cnt {
         display: flex;
         align-items: center;
@@ -155,74 +154,20 @@
         display: none
     }
 
-    @@media(max-width: 1280px) {
+    @@media(max-width: 1920px) {
         .stats-popup {
-            width: 500px
+            width: 700px
         }
 
-        .stats-head-row p {
-            font-size: 20px;
-            margin: 10px 0
+        .stats-cnt p {
+            font-size: 14px;
+            margin: 7px 0
         }
-
-        .stats-button-row button, .stats-button-row .selected {
-            font-size: 16px;
-            padding: 15px 0;
-        }
-
-        .stats-title-row {
-            width: 100%;
-            padding: 15px;
-        }
-
-            .stats-title-row p {
-                font-size: 15px;
-                font-weight: 600
-            }
-
-        .stats-diag-row {
-            padding: 7.5px 15px;
-        }
-
-        .stats-cnt {
-            column-gap: 15px
-        }
-
-            .stats-cnt div {
-                width: 15px;
-                height: 15px
-            }
-
-            .stats-cnt p {
-                font-size: 15px;
-                margin: 7.5px 0
-            }
 
         .stats-diag {
-            height: 100px;
-            width: 200px
+            height: 125px;
+            width: 250px;
         }
-
-        .stats-ok img {
-            height: 30px;
-            margin: 0 0 0 15px;
-            cursor: pointer
-        }
-
-        .stats-ok button {
-            background-color: red;
-            padding: 10px 30px;
-            margin: 10px 30px 10px 0;
-            border: 1px solid red;
-            border-radius: 5px;
-            color: white;
-            cursor: pointer
-        }
-
-            .stats-ok button:hover {
-                background-color: firebrick;
-                border: 1px solid firebrick
-            }
     }
 
     @@media(max-width: 768px) {
@@ -242,7 +187,7 @@
             .stats-dropdown select {
                 width: 100%;
                 text-align: center;
-                padding: 10px 0;
+                padding: 7px 0;
                 font-size: 18px;
                 font-weight: 600;
                 border: none;
@@ -253,18 +198,55 @@
 
                 .stats-dropdown select option {
                     background-color: whitesmoke;
+                    cursor: pointer;
                     color: black;
                 }
 
-        .stats-cnt p {
+        .stats-head-row p {
             font-size: 12px;
-            margin: 5px
+            margin: 7px 0
         }
 
-        .stats-diag {
-            height: 75px;
-            width: 150px
+        .stats-title-row {
+            padding: 15px
         }
+
+            .stats-title-row p {
+                font-size: 12px
+            }
+
+        .stats-diag-row {
+            padding: 7px 15px
+        }
+
+        .stats-cnt {
+            column-gap: 15px
+        }
+
+            .stats-cnt div {
+                width: 15px;
+                height: 15px
+            }
+
+            .stats-cnt p {
+                font-size: 12px;
+                margin: 7px 0
+            }
+
+        .stats-diag {
+            height: 60px;
+            width: 120px;
+        }
+
+            .stats-ok img {
+                height: 30px;
+                margin: 0 0 0 15px
+            }
+
+            .stats-ok button {
+                padding: 7px 20px;
+                margin: 7px 20px 7px 0
+            }
     }
 </style>
 
@@ -295,11 +277,11 @@
                 <p>Выполнено: 15</p>
             </div>
             <div class="stats-cnt">
-                <div style="background-color: red;"></div>
+                <div style="background-color: yellow;"></div>
                 <p>Ожидают: 8</p>
             </div>
             <div class="stats-cnt">
-                <div style="background-color: yellow"></div>
+                <div style="background-color: red"></div>
                 <p>Передано другим сотрудникам: 2</p>
             </div>
         </div>
@@ -356,7 +338,7 @@
     private void DrawCharts()
     {
         InstData = new PieConfig();
-        PieDataset<int> instset = new PieDataset<int>(new[] { 20, 20, 10 })
+        PieDataset<int> instset = new PieDataset<int>(new[] { 15, 8, 2 })
         {
             BackgroundColor = new[]
             {
@@ -368,7 +350,7 @@
         InstData.Data.Datasets.Add(instset);
 
         GeneralData = new PieConfig();
-        PieDataset<int> genset = new PieDataset<int>(new[] { 10, 10, 10, 10 })
+        PieDataset<int> genset = new PieDataset<int>(new[] { 13, 6, 2, 4 })
         {
             BackgroundColor = new[]
             {

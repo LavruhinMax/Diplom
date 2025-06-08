@@ -21,14 +21,7 @@
                 <img src="images/stats.png" @onclick="() => { if (!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) OpenStats(); }" />
             </div>
         </div>
-        <div class="day">
-            <img src="images/arrow-left.png" @onclick="() => { if (!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) ViewModel.RemoveDay(); }" />
-            <div class="today">
-                <p class="num">@ViewModel.date.Day</p>
-                <p class="month">@ViewModel.date.ToString("MMM", Culture.culture)</p>
-            </div>
-            <img src="images/arrow-right.png" @onclick="() => { if (!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible) ViewModel.AddDay(); }" />
-        </div>
+        <Day date="ViewModel.date" isClickable="!isEditingVisible && !isMessageVisible && !areStatsVisible && !isConfirmVisible" AddDay="ViewModel.AddDay" RemoveDay="ViewModel.RemoveDay"/>
         <div class="list" style="justify-content: @(!ViewModel.filteredRequests.Any() ? "center" : "flex-start")">
             <p class="title">Назначено на @ViewModel.date.ToString("d MMMM", Culture.culture):</p>
             @if (!ViewModel.filteredRequests.Any())

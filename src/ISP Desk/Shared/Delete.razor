@@ -1,102 +1,124 @@
 ﻿<style>
     .delete-popup {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    top: 50%;
-    left: 50%;
-    height: max-content;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    background-color: whitesmoke;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    overflow: hidden;
-    z-index: 200
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        top: 50%;
+        left: 50%;
+        height: max-content;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        background-color: whitesmoke;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 200
     }
 
-    .delete-popup p {
-    width: 80%;
-    margin: 20px;
-    font-size: 20px;
-    line-height: 25px;
-    font-weight: 600
-    }
+        .delete-popup p {
+            width: 80%;
+            margin: 20px;
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: 600
+        }
 
-    .delete-popup .input, .error-input {
-    width: calc(100% - 40px);
-    margin: 0 20px 20px 20px;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px
-    }
+        .delete-popup .input, .error-input {
+            width: calc(100% - 40px);
+            margin: 0 20px 20px 20px;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px
+        }
 
-    .delete-popup .input:focus {
-    border-color: purple;
-    outline: none
-    }
+            .delete-popup .input:focus {
+                border-color: purple;
+                outline: none
+            }
 
-    .delete-popup .error-input {
-    border-color: red
-    }
+        .delete-popup .error-input {
+            border-color: red
+        }
 
-    .delete-popup .error-input:focus {
-    border-color: red;
-    }
+            .delete-popup .error-input:focus {
+                border-color: red;
+            }
 
     .delete-cnt {
-    display: flex;
-    width: 100%;
-    background-color: lightgray;
-    padding: 10px 0;
-    align-items: center;
-    justify-content: flex-end;
+        display: flex;
+        width: 100%;
+        background-color: lightgray;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: flex-end;
     }
 
-    .delete-cnt .button-left, .delete-cnt .button-right {
-    margin: 0 20px 0 0;
-    padding: 10px;
-    font-weight: 600;
-    color: white;
-    transition: 0.2s;
-    cursor: pointer
-    }
+        .delete-cnt .button-left, .delete-cnt .button-right {
+            margin: 0 20px 0 0;
+            padding: 10px;
+            font-weight: 600;
+            color: white;
+            transition: 0.2s;
+            cursor: pointer
+        }
 
-    .delete-cnt .button-left {
-    background-color: red;
-    border: 1px solid red;
-    }
+        .delete-cnt .button-left {
+            background-color: red;
+            border: 1px solid red;
+        }
 
-    .delete-cnt .button-left:hover {
-    background-color: firebrick;
-    border: 1px solid firebrick
-    }
+            .delete-cnt .button-left:hover {
+                background-color: firebrick;
+                border: 1px solid firebrick
+            }
 
-    .delete-cnt .button-right {
-    background-color: slategray;
-    border: 1px solid slategray
-    }
+        .delete-cnt .button-right {
+            background-color: slategray;
+            border: 1px solid slategray
+        }
 
-    .delete-cnt .button-right:hover {
-    background-color: dimgray;
-    border: 1px solid dimgray
-    }
+            .delete-cnt .button-right:hover {
+                background-color: dimgray;
+                border: 1px solid dimgray
+            }
 
     .delete-popup img {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    height: 32px;
-    width: 32px;
-    cursor: pointer
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 32px;
+        width: 32px;
+        cursor: pointer
     }
 
     @@media (max-width: 768px) {
-    .delete-popup {
-    width: 90%
-    }
+        .delete-popup {
+            width: 90%
+        }
+
+            .delete-popup p {
+                margin: 10px;
+                font-size: 15px;
+                line-height: 20px
+            }
+
+            .delete-popup .input, .error-input {
+                width: calc(100% - 30px);
+                margin: 0 15px 15px 15px;
+                font-size: 15px;
+                padding: 7px
+            }
+
+        .delete-cnt {
+            padding: 7px 0
+        }
+
+            .delete-cnt .button-left, .delete-cnt .button-right {
+                margin: 0 15px 0 0;
+                padding: 7px
+            }
     }
 </style>
 

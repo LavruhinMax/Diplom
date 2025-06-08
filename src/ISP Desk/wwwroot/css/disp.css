@@ -1,8 +1,154 @@
 ﻿.main {
     width: 100%;
     display: flex;
+    overflow-y: auto;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 30px 0;
+    row-gap: 30px;
     flex: 1;
+}
+
+.head, .bottom {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 80%;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 30px 50px;
+    row-gap: 30px
+}
+
+    .head p {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0
+    }
+
+.button-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 50px
+}
+
+.click-left, .click-right {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: 0.2s;
+    cursor: pointer
+}
+
+    .click-left img, .click-right img {
+        height: 75px;
+        width: 75px
+    }
+
+    .click-left p, .click-right p {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0
+    }
+
+.click-left {
+    background-color: #A3C1AD;
+    border: 1px solid darkgreen
+}
+
+    .click-left:hover {
+        background-color: #679267
+    }
+
+.click-right {
+    background-color: gainsboro;
+    border: 1px solid black
+}
+
+    .click-right:hover {
+        background-color: darkgray
+    }
+
+.filter-row {
+    width: 100%;
+    display: flex;
+    column-gap: 20px
+}
+
+    .filter-row select {
+        font-size: 24px;
+        padding: 5px;
+        width: 30%;
+        cursor: pointer
+    }
+
+    .filter-row input {
+        font-size: 24px;
+        padding: 0 10px;
+        flex: 1
+    }
+
+        .filter-row input:focus {
+            border-color: blue;
+            outline: none
+        }
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.list-head-row, .list-row {
+    background-color: dimgray;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box
+}
+
+    .list-head-row p, .list-row p {
+        color: white;
+        font-size: 20px;
+        margin: 25px 0;
+        width: 12%
+    }
+
+    .list-row p {
+        color: black
+    }
+
+.list-row {
+    background-color: white;
+    border: 1px solid gray;
+    transition: 0.2s;
+    border-top: none;
+    cursor: pointer
+}
+
+    .list-row:hover {
+        background-color: lightgray
+    }
+
+    .list-row img {
+        height: 30px;
+        width: 30px;
+        cursor: pointer
+    }
+
+@media(max-width: 1920px) {
+
+}
+
+@media(max-width: 768px) {
+
 }

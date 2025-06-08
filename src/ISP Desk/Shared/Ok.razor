@@ -1,26 +1,26 @@
 ﻿<style>
     .ok-popup {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: max-content;
-    width: 500px;
-    background-color: white;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    z-index: 1000
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: max-content;
+        width: 500px;
+        background-color: white;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        z-index: 1000
     }
 
-    .ok-popup p {
-    width: 80%;
-    margin: 20px;
-    font-size: 20px;
-    font-weight: 600
-    }
+        .ok-popup p {
+            width: 80%;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: 600
+        }
 
     .done {
         margin: 30px 0 20px 0;
@@ -29,43 +29,63 @@
     }
 
     .ok-cnt {
-    display: flex;
-    width: 100%;
-    background-color: lightgray;
-    padding: 10px 0;
-    align-items: center;
-    justify-content: flex-end;
+        display: flex;
+        width: 100%;
+        background-color: lightgray;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: flex-end;
     }
 
-    .ok-cnt button {
-    margin: 0 20px 0 0;
-    padding: 5px 20px;
-    font-weight: 600;
-    color: white;
-    transition: 0.2s;
-    background-color: red;
-    border: 1px solid red;
-    cursor: pointer
-    }
+        .ok-cnt button {
+            margin: 0 20px 0 0;
+            padding: 5px 20px;
+            font-weight: 600;
+            color: white;
+            transition: 0.2s;
+            background-color: red;
+            border: 1px solid red;
+            cursor: pointer
+        }
 
-    .ok-cnt button:hover {
-    background-color: firebrick;
-    border: 1px solid firebrick
-    }
+            .ok-cnt button:hover {
+                background-color: firebrick;
+                border: 1px solid firebrick
+            }
 
     .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    height: 24px;
-    width: 24px;
-    cursor: pointer
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 24px;
+        width: 24px;
+        cursor: pointer
     }
 
     @@media (max-width: 768px) {
-    .ok-popup {
-    width: 90%
-    }
+        .ok-popup {
+            width: 90%
+        }
+
+            .ok-popup p {
+                margin: 15px;
+                font-size: 15px;
+            }
+
+        .done {
+            margin: 20px 0 15px 0;
+            width: 50px;
+            height: 50px
+        }
+
+        .ok-cnt {
+            padding: 7px 0
+        }
+
+            .ok-cnt button {
+                margin: 0 15px 0 0;
+                padding: 5px 15px
+            }
     }
 </style>
 
@@ -75,7 +95,7 @@
     <div class="ok-cnt">
         <button @onclick="Close">Ок</button>
     </div>
-    <img class="close" src="images/close.png" @onclick="Close"/>
+    <img class="close" src="images/close.png" @onclick="Close" />
 </div>
 
 @code {

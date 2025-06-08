@@ -1,0 +1,123 @@
+﻿.main {
+    width: 100%;
+    background-color: whitesmoke;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 0;
+    row-gap: 10px;
+    flex: 1;
+}
+
+.data-block {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 50px;
+    row-gap: 20px
+}
+
+    h2, p {
+        margin: 0
+    }
+
+label, span, input, select, p {
+    font-size: 20px
+}
+
+.contacts, .address {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 20px 0 0 0;
+    row-gap: 30px
+}
+
+    .contacts input, .address input {
+        border-radius: 5px;
+        padding: 5px
+    }
+
+        .contacts input:focus, .address input:focus {
+            border-color: #CD5700;
+            outline: none
+        }
+
+    .address select, .tariff-row select {
+        padding: 10px 20px;
+        width: max-content;
+        cursor: pointer
+    }
+
+.tariff {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+    row-gap: 20px
+}
+
+.tariff-row {
+    display: flex;
+    align-items: center;
+    column-gap: 20px
+}
+
+    .tariff-row img {
+        width: 50px;
+        height: 50px;
+        cursor: pointer
+    }
+
+.addons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px
+}
+
+.addon {
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
+    align-items: center
+}
+
+    .addon input {
+        accent-color: #CD5700;
+        height: 20px;
+        width: 20px;
+        cursor: pointer
+    }
+
+    .addon label {
+        cursor: pointer
+    }
+
+.short-input {
+    width: 75px
+}
+
+.button-cnt {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end
+}
+
+    .button-cnt button {
+        background-color: red;
+        border: 1px solid red;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 10px 20px;
+        transition: 0.1s;
+        cursor: pointer
+    }
+
+        .button-cnt button:hover {
+            background-color: firebrick;
+            border: 1px solid firebrick
+        }

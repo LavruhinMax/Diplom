@@ -1,0 +1,87 @@
+﻿<style>
+    .day {
+        display: flex;
+        width: 175px;
+        height: max-content;
+        padding: 10px 20px;
+        background-color: white;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
+    }
+
+        .day img {
+            height: 35px;
+            width: 35px;
+            cursor: pointer
+        }
+
+    .today {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        align-items: center;
+    }
+
+        .today .num, .today .month {
+            margin: 0;
+            font-weight: 600
+        }
+
+        .today .num {
+            font-size: 40px
+        }
+
+        .today .month {
+            font-size: 18px
+        }
+
+    @@media(max-width: 1920px) {
+        .day {
+            width: 100%
+        }
+
+            .day img {
+                height: 20px;
+                width: 20px
+            }
+    }
+
+    @@media(max-width: 768px) {
+        .day {
+            width: 100%
+        }
+
+        .today {
+            row-gap: 10px
+        }
+
+            .today .num {
+                font-size: 26px
+            }
+
+            .today .month {
+                font-size: 12px
+            }
+    }
+</style>
+
+<div class="day">
+    <img src="images/arrow-left.png" @onclick="() => { if (isClickable) Back(); }" />
+    <div class="today">
+        <p class="num">@date.Day</p>
+        <p class="month">@date.ToString("MMM", Culture.culture)</p>
+    </div>
+    <img src="images/arrow-right.png" @onclick="() => { if (isClickable) Forward(); }" />
+</div>
+
+@code {
+    [Parameter] public DateTime date { get; set; }
+    [Parameter] public bool isClickable { get; set; }
+    [Parameter] public EventCallback RemoveDay { get; set; }
+    [Parameter] public EventCallback AddDay { get; set; }
+
+    private void Back() => RemoveDay.InvokeAsync();
+    private void Forward() => AddDay.InvokeAsync();
+}

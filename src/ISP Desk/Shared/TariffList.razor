@@ -77,13 +77,6 @@
 
     @@media(max-width: 1920px) {
         .tariff-popup {
-            left: 30%;
-            right: 30%
-        }
-    }
-
-    @@media(max-width: 1280px) {
-        .tariff-popup {
             top: 20%;
             bottom: 20%;
             left: 25%;
@@ -112,17 +105,27 @@
             right: 15%
         }
 
-        .tariff-head p {
-            font-size: 16px
+            .tariff-head p {
+                font-size: 12px
+            }
+
+        .tariff-content {
+            row-gap: 15px;
+            padding: 15px 0
         }
 
-        .tariff p {
-            font-size: 14px;
-            line-height: 21px
+        .tariff {
+            padding: 7px;
+            row-gap: 7px
         }
+
+            .tariff p {
+                font-size: 12px;
+                line-height: 18px
+            }
 
         h4 {
-            font-size: 16px
+            font-size: 12px
         }
     }
 </style>

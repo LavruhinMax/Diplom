@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="schedule-row">
-            <img class="icon" src="@(ViewModel.futureWeek ? "images/red-arrow-left.png" : "images/arrow-left.png")" @onclick="ViewModel.SelectPreviousWeek" />
+            <img src="@(ViewModel.futureWeek ? "images/red-arrow-left.png" : "images/arrow-left.png")" @onclick="ViewModel.SelectPreviousWeek" />
             @for (int i = 0; i < 7; i++)
             {
                 var dayDate = ViewModel.currentWeekStart.AddDays(i);

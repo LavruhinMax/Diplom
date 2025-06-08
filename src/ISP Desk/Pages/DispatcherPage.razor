@@ -5,11 +5,65 @@
 
 <Header />
 <div class="main">
-
+    <div class="head">
+        <p>Здравствуйте, Арсений</p>
+        <div class="button-row">
+            <div class="click-left" @onclick="OpenNewCon">
+                <img src="images/connection.png" />
+                <p>Заявка на новое подключение</p>
+            </div>
+            <div class="click-right" @onclick="OpenNewTrouble">
+                <img src="images/new-problem.png" />
+                <p>Заявка на устранение неполадок</p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="filter-row">
+            <Day />
+            <select>
+                <option value="LS">Поиск по номеру лицевого счета</option>
+                <option value="FIO">Поиск по ФИО</option>
+                <option value="Address">Поиск по адресу</option>
+            </select>
+            <input placeholder="Поиск" />
+        </div>
+        <div class="list">
+            <div class="list-head-row">
+                <p>Номер л/с</p>
+                <p>ФИО</p>
+                <p>Адрес</p>
+                <p style="width: auto; flex: 1;">Номер телефона</p>
+                <p>Тип</p>
+                <p>Назначено на:</p>
+                <p style="width: 30px"></p>
+            </div>
+            <div class="list-row">
+                <p>Номер л/с</p>
+                <p>ФИО</p>
+                <p>Адрес</p>
+                <p style="width: auto; flex: 1;">Номер телефона</p>
+                <p>Тип</p>
+                <p>Назначено на:</p>
+                <img src="images/delete.png" />
+            </div>
+            <div class="list-row">
+                <p>Номер л/с</p>
+                <p>ФИО</p>
+                <p>Адрес</p>
+                <p style="width: auto; flex: 1;">Номер телефона</p>
+                <p>Тип</p>
+                <p>Назначено на:</p>
+                <img src="images/delete.png" />
+            </div>
+        </div>
+    </div>
 </div>
 <Footer />
 
-
 @code {
 
+
+    private void OpenNewCon() => NavManager.NavigateTo("cr", forceLoad: true);
+    private void OpenNewTrouble() => NavManager.NavigateTo("tr", forceLoad: true);
 }

@@ -1,0 +1,105 @@
+﻿@page "/cr"
+
+<link href="css/cr.css" rel="stylesheet"/>
+<PageTitle>Новая заявка</PageTitle>
+
+<Header />
+<div class="main">
+    <div class="data-block">
+        <h2>Новая заявка</h2>
+        <p>Все обязательные для заполнения поля отмечены знаком <span style="color:red">*</span></p>
+    </div>
+    <div class="data-block">
+        <h2>Контактные данные</h2>
+        <div class="contacts">
+            <label>
+                Фамилия<span style="color:red">*</span>
+                <input />
+            </label>
+            <label>
+                Имя<span style="color:red">*</span>
+                <input />
+            </label>
+            <label>
+                Отчество
+                <input />
+            </label>
+            <label>
+                Номер телефона<span style="color:red">*</span>
+                <input />
+            </label>
+            <label>
+                Электронная почта
+                <input />
+            </label>
+        </div>
+    </div>
+    <div class="data-block">
+        <h2>Адрес</h2>
+        <div class="address">
+            <select>
+                <option value="Vladimir">Владимирская область</option>
+                <option value="Moscow">Московская область</option>
+                <option value="Ivanovo">Ивановская область</option>
+            </select>
+            <label>
+                Город<span style="color:red">*</span>
+                <input />
+            </label>
+            <label>
+                Улица<span style="color:red">*</span>
+                <input />
+            </label>
+            <label>
+                Дом<span style="color:red">*</span>
+                <input class="short-input" />
+            </label>
+            <label>
+                Квартира
+                <input class="short-input" />
+            </label>
+        </div>
+    </div>
+    <div class="data-block">
+        <h2>Тарифный план</h2>
+        <div class="tariff">
+            <div class="tariff-row">
+                <select>
+                    <option value="1">Тариф №1</option>
+                    <option value="2">Тариф №2</option>
+                    <option value="3">Тариф №3</option>
+                </select>
+                <img src="images/question.png" />
+            </div>
+            <div class="addons">
+                <div class="addon">
+                    <input type="checkbox" id="one" />
+                    <label for="one">Аддон 1</label>
+                </div>
+                <div class="addon">
+                    <input type="checkbox" id="two" />
+                    <label for="two">Аддон 2</label>
+                </div>
+                <div class="addon">
+                    <input type="checkbox" id="three" />
+                    <label for="three">Аддон 3</label>
+                </div>
+                <p>Итоговая стоимость: <span style="color: #CD5700">990 ₽/мес</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="data-block">
+        <h2>Время подключения</h2>
+        <ScheduleComponent />
+    </div>
+    <div class="data-block">
+        <div class="button-cnt">
+            <button>Сохранить</button>
+        </div>
+    </div>
+</div>
+<Footer />
+
+@code {
+
+}

@@ -1,0 +1,92 @@
+﻿<style>
+    .schedule {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0 0 0;
+        row-gap: 30px
+    }
+
+    .option {
+        display: flex;
+        align-items: center;
+        column-gap: 20px
+    }
+
+        .option input {
+            accent-color: #CD5700;
+            height: 20px;
+            width: 20px;
+            cursor: pointer
+        }
+
+    label {
+        margin: 0;
+        font-size: 24px;
+        cursor: pointer
+    }
+
+    .date {
+        width: 100%;
+        display: flex;
+        column-gap: 10px
+    }
+
+        .date select {
+            font-size: 24px;
+            width: max-content;
+            cursor: pointer;
+            padding: 5px 10px
+        }
+
+        .date p {
+            margin: 0;
+            font-size: 24px
+        }
+</style>
+
+<div class="schedule">
+    <div class="option">
+        <input type="radio" id="one" name="option" checked>
+        <label for="one">Ближайшее доступное</label>
+    </div>
+    <div class="option">
+        <input type="radio" id="two" name="option">
+        <label for="two">Выбрать вручную</label>
+    </div>
+    <div class="date">
+        <select>
+            <option value="1">День 1</option>
+            <option value="2">День 2</option>
+            <option value="3">День 3</option>
+        </select>
+        <select style="margin: 0 20px 0 0">
+            <option value="1">Месяц 1</option>
+            <option value="2">Месяц 2</option>
+            <option value="3">Месяц 3</option>
+        </select>
+        <select>
+            <option value="1">10</option>
+            <option value="2">11</option>
+            <option value="3">12</option>
+            <option value="4">13</option>
+            <option value="5">14</option>
+            <option value="6">15</option>
+            <option value="7">16</option>
+            <option value="8">17</option>
+            <option value="9">18</option>
+            <option value="10">19</option>
+        </select>
+        <p>:</p>
+        <select>
+            <option value="1">00</option>
+            <option value="2">15</option>
+            <option value="3">30</option>
+            <option value="4">45</option>
+        </select>
+    </div>
+</div>
+
+@code {
+
+}

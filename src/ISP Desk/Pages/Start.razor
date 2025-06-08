@@ -15,9 +15,7 @@
             <input placeholder="Пароль" type="@((showPass) ? "text" : "password")" @bind ="pass" @oninput="PassChanged" />
             <img class="eye" src="@((showPass) ? "images/opened-eye.png" : "images/closed-eye.png")"  @onclick="PassVisibility" />
         </div>
-        <div class="forgot-password">
-            <a>Забыли пароль?</a>
-        </div>
+        <a>Забыли пароль?</a>
         <button @onclick="Enter">Войти</button>
         @if (!string.IsNullOrEmpty(error))
         {
