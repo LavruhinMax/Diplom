@@ -16,6 +16,7 @@
     flex-direction: column;
     width: 80%;
     background-color: white;
+    box-sizing: border-box;
     border-radius: 10px;
     padding: 20px 50px;
     row-gap: 20px
@@ -37,7 +38,7 @@ label, span, input, select, p {
 }
 
     .contacts input, .address input {
-        border-radius: 5px;
+        border: 1px solid gray;
         padding: 5px
     }
 
@@ -121,3 +122,148 @@ label, span, input, select, p {
             background-color: firebrick;
             border: 1px solid firebrick
         }
+
+@media(max-width: 1920px) {
+    .main {
+        padding: 20px 0
+    }
+
+    .data-block {
+        width: 90%;
+        padding: 15px 35px;
+        row-gap: 15px
+    }
+
+    h2, h3 {
+        font-size: 20px
+    }
+
+    .contacts label, .address label, .tariff label, span, input, select, p {
+        font-size: 15px
+    }
+
+    .contacts, .address {
+        margin: 15px 0 0 0;
+        row-gap: 20px
+    }
+
+        .address select, .tariff-row select {
+            padding: 7px 15px
+        }
+
+    .tariff {
+        margin: 15px 0 0 0;
+        row-gap: 15px
+    }
+
+    .tariff-row {
+        column-gap: 15px
+    }
+
+        .tariff-row img {
+            width: 40px;
+            height: 40px
+        }
+
+    .addons {
+        row-gap: 20px
+    }
+
+    .addon {
+        column-gap: 15px
+    }
+
+        .addon input {
+            height: 15px;
+            width: 15px
+        }
+
+    .short-input {
+        width: 60px
+    }
+
+        .button-cnt button {
+            font-size: 16px;
+            padding: 7px 15px
+        }
+}
+
+@media(max-width: 1280px) {
+    .contacts, .address {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+@media(max-width: 768px) {
+    .main {
+        padding: 10px 0
+    }
+
+    h2, h3 {
+        font-size: 15px
+    }
+
+    .data-block {
+        width: 95%;
+        padding: 10px 30px;
+        row-gap: 10px
+    }
+
+    .contacts label, .address label, .tariff label, span, input, select, p {
+        font-size: 12px
+    }
+
+    .contacts, .address {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin: 10px 0 0 0;
+        row-gap: 10px
+    }
+
+        .address select, .tariff-row select {
+            padding: 5px 10px
+        }
+
+    .tariff {
+        width: 100%;
+        margin: 10px 0 0 0;
+        row-gap: 10px
+    }
+
+    .tariff-row {
+        column-gap: 10px
+    }
+
+        .tariff-row img {
+            width: 25px;
+            height: 25px
+        }
+
+    .addons {
+        width: 100%;
+        row-gap: 10px
+    }
+
+    .addon {
+        column-gap: 10px
+    }
+
+        .addon input {
+            height: 12px;
+            width: 12px
+        }
+
+    .short-input {
+        width: 40px
+    }
+
+    .button-cnt {
+        justify-content: center
+    }
+
+    .button-cnt button {
+        font-size: 12px;
+        padding: 5px 10px
+    }
+}

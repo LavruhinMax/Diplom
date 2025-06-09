@@ -16,6 +16,7 @@
     flex-direction: column;
     width: 80%;
     background-color: white;
+    box-sizing: border-box;
     border-radius: 10px;
     padding: 20px 50px;
     row-gap: 20px
@@ -55,7 +56,6 @@ input, textarea, p, label, select {
     }
 
     .address input {
-        border-radius: 5px;
         padding: 5px
     }
 
@@ -74,12 +74,11 @@ input, textarea, p, label, select {
 .abonent-card {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 500px;
     height: max-content;
     row-gap: 20px;
     padding: 0 0 10px 0;
-    border: 1px solid gray;
-    border-radius: 5px
+    border: 1px solid gray
 }
 
     .abonent-card p {
@@ -156,3 +155,155 @@ textarea {
             background-color: firebrick;
             border: 1px solid firebrick
         }
+
+@media(max-width: 1920px) {
+    .main {
+        padding: 20px 0;
+        row-gap: 10px
+    }
+
+    h2 {
+        font-size: 20px
+    }
+
+    .data-block {
+        width: 90%;
+        padding: 15px 35px;
+        row-gap: 15px
+    }
+
+    input, textarea, p, label, select {
+        font-size: 15px
+    }
+
+    .searcher {
+        margin: 15px 0 0 0
+    }
+
+    .address {
+        row-gap: 20px
+    }
+
+        .address select {
+            padding: 7px 15px
+        }
+
+    .abonent-card {
+        width: 400px;
+        row-gap: 15px;
+        padding: 0 0 10px 0
+    }
+
+    .problem {
+        margin: 15px 0 0 0;
+        row-gap: 20px
+    }
+
+    .problem-row {
+        column-gap: 15px
+    }
+
+        .problem-row input[type="radio"] {
+            height: 15px;
+            width: 15px
+        }
+
+    textarea {
+        padding: 5px 5px 30px 5px
+    }
+
+    .short-input {
+        width: 60px
+    }
+
+        .button-cnt button {
+            font-size: 16px;
+            padding: 7px 15px
+        }
+}
+
+@media(max-width: 1280px) {
+    .address {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width: 768px) {
+    .main {
+        padding: 10px 0
+    }
+
+    h2 {
+        font-size: 15px
+    }
+
+    .data-block {
+        width: 95%;
+        padding: 10px 30px;
+        row-gap: 10px
+    }
+
+    .address label, .problem label, input, textarea, p, select {
+        font-size: 12px
+    }
+
+    .searcher {
+        width: 100%;
+        margin: 15px 0 0 0;
+        row-gap: 20px;
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .abonent, .address {
+        width: 100%
+    }
+
+    .abonent {
+        justify-content: center
+    }
+
+    .address {
+        row-gap: 10px
+    }
+
+        .address select {
+            padding: 5px 10px
+        }
+
+    .abonent-card {
+        width: 85%;
+        row-gap: 10px
+    }
+
+    .problem {
+        margin: 10px 0 0 0;
+        row-gap: 10px
+    }
+
+    .problem-row {
+        column-gap: 10px
+    }
+
+        .problem-row input[type="radio"] {
+            height: 12px;
+            width: 12px
+        }
+
+    textarea {
+        padding: 5px 5px 20px 5px
+    }
+
+    .short-input {
+        width: 40px
+    }
+
+    .button-cnt {
+        justify-content: center
+    }
+
+    .button-cnt button {
+        font-size: 12px;
+        padding: 5px 10px
+    }
+}

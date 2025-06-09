@@ -58,8 +58,7 @@
     }
 
 .click-left {
-    background-color: #A3C1AD;
-    border: 1px solid darkgreen
+    background-color: #A3C1AD
 }
 
     .click-left:hover {
@@ -67,8 +66,7 @@
     }
 
 .click-right {
-    background-color: gainsboro;
-    border: 1px solid black
+    background-color: gainsboro
 }
 
     .click-right:hover {
@@ -95,6 +93,7 @@
     .filter-row input {
         font-size: 24px;
         padding: 0 10px;
+        box-sizing: border-box;
         flex: 1
     }
 
@@ -108,7 +107,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 5px
 }
 
 .list-head-row, .list-row {
@@ -122,9 +121,9 @@
 
     .list-head-row p, .list-row p {
         color: white;
-        font-size: 20px;
-        margin: 25px 0;
-        width: 15%
+        font-size: 18px;
+        margin: 20px 0;
+        flex: 1
     }
 
     .list-row p {
@@ -149,10 +148,222 @@
         cursor: pointer
     }
 
-@media(max-width: 1920px) {
+.filler {
+    width: 30px
+}
 
+.list-card {
+    display: none
+}
+
+@media(max-width: 1920px) {
+    .main {
+        padding: 20px 0;
+        row-gap: 20px
+    }
+
+    .head, .bottom {
+        width: 90%;
+        padding: 20px 30px;
+        row-gap: 20px
+    }
+
+        .head p {
+            font-size: 18px
+        }
+
+    .button-row {
+        column-gap: 30px
+    }
+
+    .click-left, .click-right {
+        column-gap: 15px;
+        padding: 7px 15px
+    }
+
+        .click-left img, .click-right img {
+            height: 50px;
+            width: 50px
+        }
+
+        .click-left p, .click-right p {
+            font-size: 15px
+        }
+
+    .bottom {
+        row-gap: 30px
+    }
+
+    .filter-row {
+        column-gap: 15px
+    }
+
+        .filter-row select {
+            font-size: 18px
+        }
+
+        .filter-row input {
+            font-size: 18px;
+            padding: 0 7px
+        }
+
+    .list-head-row, .list-row {
+        padding: 0 7px
+    }
+
+        .list-head-row p, .list-row p {
+            font-size: 14px;
+            margin: 15px 0
+        }
+
+        .list-row img {
+            height: 25px;
+            width: 25px
+        }
+
+    .filler {
+        width: 25px
+    }
+}
+
+@media(max-width: 1280px) {
+    .list {
+        border-radius: 0;
+        row-gap: 20px
+    }
+
+    .list-card {
+        display: flex;
+        border: 1px solid gray;
+        border-radius: 5px
+    }
+
+    .vertical-head, .vertical-row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        border: none;
+        padding: 10px 0;
+        row-gap: 15px
+    }
+
+    .vertical-head {
+        background-color: dimgray;
+        width: 35%;
+        color: white
+    }
+
+    .vertical-row {
+        position: relative;
+        flex: 1;
+        background-color: whitesmoke
+    }
+
+        .vertical-head p, .vertical-row p {
+            margin: 0;
+            width: 100%;
+            padding: 0 10px;
+            font-size: 18px
+        }
+
+    .list-row img {
+        display: none
+    }
+
+    .list-card img {
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        bottom: 15px;
+        right: 15px;
+        cursor: pointer
+    }
+
+    .list-row, .list-head-row {
+        display: none
+    }
 }
 
 @media(max-width: 768px) {
+    .main {
+        padding: 10px 0
+    }
 
+    .head, .bottom {
+        width: 95%;
+        padding: 15px 10px;
+        row-gap: 20px
+    }
+
+        .head p {
+            font-size: 16px
+        }
+
+    .button-row {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px
+    }
+
+    .click-left, .click-right {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        column-gap: 10px;
+        padding: 10px 0
+    }
+
+        .click-left img, .click-right img {
+            height: 30px;
+            width: 30px
+        }
+
+        .click-left p, .click-right p {
+            font-size: 12px
+        }
+
+    .bottom {
+        row-gap: 20px
+    }
+
+    .filter-row {
+        width: 100%;
+        flex-direction: column;
+        row-gap: 10px
+    }
+
+        .filter-row select {
+            width: 100%;
+            padding: 10px 0;
+            background-color: lightgray;
+            font-size: 14px
+        }
+
+        .filter-row input {
+            width: 100%;
+            font-size: 14px;
+            padding: 10px 0
+        }
+
+    .list {
+        row-gap: 10px
+    }
+
+    .vertical-head, .vertical-row {
+        padding: 5px 0;
+        row-gap: 10px
+    }
+
+        .vertical-head p, .vertical-row p {
+            font-size: 12px
+        }
+
+    .list-card img {
+        height: 25px;
+        width: 25px;
+        bottom: 10px;
+        right: 10px
+    }
 }
