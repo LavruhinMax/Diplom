@@ -1,9 +1,10 @@
 ﻿@page "/disp"
+@inject Dispatcher_VM ViewModel
 
 <link href="css/disp.css" rel="stylesheet" />
 <PageTitle>Главная</PageTitle>
 
-<Header />
+<Header NavItems="ViewModel.NavItems"/>
 <div class="main">
     <div class="head">
         <p>Здравствуйте, Арсений</p>
@@ -20,7 +21,7 @@
     </div>
     <div class="bottom">
         <div class="filter-row">
-            <Day Lite="true" />
+            <Day date="ViewModel.date" Lite=true AddDay="ViewModel.AddDay" RemoveDay="ViewModel.RemoveDay" />
             <select>
                 <option value="LS">Поиск по номеру лицевого счета</option>
                 <option value="FIO">Поиск по ФИО</option>
@@ -29,71 +30,65 @@
             <input placeholder="Поиск" />
         </div>
         <div class="list">
-            <div class="list-head-row">
-                <p>Л/С</p>
-                <p>ФИО</p>
-                <p>Адрес</p>
-                <p>Телефон</p>
-                <p>Тип</p>
-                <p>Запланировано</p>
-                <div class="filler"></div>
-            </div>
-            <div class="list-row">
-                <p>330012</p>
-                <p>Мирошников Б.И.</p>
-                <p>Соколова-Соколенка, 13</p>
-                <p>+79007392039</p>
-                <p>У/П</p>
-                <p>09.12.24 16:00</p>
-                <img src="images/delete.png" />
-            </div>
-            <div class="list-row">
-                <p>330012</p>
-                <p>Мирошников Б.И.</p>
-                <p>Соколова-Соколенка, 13</p>
-                <p>+79007392039</p>
-                <p>У/П</p>
-                <p>09.12.24 16:00</p>
-                <img src="images/delete.png" />
-            </div>
-            <div class="list-card">
-                <div class="vertical-head">
+            @if (!ViewModel.filteredRequests.Any())
+            {
+                <div class="empty">
+                    <img src="images/no results.png" />
+                    <p>Список пуст</p>
+                </div>
+            }
+            else
+            {
+                <div class="list-head-row">
                     <p>Л/С</p>
                     <p>ФИО</p>
                     <p>Адрес</p>
                     <p>Телефон</p>
                     <p>Тип</p>
                     <p>Запланировано</p>
+                    <div class="filler"></div>
                 </div>
-                <div class="vertical-row">
-                    <p>330012</p>
-                    <p>Мирошников Б.И.</p>
-                    <p>Соколова-Соколенка, 13</p>
-                    <p>+79007392039</p>
-                    <p>У/П</p>
-                    <p>09.12.24 16:00</p>
-                    <img src="images/delete.png" />
-                </div>
-            </div>
-            <div class="list-card">
-                <div class="vertical-head">
-                    <p>Л/С</p>
-                    <p>ФИО</p>
-                    <p>Адрес</p>
-                    <p>Телефон</p>
-                    <p>Тип</p>
-                    <p>Запланировано</p>
-                </div>
-                <div class="vertical-row">
-                    <p>330012</p>
-                    <p>Мирошников Б.И.</p>
-                    <p>Соколова-Соколенка, 13</p>
-                    <p>+79007392039</p>
-                    <p>У/П</p>
-                    <p>09.12.24 16:00</p>
-                    <img src="images/delete.png" />
-                </div> 
-            </div>
+            }
+            @foreach (var r in ViewModel.filteredRequests)
+            {
+                @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a))
+                {
+                    <div class="list-row">
+                        <p>№ @a.PA</p>
+                        <p>@a.LastName @a.FirstName[0].@a.MiddleName[0].</p>
+                        <p>@a.City, @a.Street @a.House</p>
+                        <p>@a.PhoneNumber</p>
+                        <p>@r.Type</p>
+                        <p>@r.Scheduled.ToString("dd.MM.yy HH:mm")</p>
+                        <img src="images/delete.png" />
+                    </div>
+                }
+            }
+            @foreach (var r in ViewModel.filteredRequests)
+            {
+                @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a))
+                {
+                    <div class="list-card">
+                        <div class="vertical-head">
+                            <p>Л/С</p>
+                            <p>ФИО</p>
+                            <p>Адрес</p>
+                            <p>Телефон</p>
+                            <p>Тип</p>
+                            <p>Запланировано</p>
+                        </div>
+                        <div class="vertical-row">
+                            <p>№ @a.PA</p>
+                            <p>@a.LastName @a.FirstName[0].@a.MiddleName[0].</p>
+                            <p>@a.City, @a.Street @a.House</p>
+                            <p>@a.PhoneNumber</p>
+                            <p>@r.Type</p>
+                            <p>@r.Scheduled.ToString("dd.MM.yy HH:mm")</p>
+                            <img src="images/delete.png" />
+                        </div>
+                    </div>
+                }
+            }
         </div>
     </div>
 </div>
@@ -101,6 +96,10 @@
 
 @code {
 
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.InitializeAsync();
+    }
 
     private void OpenNewCon() => NavManager.NavigateTo("cr", forceLoad: true);
     private void OpenNewTrouble() => NavManager.NavigateTo("tr", forceLoad: true);

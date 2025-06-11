@@ -39,7 +39,7 @@
             {
                 @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a) && r.InstallatorID == UserContext.Installator.InstallatorID)
                 {
-                    <RequestCard ab="a" req="r" isDisabled="isMessageVisible" />
+                    <RequestCard ab="a" req="r" isDisabled="isMessageVisible" @onclick="() => OpenReq(r)" />
                 }
             }
         }
@@ -62,5 +62,10 @@
     {
         isMessageVisible = false;
         ViewModel.SetZero();
+    }
+
+    private void OpenReq(Request r)
+    {
+        
     }
 }

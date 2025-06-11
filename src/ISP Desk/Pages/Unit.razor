@@ -54,6 +54,7 @@
 <Confirm isVisible="isConfirmVisible" isVisibleChanged="ConfirmVisibility" message="@message" isConfirmed="DeleteInst" />
 <Mail isVisible="isMessageVisible" isVisibleChanged="MessageVisibility" i="ViewModel.inst" ms="UserContext.Lead.Messages" SendMessage="SendMessage" DeleteMessage="DeleteMessage" />
 <Stats isVisible="areStatsVisible" isVisibleChanged="StatsVisibility"/>
+<Ok isVisible="isOkVisible" isVisibleChanged="OkVisibility" message="@message" />
 
 @code {
     [Parameter] public int InstallatorID { get; set; }
@@ -61,6 +62,7 @@
     private bool isMessageVisible = false;
     private bool areStatsVisible = false;
     private bool isConfirmVisible = false;
+    private bool isOkVisible = false;
     private string message = string.Empty;
 
     protected override async Task OnInitializedAsync()
@@ -71,7 +73,12 @@
     private void OpenMessageBox() => isMessageVisible = true;
     private async Task SendMessage(Message m) => await ViewModel.Send(m);
     private void Edit() => isEditingVisible = true;
-    private async Task EditInst(Installator inst) => await ViewModel.EditInst(inst);
+    private async Task EditInst(Installator inst)
+    {
+        await ViewModel.EditInst(inst);
+        message = "Данные успешно изменены.";
+
+    }
 
     private void OpenDelete()
     {
@@ -101,4 +108,5 @@
     private void EditVisibility() => isEditingVisible = false;
     private void MessageVisibility() => isMessageVisible = false;
     private void StatsVisibility() => areStatsVisible = false;
+    private void OkVisibility() => isOkVisible = false;
 }

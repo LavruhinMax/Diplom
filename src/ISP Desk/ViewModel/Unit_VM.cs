@@ -43,7 +43,7 @@ namespace ISP_Desk.ViewModel
             NavItems.Add(new NavItem() { linkName = $"{inst.LastName} {inst.FirstName[0]}.{inst.MiddleName[0]}.", Url = $"unit/{inst.InstallatorID}" });
         }
 
-        public void FilterRequestsByDay() => filteredRequests = requests.Where(r => r.Scheduled.Day == date.Day).ToList();
+        public void FilterRequestsByDay() => filteredRequests = requests.Where(r => r.Scheduled.Date == date.Date).ToList();
 
         public void AddDay()
         {

@@ -26,6 +26,7 @@
 
         .tariff-head p {
             font-size: 18px;
+            margin: 15px 0;
             color: white
         }
 
@@ -39,7 +40,7 @@
         overflow-y: auto
     }
 
-    .tariff {
+    .tariff-p {
         width: 90%;
         display: flex;
         padding: 10px;
@@ -50,7 +51,7 @@
         background-color: #FFF1E6
     }
 
-        .tariff p {
+        .tariff-p p {
             width: 100%;
             font-size: 16px;
             line-height: 24px;
@@ -58,7 +59,7 @@
             margin: 0
         }
 
-    .tariff-row {
+    .tariff-p-row {
         display: flex;
         justify-content: space-between
     }
@@ -87,7 +88,7 @@
             font-size: 16px
         }
 
-        .tariff p {
+        .tariff-p p {
             font-size: 14px;
             line-height: 21px
         }
@@ -105,21 +106,21 @@
             right: 15%
         }
 
-            .tariff-head p {
-                font-size: 12px
-            }
+        .tariff-head p {
+            font-size: 12px
+        }
 
         .tariff-content {
             row-gap: 15px;
             padding: 15px 0
         }
 
-        .tariff {
+        .tariff-p {
             padding: 7px;
             row-gap: 7px
         }
 
-            .tariff p {
+            .tariff-p p {
                 font-size: 12px;
                 line-height: 18px
             }
@@ -130,29 +131,29 @@
     }
 </style>
 
-<div class="tariff-popup">
+<div class="tariff-popup" style="display: @(isVisible ? "flex" : "none")">
     <div class="tariff-head">
         <p>Актуальные тарифы</p>
-        <img class="tariff-close" src="images/close.png" />
+        <img class="tariff-close" src="images/close.png" @onclick="Close" />
     </div>
     <div class="tariff-content">
-        <div class="tariff">
-            <div class="tariff-row">
+        <div class="tariff-p">
+            <div class="tariff-p-row">
                 <h4>Базовый</h4>
                 <h4>500 р/мес</h4>
             </div>
             <p>Интернет 100 Мбит/с</p>
         </div>
-        <div class="tariff">
-            <div class="tariff-row">
+        <div class="tariff-p">
+            <div class="tariff-p-row">
                 <h4>Для дома</h4>
                 <h4>600 р/мес</h4>
             </div>
             <p>Интернет 100 Мбит/с</p>
             <p>IPTV (160 каналов + кинотеатр)</p>
         </div>
-        <div class="tariff">
-            <div class="tariff-row">
+        <div class="tariff-p">
+            <div class="tariff-p-row">
                 <h4>Комбинированный</h4>
                 <h4>750 р/мес</h4>
             </div>
@@ -160,8 +161,8 @@
             <p>IPTV (160 каналов + кинотеатр)</p>
             <p>1 SIM (50 ГБ + 500 минут)</p>
         </div>
-        <div class="tariff">
-            <div class="tariff-row">
+        <div class="tariff-p">
+            <div class="tariff-p-row">
                 <h4>Ультра</h4>
                 <h4>1050 р/мес</h4>
             </div>
@@ -169,8 +170,8 @@
             <p>IPTV (160 каналов + кинотеатр)</p>
             <p>3 SIM (50 ГБ + 500 минут)</p>
         </div>
-        <div class="tariff">
-            <div class="tariff-row">
+        <div class="tariff-p">
+            <div class="tariff-p-row">
                 <h4>4 в 1</h4>
                 <h4>1200 р/мес</h4>
             </div>
@@ -181,3 +182,11 @@
         </div>
     </div>
 </div>
+
+@code {
+    [Parameter] public bool isVisible { get; set; }
+    [Parameter] public EventCallback isVisibleChanged { get; set; }
+    [Parameter] public List<Tariff> tariffs { get; set; }
+
+    private void Close() => isVisibleChanged.InvokeAsync();
+}

@@ -1,9 +1,10 @@
 ﻿@page "/cr"
+@inject CR_VM ViewModel
 
-<link href="css/cr.css" rel="stylesheet"/>
+<link href="css/cr.css" rel="stylesheet" />
 <PageTitle>Новая заявка</PageTitle>
 
-<Header />
+<Header NavItems="ViewModel.NavItems"/>
 <div class="main">
     <div class="data-block">
         <h2>Новая заявка</h2>
@@ -65,26 +66,30 @@
         <div class="tariff">
             <div class="tariff-row">
                 <select>
-                    <option value="1">Тариф №1</option>
-                    <option value="2">Тариф №2</option>
-                    <option value="3">Тариф №3</option>
+                    @foreach (var t in ViewModel.tariffs)
+                    {
+                        <option value="@t.TariffName">@t.TariffName</option>
+                    }
                 </select>
-                <img src="images/question.png" />
+                <img src="images/question.png" @onclick="SeeTrfs" />
             </div>
             <div class="addons">
                 <div class="addon">
                     <input type="checkbox" id="one" />
-                    <label for="one">Аддон 1</label>
+                    <label for="one">Видеонаблюдение</label>
                 </div>
                 <div class="addon">
                     <input type="checkbox" id="two" />
-                    <label for="two">Аддон 2</label>
+                    <label for="two">3 SIM (50 ГБ + 500 минут)</label>
                 </div>
                 <div class="addon">
                     <input type="checkbox" id="three" />
-                    <label for="three">Аддон 3</label>
+                    <label for="three">Яндекс Плюс</label>
                 </div>
-                <p>Итоговая стоимость: <span style="color: #CD5700">990 ₽/мес</span></p>
+                <div class="addon">
+                    <input type="checkbox" id="four" />
+                    <label for="four">Литрес Книги</label>
+                </div>
             </div>
         </div>
     </div>
@@ -100,6 +105,17 @@
 </div>
 <Footer />
 
-@code {
+<TariffList isVisible="areTrfsVisible" isVisibleChanged="TariffVisibility" tariffs="ViewModel.tariffs" />
 
+@code {
+    private bool areTrfsVisible = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.InitializeAsync();
+    }
+
+    private void SeeTrfs() => areTrfsVisible = true;
+
+    private void TariffVisibility() => areTrfsVisible = false;
 }

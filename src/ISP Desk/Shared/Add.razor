@@ -223,11 +223,13 @@
         <input placeholder="Электронная почта" @bind="email" />
     </div>
     <div class="add-cnt">
-        <button class="button-left" @onclick="CheckAndConfirm">@(isAddingOrEditing ? "Добавить" : "Изменить")</button>
-        <button class="button-right" @onclick="Close">Отмена</button>
+        <button class="button-left" disabled="@isOkVisible" @onclick="CheckAndConfirm">@(isAddingOrEditing ? "Добавить" : "Изменить")</button>
+        <button class="button-right" disabled="@isOkVisible" @onclick="Close">Отмена</button>
     </div>
-    <img class="close" src="images/close.png" @onclick="Close" />
+    <img class="close" src="images/close.png" @onclick="() => {if(!isOkVisible) Close(); }" />
 </div>
+
+<Ok isVisible="isOkVisible" isVisibleChanged="OkVisibility" isSucceded=false message="@result" />
 
 @code {
     [Parameter] public bool isVisible { get; set; }
@@ -236,6 +238,8 @@
     [Parameter] public EventCallback<Installator> EditInst { get; set; }
     [Parameter] public Installator i { get; set; }
     [Parameter] public bool isAddingOrEditing { get; set; }
+    private bool isOkVisible = false;
+    private string result = string.Empty;
 
     private string lName = string.Empty, mName = string.Empty, fName = string.Empty, gender = "М",
         phone = string.Empty, email = string.Empty;
@@ -264,14 +268,20 @@
     {
         if (string.IsNullOrEmpty(fName) || string.IsNullOrEmpty(mName) || string.IsNullOrEmpty(lName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(phone))
         {
+            result = "Заполните все поля!";
+            isOkVisible = true;
             return;
         }
         else if (!FormatChecker.validateMail(email))
         {
+            result = "Неверный формат электронной почты!";
+            isOkVisible = true;
             return;
         }
         else if (!FormatChecker.validatePhone(phone))
         {
+            result = "Неверный формат телефона!";
+            isOkVisible = true;
             return;
         }
         await Confirm();
@@ -302,5 +312,6 @@
         Close();
     }
 
+    private void OkVisibility() => isOkVisible = false;
     private void Close() => isVisibleChanged.InvokeAsync();
 }

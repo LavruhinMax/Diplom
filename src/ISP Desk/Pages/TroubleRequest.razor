@@ -1,9 +1,10 @@
 ﻿@page "/tr"
+@inject TR_VM ViewModel
 
 <link href="css/tr.css" rel="stylesheet" />
 <PageTitle>Новая заявка</PageTitle>
 
-<Header />
+<Header NavItems="ViewModel.NavItems"/>
 <div class="main">
     <div class="data-block">
         <h2>Новая заявка</h2>
@@ -34,15 +35,6 @@
                     Квартира
                     <input class="short-input" />
                 </label>
-            </div>
-            <div class="abonent">
-                <div class="abonent-card">
-                    <h3>Абонент</h3>
-                    <p>Номер л/c: н/д</p>
-                    <p>ФИО: н/д</p>
-                    <p>Технология: н/д</p>
-                    <p>Тариф: н/д</p>
-                </div>
             </div>
         </div>
     </div>
@@ -86,4 +78,8 @@
 
 @code {
 
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.InitializeAsync();
+    }
 }

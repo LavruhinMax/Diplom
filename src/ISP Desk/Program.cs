@@ -14,8 +14,10 @@ builder.Services.AddDbContext<AppDbContext>(c => c.UseSqlite(connectionString));
 builder.Services.AddScoped<Start_VM>();
 builder.Services.AddScoped<Dispatcher_VM>();
 builder.Services.AddScoped<Installator_VM>();
-builder.Services.AddScoped<LeadPage_VM>();
+builder.Services.AddScoped<Lead_VM>();
 builder.Services.AddScoped<Unit_VM>();
+builder.Services.AddScoped<CR_VM>();
+builder.Services.AddScoped<TR_VM>();
 builder.Services.AddScoped<CryptoService>();
 
 builder.Services.AddRazorPages();

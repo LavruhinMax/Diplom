@@ -1,5 +1,5 @@
 ﻿@page "/lead"
-@inject LeadPage_VM ViewModel
+@inject Lead_VM ViewModel
 
 <link href="css/lead.css" rel="stylesheet" />
 <PageTitle>Главная</PageTitle>
@@ -115,7 +115,12 @@
 
     private void Add() => isAddingVisible = true;
 
-    private async Task AddInst(Installator inst) => await ViewModel.AddInst(inst);
+    private async Task AddInst(Installator inst)
+    {
+        await ViewModel.AddInst(inst);
+        message = "Новый сотрудник успешно добавлен.";
+        isOkVisible = true;
+    }
 
     private void AddVisibility() => isAddingVisible = false;
     private void ArchiveVisibility() => isArchiveVisible = false;

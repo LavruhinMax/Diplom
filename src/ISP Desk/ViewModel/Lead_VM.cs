@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ISP_Desk.ViewModel
 {
-    public class LeadPage_VM
+    public class Lead_VM
     {
         private readonly AppDbContext _context;
         public List<Installator> filteredInstallators = new List<Installator>();
@@ -17,7 +17,7 @@ namespace ISP_Desk.ViewModel
         public DateTime date = DateTime.Now;
         public List<NavItem> NavItems = new List<NavItem>();
 
-        public LeadPage_VM(AppDbContext context)
+        public Lead_VM(AppDbContext context)
         {
             _context = context;
         }

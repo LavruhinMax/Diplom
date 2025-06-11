@@ -122,7 +122,7 @@
 
 @code {
     [Parameter] public DateTime date { get; set; }
-    [Parameter] public bool isClickable { get; set; }
+    [Parameter] public bool isClickable { get; set; } = true;
     [Parameter] public EventCallback RemoveDay { get; set; }
     [Parameter] public EventCallback AddDay { get; set; }
     [Parameter] public bool Lite { get; set; } = false;

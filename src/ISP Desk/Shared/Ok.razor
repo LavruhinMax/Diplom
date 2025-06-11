@@ -11,7 +11,7 @@
         height: max-content;
         width: 500px;
         background-color: white;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         z-index: 1000
     }
 
@@ -19,6 +19,7 @@
             width: 80%;
             margin: 20px;
             font-size: 20px;
+            line-height: 25px;
             font-weight: 600
         }
 
@@ -90,7 +91,10 @@
 </style>
 
 <div style="display: @(isVisible ? "flex" : "none")" class="ok-popup">
-    <img class="done" src="images/done.png" />
+    @if (isSucceded)
+    {
+        <img class="done" src="images/done.png" />
+    }
     <p>@message</p>
     <div class="ok-cnt">
         <button @onclick="Close">Ок</button>
@@ -99,6 +103,7 @@
 </div>
 
 @code {
+    [Parameter] public bool isSucceded { get; set; } = true;
     [Parameter] public bool isVisible { get; set; }
     [Parameter] public string message { get; set; }
     [Parameter] public EventCallback isVisibleChanged { get; set; }
