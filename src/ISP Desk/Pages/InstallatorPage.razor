@@ -4,7 +4,7 @@
 <link href="css/inst.css" rel="stylesheet" />
 <PageTitle>Расписание</PageTitle>
 
-<Header NavItems="ViewModel.NavItems"/>
+<Header NavItems="ViewModel.NavItems" />
 <div class="main">
     <div class="schedule">
         <div class="schedule-time">
@@ -22,24 +22,25 @@
                 bool check = ViewModel.CheckIfDayoff(DateOnly.FromDateTime(dayDate));
                 <div class="column-day" @onclick="() => { if (!isMessageVisible) ViewModel.SelectDate(dayDate); }">
                     <p>@ViewModel.weekDays[i]</p>
-                    <p style="color: @(check ? "red" : ""); color: @(check && dayDate == ViewModel.selectedDate ? "pink" : "");" class="@(dayDate == ViewModel.selectedDate && dayDate.Day < 10 ? "selected-day-short" : dayDate == ViewModel.selectedDate ? "selected-day" : dayDate.Day < 10 ? "day-short" : "day")">@ViewModel.days[i]</p>
+                    <p style="color: @(check ? "red" : ""); color: @(check && dayDate.Date == ViewModel.selectedDate.Date ? "pink" : "");" class="@(dayDate.Date == ViewModel.selectedDate.Date && dayDate.Day < 10 ? "selected-day-short" : dayDate.Date == ViewModel.selectedDate.Date ? "selected-day" : dayDate.Day < 10 ? "day-short" : "day")">@ViewModel.days[i]</p>
                 </div>
             }
             <img src="@(ViewModel.pastWeek ? "images/red-arrow-right.png" : "images/arrow-right.png")" @onclick="ViewModel.SelectNextWeek" />
         </div>
     </div>
     <div class="req-list">
-        @if (!ViewModel.filteredRequests.Any())
+        @if (!ViewModel.currentRequests.Any())
         {
-            <img src="images/empty.png"/>
+            <img src="images/empty.png" />
             <p>Выездов не запланировано</p>
         }
-        else {
-            foreach (var r in ViewModel.filteredRequests)
+        else
+        {
+            foreach (var r in ViewModel.currentRequests)
             {
                 @if (ViewModel.abonentsDict.TryGetValue(r.AbonentID, out var a) && r.InstallatorID == UserContext.Installator.InstallatorID)
                 {
-                    <RequestCard ab="a" req="r" isDisabled="isMessageVisible" @onclick="() => OpenReq(r)" />
+                    <RequestCard ab="a" req="r" isDisabled="isMessageVisible" />
                 }
             }
         }
@@ -49,8 +50,10 @@
 
 <Mailbox isVisible="isMessageVisible" isVisibleChanged="MessageVisibility" messageList="UserContext.Installator.Messages" l="ViewModel.lead" />
 
+
 @code {
     private bool isMessageVisible = false;
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -62,10 +65,5 @@
     {
         isMessageVisible = false;
         ViewModel.SetZero();
-    }
-
-    private void OpenReq(Request r)
-    {
-        
     }
 }

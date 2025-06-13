@@ -12,17 +12,17 @@ namespace ISP_Desk.ViewModel
     public class Installator_VM
     {
         private readonly AppDbContext _context;
-        public List<Request> filteredRequests = new List<Request>();
+        public List<Request> currentRequests = new List<Request>();
         public List<Abonent> abonents = new List<Abonent>();
         public Lead lead = new Lead();
-        public int count;
+        public int count = 0;
         public Dictionary<int, Abonent> abonentsDict => abonents.ToDictionary(a => a.AbonentID);
 
         public string[] weekDays = new string[7] { "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС" };
         public int[] days = new int[7];
         public DateTime currentDay = DateTime.Today;
         public DateTime currentWeekStart;
-        public DateTime selectedDate = DateTime.Today;
+        public DateTime selectedDate = DateTime.Now;
         public bool pastWeek = false;
         public bool futureWeek = false;
         public List<NavItem> NavItems = new List<NavItem>();
@@ -34,11 +34,11 @@ namespace ISP_Desk.ViewModel
 
         public async Task InitializeAsync()
         {
-            UserContext.Installator.Requests = await _context.Request.Where(r => r.InstallatorID == UserContext.Installator.InstallatorID).ToListAsync();
             abonents = await _context.Abonent.ToListAsync();
+            UserContext.Installator.Requests = await _context.Request.Where(r => r.InstallatorID == UserContext.Installator.InstallatorID).ToListAsync();
             UserContext.Installator.Messages = await _context.Message.Where(m => m.InstallatorID == UserContext.Installator.InstallatorID).ToListAsync();
             count = UserContext.Installator.Messages.Where(m => m.isRead == false).Count();
-            filteredRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Date == selectedDate).ToList();
+            currentRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Date == selectedDate.Date).ToList();
             lead = _context.Lead.First(l => l.LeadID == UserContext.Installator.LeadID);
             SetNavItems();
             DrawHeadRow();
@@ -90,7 +90,7 @@ namespace ISP_Desk.ViewModel
         public void SelectDate(DateTime Date)
         {
             selectedDate = Date;
-            filteredRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Date == selectedDate).ToList();
+            currentRequests = UserContext.Installator.Requests.Where(r => r.Scheduled.Date == selectedDate.Date).ToList();
         }
 
         private void UpdateWeekDays()

@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.1.5">
+  <diagram name="Страница — 1" id="I8Pg31vQWCyDtqludsQD">
+    <mxGraphModel dx="1226" dy="741" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gg-xhsN09UIStIRCjvh4-1" value="Пользователь" style="verticalAlign=top;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=0;html=1;whiteSpace=wrap;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="383" y="92" width="197" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-3" value="Сервер" style="verticalAlign=top;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=0;html=1;whiteSpace=wrap;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="372" y="297" width="600" height="183" as="geometry" />
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-8" value="Сервер БД" style="verticalAlign=top;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=0;html=1;whiteSpace=wrap;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="372" y="540" width="278" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-12" value="Blazor Server App" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="394" y="369" width="152" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-13" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="gg-xhsN09UIStIRCjvh4-12" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-14" value="Kestrel/IIS" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="567.5" y="369" width="152" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-15" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="gg-xhsN09UIStIRCjvh4-14" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-16" value="ASP .NET Core Runtime" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="739" y="369" width="205" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-17" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="gg-xhsN09UIStIRCjvh4-16" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-18" value="Веб-интерфейс" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="405.5" y="155" width="152" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-19" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="gg-xhsN09UIStIRCjvh4-18" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-20" value="ISP_Desk.db" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="435" y="684" width="152" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-21" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="gg-xhsN09UIStIRCjvh4-20" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-22" value="СУБД SQLite" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="435" y="603" width="152" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-23" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="gg-xhsN09UIStIRCjvh4-22" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-25" value="EFCore/SQLite" style="endArrow=classic;html=1;rounded=0;exitX=0.342;exitY=1.014;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.067;entryY=-0.033;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=13;fontStyle=1" parent="1" source="gg-xhsN09UIStIRCjvh4-12" target="gg-xhsN09UIStIRCjvh4-22" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="447" y="529" as="sourcePoint" />
+            <mxPoint x="497" y="479" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gg-xhsN09UIStIRCjvh4-26" value="WebSocket/SignalR" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.574;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;fontStyle=1;fontSize=13;" parent="1" source="gg-xhsN09UIStIRCjvh4-18" target="gg-xhsN09UIStIRCjvh4-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="482" y="256" as="sourcePoint" />
+            <mxPoint x="478" y="358" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IycP1EoeHwDN0wI38OkS-1" value="Веб-приложение учёта и контроля заявок пользователей интернет-првайдера" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=331;height=40;" vertex="1" parent="1">
+          <mxGeometry x="210" y="18" width="825" height="763" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

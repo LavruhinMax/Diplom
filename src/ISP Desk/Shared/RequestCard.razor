@@ -16,15 +16,19 @@
         }
 
     .card-row {
+        width: 100%;
         display: flex;
-        justify-content: space-between;
+        box-sizing: border-box;
+        justify-content: space-between
     }
 
     .card-info {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        column-gap: 20px
+        box-sizing: border-box;
+        column-gap: 20px;
+        overflow: hiden
     }
 
         .card-info p {
@@ -64,12 +68,12 @@
 
         .req-card {
             row-gap: 15px;
-            padding: 10px
+            padding: 5px
         }
     }
 </style>
 
-<div class="req-card">
+<div class="req-card" @onclick="OpenReq">
     <div class="card-row">
         <div class="card-info">
             <img src="images/location.png" />
@@ -88,8 +92,19 @@
     </div>
 </div>
 
+<RequestPopup isVisible="isPopupVisible" isVisibleChanged="RequestVisibility" r="req" a="ab" />
+
 @code {
     [Parameter] public Abonent ab { get; set; }
     [Parameter] public Request req { get; set; }
     [Parameter] public bool isDisabled { get; set; }
+
+    private bool isPopupVisible = false;
+
+    private void OpenReq()
+    {
+        isPopupVisible = true;
+    }
+
+    private void RequestVisibility() => isPopupVisible = false;
 }
