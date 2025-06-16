@@ -1,4 +1,5 @@
-﻿<style>
+﻿@using System.Text.RegularExpressions
+<style>
     .add-popup {
         position: fixed;
         display: flex;
@@ -289,6 +290,7 @@
 
     private async Task Confirm()
     {
+        
         Installator inst = new Installator()
             {
                 LeadID = UserContext.Lead.LeadID,
@@ -296,7 +298,7 @@
                 MiddleName = mName,
                 LastName = lName,
                 Gender = gender,
-                PhoneNumber = phone,
+                PhoneNumber = Regex.Replace(phone, @"^8(\d{10})$", "+7$1"),
                 Email = email
             };
         if (isAddingOrEditing)

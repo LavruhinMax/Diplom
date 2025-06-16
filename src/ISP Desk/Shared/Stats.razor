@@ -256,15 +256,15 @@
         <img @onclick="(() => { if (!isImportVisible) Close(); })" src="images/close.png" class="stats-close" />
     </div>
     <div class="stats-button-row">
-        <button disabled="@isImportVisible">2025</button>
-        <button disabled="@isImportVisible">Июнь</button>
-        <button disabled="@isImportVisible" class="selected">09.06 - 15.06</button>
+        <button @onclick="PickYear" disabled="@isImportVisible" class=@(isYearPicked ? " selected" : "")>@DateTime.Now.Year</button>
+        <button @onclick="PickMonth" disabled="@isImportVisible" class=@(isMonthPicked ? "selected" : "")>@DateTime.Now.ToString("MMMM", Culture.culture)</button>
+        <button @onclick="PickWeek" disabled="@isImportVisible" class=@(isWeekPicked ? "selected" : "")>@mon.ToString("dd.MM") - @sun.ToString("dd.MM")</button>
     </div>
     <div class="stats-dropdown">
-        <select>
-            <option value="year">2025</option>
-            <option value="month">Июнь</option>
-            <option value="week">09.06 - 15.06</option>
+        <select @onchange="HandleSelect">
+            <option disabled="@isImportVisible" value="week">@mon.ToString("dd.MM") - @sun.ToString("dd.MM")</option>
+            <option disabled="@isImportVisible" value="month">@DateTime.Now.ToString("MMMM", Culture.culture)</option>
+            <option disabled="@isImportVisible" value="year">@DateTime.Now.Year</option>
         </select>
     </div>
     <div class="stats-title-row">
@@ -274,19 +274,19 @@
         <div class="stats-column">
             <div class="stats-cnt">
                 <div style="background-color: green;"></div>
-                <p>Выполнено: 15</p>
+                <p>Выполнено: @ChartService.instset[0]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: yellow;"></div>
-                <p>Ожидают: 8</p>
+                <p>Ожидают: @ChartService.instset[1]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: red"></div>
-                <p>Передано другим сотрудникам: 2</p>
+                <p>Передано другим сотрудникам: @ChartService.instset[2]</p>
             </div>
         </div>
         <div class="stats-diag">
-            <Chart Config="InstData" />
+            <Chart Config="ChartService.InstData" />
         </div>
     </div>
     <div class="stats-title-row">
@@ -296,23 +296,23 @@
         <div class="stats-column">
             <div class="stats-cnt">
                 <div style="background-color: blue;"></div>
-                <p>Нестабильное соединение: 13</p>
+                <p>Нестабильное соединение: @ChartService.genset[0]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: brown"></div>
-                <p>Нет сигнала ТВ: 6</p>
+                <p>Нет сигнала ТВ: @ChartService.genset[1]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: olive"></div>
-                <p>Неполадки с мобильной связью: 2</p>
+                <p>Неполадки с мобильной связью: @ChartService.genset[2]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: orange"></div>
-                <p>Аппаратные проблемы: 4</p>
+                <p>Аппаратные проблемы: @ChartService.genset[3]</p>
             </div>
         </div>
         <div class="stats-diag">
-            <Chart Config="GeneralData" />
+            <Chart Config="ChartService.GeneralData" />
         </div>
     </div>
     <div class="stats-ok">
@@ -326,41 +326,69 @@
 @code {
     [Parameter] public bool isVisible { get; set; }
     [Parameter] public EventCallback isVisibleChanged { get; set; }
+    [Parameter] public List<Request> userRequests { get; set; }
+    [Parameter] public List<Report> userReports { get; set; }
+    DateTime mon, sun;
+    private bool isYearPicked = false, isMonthPicked = false, isWeekPicked = true;
     private bool isImportVisible = false;
-    private PieConfig InstData;
-    private PieConfig GeneralData;
 
     protected override void OnInitialized()
     {
-        DrawCharts();
+        mon = DateTime.Today.AddDays(-((int)DateTime.Today.DayOfWeek - (int)DayOfWeek.Monday));
+        sun = mon.AddDays(6);
+        ChartService.userRequests = userRequests.Where(u => u.Scheduled.Date >= mon.Date && u.Scheduled.Date <= mon.AddDays(6).Date).ToList();
+        ChartService.userReports = userReports.Where(r => userRequests.Select(rq => rq.RequestID).Contains(r.RequestID)).ToList();
+        GetStats();
     }
 
-    private void DrawCharts()
+    private void GetStats()
     {
-        InstData = new PieConfig();
-        PieDataset<int> instset = new PieDataset<int>(new[] { 15, 8, 2 })
-        {
-            BackgroundColor = new[]
-            {
-            ColorUtil.ColorHexString(0, 128, 0),
-            ColorUtil.ColorHexString(255, 0, 0),
-            ColorUtil.ColorHexString(255, 255, 0),
-            }
-        };
-        InstData.Data.Datasets.Add(instset);
+        ChartService.DrawTopChart();
+        ChartService.DrawBottomChart();
+    }
 
-        GeneralData = new PieConfig();
-        PieDataset<int> genset = new PieDataset<int>(new[] { 13, 6, 2, 4 })
+    private void PickYear()
+    {
+        isYearPicked = true;
+        isWeekPicked = false; isMonthPicked = false;
+        ChartService.userRequests = userRequests.Where(u => u.Scheduled.Year == DateTime.Now.Year).ToList();
+        ChartService.userReports = userReports.Where(r => userRequests.Select(rq => rq.RequestID).Contains(r.RequestID)).ToList();
+        GetStats();
+    }
+
+    private void PickMonth()
+    {
+        isMonthPicked = true;
+        isWeekPicked = false; isYearPicked = false;
+        ChartService.userRequests = userRequests.Where(u => u.Scheduled.Month == DateTime.Now.Month && u.Scheduled.Year == DateTime.Now.Year).ToList();
+        ChartService.userReports = userReports.Where(r => userRequests.Select(rq => rq.RequestID).Contains(r.RequestID)).ToList();
+        GetStats();
+    }
+
+    private void PickWeek()
+    {
+        isWeekPicked = true;
+        isMonthPicked = false; isYearPicked = false;
+        ChartService.userRequests = userRequests.Where(u => u.Scheduled.Date >= mon.Date && u.Scheduled.Date <= mon.AddDays(6).Date).ToList();
+        ChartService.userReports = userReports.Where(r => userRequests.Select(rq => rq.RequestID).Contains(r.RequestID)).ToList();
+        GetStats();
+    }
+
+    private void HandleSelect(ChangeEventArgs e)
+    {
+        string selectedOption = e.Value?.ToString();
+        switch(selectedOption)
         {
-            BackgroundColor = new[]
-            {
-            ColorUtil.ColorHexString(0, 0, 255),
-            ColorUtil.ColorHexString(165, 42, 42),
-            ColorUtil.ColorHexString(128, 128, 0),
-            ColorUtil.ColorHexString(255, 165, 0),
-            }
-        };
-        GeneralData.Data.Datasets.Add(genset);
+            case "week":
+                PickWeek();
+                break;
+            case "month":
+                PickMonth();
+                break;
+            case "year":
+                PickYear();
+                break;
+        }
     }
 
     private void OpenImport() => isImportVisible = true;

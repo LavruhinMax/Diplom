@@ -18,7 +18,7 @@ builder.Services.AddScoped<Lead_VM>();
 builder.Services.AddScoped<Unit_VM>();
 builder.Services.AddScoped<CR_VM>();
 builder.Services.AddScoped<TR_VM>();
-builder.Services.AddScoped<CryptoService>();
+
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();

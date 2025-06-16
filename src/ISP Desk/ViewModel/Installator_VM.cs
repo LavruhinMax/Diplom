@@ -20,11 +20,9 @@ namespace ISP_Desk.ViewModel
 
         public string[] weekDays = new string[7] { "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС" };
         public int[] days = new int[7];
-        public DateTime currentDay = DateTime.Today;
+        public DateTime currentDay = DateTime.Today, selectedDate = DateTime.Now;
         public DateTime currentWeekStart;
-        public DateTime selectedDate = DateTime.Now;
-        public bool pastWeek = false;
-        public bool futureWeek = false;
+        public bool pastWeek = false, futureWeek = false;
         public List<NavItem> NavItems = new List<NavItem>();
 
         public Installator_VM(AppDbContext context)
