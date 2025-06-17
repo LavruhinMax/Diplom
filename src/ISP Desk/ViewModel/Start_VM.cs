@@ -10,10 +10,11 @@ namespace ISP_Desk.ViewModel
     public class Start_VM
     {
         private readonly AppDbContext _context;
-        public List<Account> accounts = new List<Account>();
-        public List<Installator> installators = new List<Installator>();
-        public List<Lead> leads = new List<Lead>();
-        public List<Dispatcher> dispatchers = new List<Dispatcher>();
+        public List<Account> accounts = new();
+        public List<Installator> installators = new();
+        public List<Lead> leads = new();
+        public List<Dispatcher> dispatchers = new();
+
         public Start_VM(AppDbContext context)
         {
             _context = context;

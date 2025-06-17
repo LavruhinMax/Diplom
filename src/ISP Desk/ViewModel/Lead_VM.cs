@@ -11,11 +11,11 @@ namespace ISP_Desk.ViewModel
     public class Lead_VM
     {
         private readonly AppDbContext _context;
-        public List<Installator> filteredInstallators = new List<Installator>();
-        public List<Request> requests = new List<Request>();
-        public List<Request> filteredRequests = new List<Request>();
+        public List<Installator> filteredInstallators = new();
+        public List<Request> requests = new();
+        public List<Request> filteredRequests = new();
         public DateTime date = DateTime.Now;
-        public List<NavItem> NavItems = new List<NavItem>();
+        public List<NavItem> NavItems = new();
 
         public Lead_VM(AppDbContext context)
         {

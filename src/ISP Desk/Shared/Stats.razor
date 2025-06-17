@@ -238,15 +238,15 @@
             width: 120px;
         }
 
-            .stats-ok img {
-                height: 30px;
-                margin: 0 0 0 15px
-            }
+        .stats-ok img {
+            height: 30px;
+            margin: 0 0 0 15px
+        }
 
-            .stats-ok button {
-                padding: 7px 20px;
-                margin: 7px 20px 7px 0
-            }
+        .stats-ok button {
+            padding: 7px 20px;
+            margin: 7px 20px 7px 0
+        }
     }
 </style>
 
@@ -262,27 +262,27 @@
     </div>
     <div class="stats-dropdown">
         <select @onchange="HandleSelect">
-            <option disabled="@isImportVisible" value="week">@mon.ToString("dd.MM") - @sun.ToString("dd.MM")</option>
-            <option disabled="@isImportVisible" value="month">@DateTime.Now.ToString("MMMM", Culture.culture)</option>
-            <option disabled="@isImportVisible" value="year">@DateTime.Now.Year</option>
+            <option disabled="@isImportVisible" value="week" selected="@isWeekPicked">@mon.ToString("dd.MM") - @sun.ToString("dd.MM")</option>
+            <option disabled="@isImportVisible" value="month" selected="@isMonthPicked">@DateTime.Now.ToString("MMMM", Culture.culture)</option>
+            <option disabled="@isImportVisible" value="year" selected="@isYearPicked">@DateTime.Now.Year</option>
         </select>
     </div>
     <div class="stats-title-row">
-        <p>Осуществлено выездов: 17</p>
+        <p>Осуществлено выездов: @sortedReports.Count()</p>
     </div>
     <div class="stats-diag-row">
         <div class="stats-column">
             <div class="stats-cnt">
                 <div style="background-color: green;"></div>
-                <p>Выполнено: @ChartService.instset[0]</p>
+                <p>Выполнено: @set1[0]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: yellow;"></div>
-                <p>Ожидают: @ChartService.instset[1]</p>
+                <p>Ожидают: @set1[1]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: red"></div>
-                <p>Передано другим сотрудникам: @ChartService.instset[2]</p>
+                <p>Передано другим сотрудникам: @set1[2]</p>
             </div>
         </div>
         <div class="stats-diag">
@@ -296,19 +296,19 @@
         <div class="stats-column">
             <div class="stats-cnt">
                 <div style="background-color: blue;"></div>
-                <p>Нестабильное соединение: @ChartService.genset[0]</p>
+                <p>Нестабильное соединение: @set2[0]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: brown"></div>
-                <p>Нет сигнала ТВ: @ChartService.genset[1]</p>
+                <p>Нет сигнала ТВ: @set2[1]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: olive"></div>
-                <p>Неполадки с мобильной связью: @ChartService.genset[2]</p>
+                <p>Неполадки с мобильной связью: @set2[2]</p>
             </div>
             <div class="stats-cnt">
                 <div style="background-color: orange"></div>
-                <p>Аппаратные проблемы: @ChartService.genset[3]</p>
+                <p>Аппаратные проблемы: @set2[3]</p>
             </div>
         </div>
         <div class="stats-diag">
@@ -327,8 +327,12 @@
     [Parameter] public bool isVisible { get; set; }
     [Parameter] public EventCallback isVisibleChanged { get; set; }
     [Parameter] public List<Request> userRequests { get; set; }
-    [Parameter] public List<Report> userReports { get; set; }
-    DateTime mon, sun;
+
+    private List<Request> sortedRequests = new();
+    private List<Report> sortedReports = new();
+
+    private int[] set1, set2;
+    private DateTime mon, sun;
     private bool isYearPicked = false, isMonthPicked = false, isWeekPicked = true;
     private bool isImportVisible = false;
 
@@ -336,48 +340,54 @@
     {
         mon = DateTime.Today.AddDays(-((int)DateTime.Today.DayOfWeek - (int)DayOfWeek.Monday));
         sun = mon.AddDays(6);
-        ChartService.userRequests = userRequests.Where(u => u.Scheduled.Date >= mon.Date && u.Scheduled.Date <= mon.AddDays(6).Date).ToList();
-        ChartService.userReports = userReports.Where(r => userRequests.Select(rq => rq.RequestID).Contains(r.RequestID)).ToList();
-        GetStats();
+        sortedRequests = userRequests.Where(u => u.Scheduled.Date >= mon.Date && u.Scheduled.Date <= mon.AddDays(6).Date).ToList();;
+        CountMatches();
     }
 
-    private void GetStats()
+    private void CountMatches()
     {
-        ChartService.DrawTopChart();
-        ChartService.DrawBottomChart();
+        sortedReports.Clear();
+        sortedReports.AddRange(sortedRequests.SelectMany(r => r.Reports));
+        set1 = new[] {
+            sortedReports.Where(r => r.Status == "Завершен").Count(),
+            sortedRequests.Where(u => u.Closed == null).Count(),
+            sortedReports.Where(r => r.Status == "Передан").Count()
+        };
+        set2 = new[] {
+            sortedRequests.Where(u => u.Type == "Нестабильное соединение").Count(),
+            sortedRequests.Where(u => u.Type == "Нет сигнала ТВ").Count(),
+            sortedRequests.Where(u => u.Type == "Неполадки с мобильной связью").Count(),
+            sortedRequests.Where(u => u.Type == "Аппаратные проблемы").Count()
+        };
+        ChartService.DrawTopChart(set1);
+        ChartService.DrawBottomChart(set2);
     }
 
     private void PickYear()
     {
-        isYearPicked = true;
-        isWeekPicked = false; isMonthPicked = false;
-        ChartService.userRequests = userRequests.Where(u => u.Scheduled.Year == DateTime.Now.Year).ToList();
-        ChartService.userReports = userReports.Where(r => userRequests.Select(rq => rq.RequestID).Contains(r.RequestID)).ToList();
-        GetStats();
+        isYearPicked = true; isWeekPicked = false; isMonthPicked = false;
+        sortedRequests = userRequests.Where(u => u.Scheduled.Year == DateTime.Now.Year).ToList();
+        CountMatches();
     }
 
     private void PickMonth()
     {
-        isMonthPicked = true;
-        isWeekPicked = false; isYearPicked = false;
-        ChartService.userRequests = userRequests.Where(u => u.Scheduled.Month == DateTime.Now.Month && u.Scheduled.Year == DateTime.Now.Year).ToList();
-        ChartService.userReports = userReports.Where(r => userRequests.Select(rq => rq.RequestID).Contains(r.RequestID)).ToList();
-        GetStats();
+        isMonthPicked = true; isWeekPicked = false; isYearPicked = false;
+        sortedRequests = userRequests.Where(u => u.Scheduled.Month == DateTime.Now.Month && u.Scheduled.Year == DateTime.Now.Year).ToList();
+        CountMatches();
     }
 
     private void PickWeek()
     {
-        isWeekPicked = true;
-        isMonthPicked = false; isYearPicked = false;
-        ChartService.userRequests = userRequests.Where(u => u.Scheduled.Date >= mon.Date && u.Scheduled.Date <= mon.AddDays(6).Date).ToList();
-        ChartService.userReports = userReports.Where(r => userRequests.Select(rq => rq.RequestID).Contains(r.RequestID)).ToList();
-        GetStats();
+        isWeekPicked = true; isMonthPicked = false; isYearPicked = false;
+        sortedRequests = userRequests.Where(u => u.Scheduled.Date >= mon.Date && u.Scheduled.Date <= mon.AddDays(6).Date).ToList();
+        CountMatches();
     }
 
     private void HandleSelect(ChangeEventArgs e)
     {
         string selectedOption = e.Value?.ToString();
-        switch(selectedOption)
+        switch (selectedOption)
         {
             case "week":
                 PickWeek();

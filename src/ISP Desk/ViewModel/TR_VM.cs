@@ -5,7 +5,7 @@ namespace ISP_Desk.ViewModel
 {
     public class TR_VM
     {
-        public List<NavItem> NavItems = new List<NavItem>();
+        public List<NavItem> NavItems = new();
 
         public async Task InitializeAsync()
         {

@@ -9,7 +9,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         height: max-content;
-        width: 500px;
+        width: 600px;
         background-color: white;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
         box-sizing: border-box;
@@ -161,7 +161,7 @@
 
         .import-file {
             column-gap: 20px;
-            padding: 0 15px 15px 15px
+            padding: 0 10px 10px 10px
         }
 
             .import-file img {
@@ -194,15 +194,15 @@
     <div class="import-list">
         <div class="import-checkbox">
             <input type="checkbox" id="week" checked />
-            <label for="week">Статистика за 01.06 - 08.06</label>
+            <label for="week">Статистика за @mon.ToString("dd.MM") - @sun.ToString("dd.MM")</label>
         </div>
         <div class="import-checkbox">
             <input type="checkbox" id="month" />
-            <label for="month">Статистика за 01.06 - 30.06</label>
+            <label for="month">Статистика за @DateTime.Now.ToString("MMMM", Culture.culture)</label>
         </div>
         <div class="import-checkbox">
             <input type="checkbox" id="year" />
-            <label for="year">Статистика за 01.01 - 03.06</label>
+            <label for="year">Статистика за @DateTime.Now.Year</label>
         </div>
     </div>
     <div class="import-file">
@@ -210,18 +210,35 @@
         <p>@selectedPath</p>
     </div>
     <div class="import-button-row">
-        <button class="apply">Применить</button>
+        <button class="apply" @onclick="Apply">Применить</button>
         <button @onclick="Close" class="cancel">Отмена</button>
     </div>
 </div>
-
 
 
 @code {
     [Inject] private IJSRuntime JSRuntime { get; set; }
     [Parameter] public bool isVisible { get; set; }
     [Parameter] public EventCallback isVisibleChanged { get; set; }
-    private string selectedPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
+    int[] set1 = new[] {
+            3,
+            6,
+            9
+        };
+    int[] set2 = new[] {
+            5,
+            8,
+            7
+        };
+
+    private DateTime mon, sun;
+    private string selectedPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads\\Report.xlsx";
+
+    protected override void OnInitialized()
+    {
+        mon = DateTime.Today.AddDays(-((int)DateTime.Today.DayOfWeek - (int)DayOfWeek.Monday));
+        sun = mon.AddDays(6);
+    }
 
     private async Task OpenFolderDialog()
     {
@@ -230,6 +247,11 @@
         {
             selectedPath = path;
         }
+    }
+
+    private void Apply()
+    {
+        ExcelService.ExportToExcel(set1, set2, selectedPath);
     }
 
     private void Close() => isVisibleChanged.InvokeAsync();

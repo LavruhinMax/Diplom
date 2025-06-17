@@ -12,9 +12,9 @@ namespace ISP_Desk.ViewModel
     public class Installator_VM
     {
         private readonly AppDbContext _context;
-        public List<Request> currentRequests = new List<Request>();
-        public List<Abonent> abonents = new List<Abonent>();
-        public Lead lead = new Lead();
+        public List<Request> currentRequests = new();
+        public List<Abonent> abonents = new();
+        public Lead lead = new();
         public int count = 0;
         public Dictionary<int, Abonent> abonentsDict => abonents.ToDictionary(a => a.AbonentID);
 
@@ -23,7 +23,7 @@ namespace ISP_Desk.ViewModel
         public DateTime currentDay = DateTime.Today, selectedDate = DateTime.Now;
         public DateTime currentWeekStart;
         public bool pastWeek = false, futureWeek = false;
-        public List<NavItem> NavItems = new List<NavItem>();
+        public List<NavItem> NavItems = new();
 
         public Installator_VM(AppDbContext context)
         {

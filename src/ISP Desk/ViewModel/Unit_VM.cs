@@ -10,15 +10,16 @@ namespace ISP_Desk.ViewModel
     public class Unit_VM
     {
         private readonly AppDbContext _context;
-        public Installator inst = new Installator();
-        public List<Request> filteredRequests = new List<Request>();
-        public List<Abonent> abonents = new List<Abonent>();
+        public Installator inst = new();
+        public List<Request> filteredRequests = new();
+        public List<Abonent> abonents = new();
+        public List<Report> reports = new();
         public Dictionary<int, Abonent> abonentsDict => abonents.ToDictionary(a => a.AbonentID);
 
         public DateTime date = DateTime.Now;
         public string phone;
 
-        public List<NavItem> NavItems = new List<NavItem>();
+        public List<NavItem> NavItems = new();
  
         public Unit_VM(AppDbContext context)
         {
@@ -27,10 +28,12 @@ namespace ISP_Desk.ViewModel
 
         public async Task InitializeAsync(int id)
         {
+            abonents = await _context.Abonent.ToListAsync();
+            reports = await _context.Report.ToListAsync();
             inst = _context.Installator.First(i => i.InstallatorID == id);
             inst.Requests = await _context.Request.Where(r => r.InstallatorID == id).ToListAsync();
-            //inst.Reports = await _context.Report.Where(r => inst.Requests.Select(rq => rq.RequestID).Contains(r.RequestID)).ToListAsync();
-            abonents = await _context.Abonent.ToListAsync();
+            foreach (var r in inst.Requests)
+                r.Reports = reports.Where(rp => rp.RequestID == r.RequestID).ToList();
             UserContext.Lead.Messages = await _context.Message.Where(m => m.LeadID == UserContext.Lead.LeadID && m.InstallatorID == inst.InstallatorID).ToListAsync();
             phone = $"+7 ({inst.PhoneNumber.Substring(2, 3)}) {inst.PhoneNumber.Substring(5, 3)} {inst.PhoneNumber.Substring(8, 2)} {inst.PhoneNumber.Substring(10, 2)}";
             FilterRequestsByDay();

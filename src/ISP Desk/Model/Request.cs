@@ -11,5 +11,6 @@
         public DateTime Created { get; set; }
         public DateTime Scheduled { get; set; }
         public DateTime? Closed { get; set; }
+        public List<Report> Reports { get; set; }
     }
 }

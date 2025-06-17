@@ -9,13 +9,13 @@ namespace ISP_Desk.ViewModel
     public class Dispatcher_VM
     {
         private readonly AppDbContext _context;
-        public List<Request> requests = new List<Request>();
-        public List<Request> filteredRequests = new List<Request>();
-        public List<Abonent> abonents = new List<Abonent>();
+        public List<Request> requests = new();
+        public List<Request> filteredRequests = new();
+        public List<Abonent> abonents = new();
         public Dictionary<int, Abonent> abonentsDict => abonents.ToDictionary(a => a.AbonentID);
 
         public DateTime date = DateTime.Now;
-        public List<NavItem> NavItems = new List<NavItem>();
+        public List<NavItem> NavItems = new();
 
         public Dispatcher_VM(AppDbContext context)
         {

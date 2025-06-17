@@ -14,7 +14,6 @@
         public bool isActive { get; set; }
         public DateOnly? RemovalDate { get; set; }
         public Account Account { get; set; }
-        public List<Report> Reports { get; set; }
         public List<Request> Requests { get; set; }
         public List<Message> Messages { get; set; }
     }

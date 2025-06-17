@@ -8,9 +8,9 @@ namespace ISP_Desk.ViewModel
     public class CR_VM
     {
         private readonly AppDbContext _context;
-        public List<Tariff> tariffs = new List<Tariff>();
+        public List<Tariff> tariffs = new();
 
-        public List<NavItem> NavItems = new List<NavItem>();
+        public List<NavItem> NavItems = new();
 
         public CR_VM(AppDbContext context)
         {
